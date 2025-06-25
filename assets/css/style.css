@@ -681,35 +681,776 @@ footer::before {
   animation: neonGlow 2s infinite alternate;
 }
 
-@media (max-width: 768px) {
+/* === RESPONSIVE DESIGN COMPLETO === */
+
+/* Extra Small Devices - Celulares pequeños (portrait) */
+@media (max-width: 575.98px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
   .header-logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .header-logo img {
+    max-width: 30px;
+    height: auto;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  
+  .neon-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .futuristic-card {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .image-placeholder {
+    min-height: 120px;
+  }
+  
+  .hero-section {
+    min-height: 60vh;
+    padding: 2rem 0;
+  }
+  
+  .cta-content {
+    padding: 1.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .btn-call, .btn-whatsapp, .btn-futuristic {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .form-control-futuristic {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .glass-section {
+    margin: 1rem 0;
+    border-radius: 15px;
+  }
+}
+
+/* Small Devices - Celulares medianos y pequeñas tablets (landscape) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .header-logo {
+    font-size: 1.4rem;
+  }
+  
+  .header-logo img {
+    max-width: 35px;
+    height: auto;
+  }
+  
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .neon-title {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .futuristic-card {
+    padding: 1.2rem;
+  }
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .image-placeholder {
+    min-height: 140px;
+  }
+  
+  .hero-section {
+    min-height: 70vh;
+  }
+  
+  .cta-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .btn-call, .btn-whatsapp {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+/* Medium Devices - Tablets medianas */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .header-logo {
+    font-size: 1.6rem;
+  }
+  
+  .header-logo img {
+    max-width: 40px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
   }
   
   .futuristic-card {
     padding: 1.5rem;
   }
   
+  .card-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
+  
+  .image-placeholder {
+    min-height: 160px;
+  }
+  
+  .hero-section {
+    min-height: 75vh;
+  }
+  
+  .cta-content {
+    padding: 2rem;
+  }
+}
+
+/* Large Devices - Tablets grandes y laptops pequeñas */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .header-logo {
+    font-size: 1.8rem;
+  }
+  
+  .header-logo img {
+    max-width: 45px;
+    height: auto;
+  }
+  
   .neon-title {
+    font-size: 3rem;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .futuristic-card {
+    padding: 1.8rem;
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .image-placeholder {
+    min-height: 180px;
+  }
+  
+  .hero-section {
+    min-height: 80vh;
+  }
+}
+
+/* Extra Large Devices - Laptops medianas y desktops pequeños */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  html {
+    font-size: 17px;
+  }
+  
+  .header-logo {
+    font-size: 2rem;
+  }
+  
+  .header-logo img {
+    max-width: 50px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 3.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .futuristic-card {
+    padding: 2rem;
+  }
+  
+  .card-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.5rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.2rem;
+  }
+  
+  .image-placeholder {
+    min-height: 200px;
+  }
+  
+  .hero-section {
+    min-height: 85vh;
+  }
+  
+  .cta-content {
+    padding: 2.5rem;
+  }
+}
+
+/* XXL Devices - Desktops medianos y grandes */
+@media (min-width: 1400px) and (max-width: 1919.98px) {
+  html {
+    font-size: 18px;
+  }
+  
+  .container {
+    max-width: 1320px;
+  }
+  
+  .header-logo {
+    font-size: 2.2rem;
+  }
+  
+  .header-logo img {
+    max-width: 55px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 4rem;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .futuristic-card {
+    padding: 2.2rem;
+  }
+  
+  .card-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.6rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .image-placeholder {
+    min-height: 220px;
+  }
+  
+  .hero-section {
+    min-height: 90vh;
+  }
+  
+  .cta-content {
+    padding: 3rem;
+  }
+}
+
+/* Ultra Wide Screens - Smart TVs pequeñas y monitores ultra anchos */
+@media (min-width: 1920px) and (max-width: 2559.98px) {
+  html {
+    font-size: 20px;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
+  
+  .header-logo {
+    font-size: 2.5rem;
+  }
+  
+  .header-logo img {
+    max-width: 60px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 4.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .futuristic-card {
+    padding: 2.5rem;
+  }
+  
+  .card-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 1.8rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+  }
+  
+  .image-placeholder {
+    min-height: 250px;
+  }
+  
+  .hero-section {
+    min-height: 95vh;
+  }
+  
+  .cta-content {
+    padding: 3.5rem;
+  }
+  
+  .btn-call, .btn-whatsapp, .btn-futuristic {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Smart TVs medianas y grandes */
+@media (min-width: 2560px) {
+  html {
+    font-size: 24px;
+  }
+  
+  .container {
+    max-width: 2000px;
+  }
+  
+  .header-logo {
+    font-size: 3rem;
+  }
+  
+  .header-logo img {
+    max-width: 80px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 5.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .futuristic-card {
+    padding: 3rem;
+  }
+  
+  .card-icon {
+    width: 100px;
+    height: 100px;
     font-size: 2rem;
   }
   
   .project-gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 4rem;
   }
   
   .image-placeholder {
-    min-height: 150px;
+    min-height: 300px;
   }
   
-  .cta-buttons {
+  .hero-section {
+    min-height: 100vh;
+  }
+  
+  .cta-content {
+    padding: 4rem;
+  }
+  
+  .btn-call, .btn-whatsapp, .btn-futuristic {
+    padding: 25px 50px;
+    font-size: 1.3rem;
+  }
+  
+  .form-control-futuristic {
+    padding: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+  }
+}
+
+/* Responsive utilities para mejorar la legibilidad */
+@media (max-width: 991.98px) {
+  .d-md-none {
+    display: none !important;
+  }
+  
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  
+  .mb-mobile-3 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .px-mobile-2 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* Mejoras específicas para touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .btn-call, .btn-whatsapp, .btn-futuristic {
+    padding: 18px 25px;
+    min-height: 50px;
+  }
+  
+  .nav-link {
+    padding: 15px;
+    min-height: 44px;
+  }
+  
+  .form-control-futuristic {
+    padding: 18px;
+    min-height: 50px;
+  }
+  
+  .futuristic-card:hover {
+    transform: none;
+  }
+  
+  .futuristic-card:active {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+/* Mejoras para orientación landscape en móviles */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh;
+    padding: 1rem 0;
+  }
+  
+  .neon-title {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  .subtitle {
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-content {
+    padding: 1.5rem;
+  }
+}
+
+/* === UTILIDADES RESPONSIVE ADICIONALES === */
+
+/* Flexbox responsive utilities */
+.flex-wrap-mobile {
+  flex-wrap: wrap;
+}
+
+.justify-content-center-mobile {
+  justify-content: center;
+}
+
+/* Typography responsive */
+.h1-responsive {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.h2-responsive {
+  font-size: clamp(1.3rem, 3.5vw, 2.5rem);
+}
+
+.h3-responsive {
+  font-size: clamp(1.1rem, 3vw, 2rem);
+}
+
+.text-responsive {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+}
+
+/* Container fluid responsive */
+.container-fluid-responsive {
+  padding-left: clamp(15px, 3vw, 50px);
+  padding-right: clamp(15px, 3vw, 50px);
+}
+
+/* Cards responsive improvements */
+.card-responsive {
+  width: 100%;
+  max-width: none;
+}
+
+@media (min-width: 576px) {
+  .card-responsive {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-responsive {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-responsive {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-responsive {
+    max-width: 1140px;
+  }
+}
+
+/* Grid responsive improvements */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+/* Spacing responsive */
+.spacing-responsive {
+  margin: clamp(1rem, 3vw, 3rem) 0;
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* Image responsive improvements */
+.img-responsive {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* Video responsive */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Table responsive */
+.table-responsive-custom {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive-custom table {
+  min-width: 600px;
+}
+
+/* Navigation responsive improvements */
+.navbar-responsive {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-responsive .navbar-nav {
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    text-align: center;
   }
   
-  .btn-call, .btn-whatsapp {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
+  .navbar-responsive .nav-link {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Form responsive improvements */
+.form-responsive .form-control {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  padding: clamp(0.75rem, 2vw, 1rem);
+}
+
+/* Button responsive improvements */
+.btn-responsive {
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  min-height: 44px;
+}
+
+/* Footer responsive */
+@media (max-width: 767.98px) {
+  footer .container {
+    text-align: center;
+  }
+  
+  footer .row > div {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Accessibility improvements for all screen sizes */
+.sr-only-responsive {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus improvements for keyboard navigation */
+.focus-visible:focus {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .neon-title {
+    color: black !important;
+    text-shadow: none !important;
+  }
+  
+  .futuristic-card {
+    border: 1px solid #ccc !important;
+    background: white !important;
   }
 }

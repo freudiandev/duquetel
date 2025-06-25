@@ -16,96 +16,109 @@
 </head>
 <body>
   <header>
-    <div class="container d-flex justify-content-between align-items-center py-3">
-      <h1 class="header-logo mb-0"><img src="/assets/images/logo_base.png" alt="Logo"> ⚡ DUQUETEL</h1>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-        </ul>
-      </nav>
+    <div class="container-fluid container-fluid-responsive">
+      <div class="d-flex justify-content-between align-items-center py-3 flex-wrap">
+        <h1 class="header-logo mb-0 h1-responsive">
+          <img src="/assets/images/logo_base.png" alt="Logo Duquetel" class="img-responsive me-2" style="max-width: 50px;"> 
+          <span class="d-none d-sm-inline">⚡ DUQUETEL</span>
+          <span class="d-inline d-sm-none">⚡ DQ</span>
+        </h1>
+        <nav class="navbar-responsive">
+          <ul class="nav flex-wrap justify-content-center justify-content-lg-end">
+            <li class="nav-item"><a class="nav-link focus-visible" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link focus-visible" href="about.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link focus-visible" href="services.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link focus-visible" href="contact.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero Section Responsive -->
     <section class="hero-section">
-      <div class="container text-center">
-        <h1 class="neon-title display-3 mb-4">BIENVENIDOS AL FUTURO ELÉCTRICO</h1>
-        <p class="subtitle lead mb-5">Innovación tecnológica en ingeniería eléctrica con 19 años de experiencia transformando el sector energético</p>
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-8">
-            <div class="glass-section p-4">
-              <p class="text-glow mb-0">Especialistas en soluciones eléctricas sostenibles, automatización industrial y energías renovables</p>
+      <div class="container-fluid container-fluid-responsive text-center">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <h1 class="neon-title h1-responsive mb-3 mb-md-4">BIENVENIDOS AL FUTURO ELÉCTRICO</h1>
+            <p class="subtitle text-responsive mb-4 mb-md-5">Innovación tecnológica en ingeniería eléctrica con 19 años de experiencia transformando el sector energético</p>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-4 mb-md-5">
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="glass-section spacing-responsive">
+              <p class="text-glow text-responsive mb-0">Especialistas en soluciones eléctricas sostenibles, automatización industrial y energías renovables</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Sección de navegación rápida -->
-    <section class="container py-5">
-      <h2 class="neon-title h2 mb-5">EXPLORA NUESTRO MUNDO TECNOLÓGICO</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4 fade-in-left">
-          <div class="futuristic-card text-center h-100">
-            <div class="card-icon">
+    <!-- Sección de navegación rápida responsive -->
+    <section class="container-fluid container-fluid-responsive py-4 py-md-5">
+      <h2 class="neon-title h2-responsive mb-4 mb-md-5 text-center">EXPLORA NUESTRO MUNDO TECNOLÓGICO</h2>
+      <div class="row g-3 g-md-4">
+        <div class="col-12 col-sm-6 col-lg-4 fade-in-left">
+          <div class="futuristic-card text-center h-100 card-responsive">
+            <div class="card-icon mx-auto">
               <i class="fas fa-info-circle"></i>
             </div>
-            <h3 class="text-glow mb-3">Sobre Nosotros</h3>
-            <p class="mb-4">Descubre nuestra misión, visión y compromiso con la excelencia tecnológica</p>
-            <a href="about.html" class="btn btn-futuristic">Conocer Más</a>
+            <h3 class="text-glow h3-responsive mb-3">Sobre Nosotros</h3>
+            <p class="text-responsive mb-4">Descubre nuestra misión, visión y compromiso con la excelencia tecnológica</p>
+            <a href="about.html" class="btn btn-futuristic btn-responsive focus-visible">Conocer Más</a>
           </div>
         </div>
-        <div class="col-md-4 mb-4 fade-in-up">
-          <div class="futuristic-card text-center h-100">
-            <div class="card-icon">
+        <div class="col-12 col-sm-6 col-lg-4 fade-in-up">
+          <div class="futuristic-card text-center h-100 card-responsive">
+            <div class="card-icon mx-auto">
               <i class="fas fa-bolt"></i>
             </div>
-            <h3 class="text-glow mb-3">Servicios</h3>
-            <p class="mb-4">Explora nuestras soluciones innovadoras en ingeniería eléctrica y automatización</p>
-            <a href="services.html" class="btn btn-futuristic">Ver Servicios</a>
+            <h3 class="text-glow h3-responsive mb-3">Servicios</h3>
+            <p class="text-responsive mb-4">Explora nuestras soluciones innovadoras en ingeniería eléctrica y automatización</p>
+            <a href="services.html" class="btn btn-futuristic btn-responsive focus-visible">Ver Servicios</a>
           </div>
         </div>
-        <div class="col-md-4 mb-4 fade-in-right">
-          <div class="futuristic-card text-center h-100">
-            <div class="card-icon">
+        <div class="col-12 col-sm-12 col-lg-4 fade-in-right">
+          <div class="futuristic-card text-center h-100 card-responsive">
+            <div class="card-icon mx-auto">
               <i class="fas fa-comments"></i>
             </div>
-            <h3 class="text-glow mb-3">Contacto</h3>
-            <p class="mb-4">Conecta con nuestro equipo de expertos para impulsar tu proyecto</p>
-            <a href="contact.html" class="btn btn-futuristic">Contactar</a>
+            <h3 class="text-glow h3-responsive mb-3">Contacto</h3>
+            <p class="text-responsive mb-4">Conecta con nuestro equipo de expertos para impulsar tu proyecto</p>
+            <a href="contact.html" class="btn btn-futuristic btn-responsive focus-visible">Contactar</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Irresistible en Index -->
-    <section class="container">
+    <!-- CTA Irresistible en Index - Responsive -->
+    <section class="container-fluid container-fluid-responsive">
       <div class="cta-irresistible">
-        <div class="cta-content text-center">
-          <h3 class="neon-title h3 mb-3">🔥 ¡OFERTA DE BIENVENIDA!</h3>
-          <p class="lead mb-3">
+        <div class="cta-content text-center spacing-responsive">
+          <h3 class="neon-title h3-responsive mb-3">🔥 ¡OFERTA DE BIENVENIDA!</h3>
+          <p class="text-responsive mb-3">
             <span class="cta-highlight">¡CONSULTA TÉCNICA GRATUITA</span> + 
             <span class="cta-urgency">presupuesto sin compromiso</span>
           </p>
-          <p class="mb-4">
+          <p class="text-responsive mb-4">
             💎 <strong>INCLUYE:</strong> Visita al sitio + Análisis completo + Propuesta personalizada
-            <br>🎁 <strong>BONUS:</strong> <span class="cta-highlight">Descuento del 10% en tu primer proyecto</span>
+            <br class="d-none d-md-block">
+            <span class="d-block d-md-inline mt-2 mt-md-0">🎁 <strong>BONUS:</strong> <span class="cta-highlight">Descuento del 10% en tu primer proyecto</span></span>
           </p>
-          <div class="cta-buttons">
-            <a href="tel:+593997306549" class="btn-call">
+          <div class="cta-buttons d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <a href="tel:+593997306549" class="btn-call btn-responsive focus-visible">
               <i class="fas fa-phone-alt"></i>
-              CONSULTA CON JORGE
+              <span class="d-none d-sm-inline">CONSULTA CON JORGE</span>
+              <span class="d-inline d-sm-none">LLAMAR</span>
             </a>
-            <a href="https://wa.me/593997306549?text=Hola%20Jorge,%20me%20interesa%20la%20consulta%20técnica%20gratuita%20y%20el%20descuento%20de%20bienvenida" class="btn-whatsapp" target="_blank">
+            <a href="https://wa.me/593997306549?text=Hola%20Jorge,%20me%20interesa%20la%20consulta%20técnica%20gratuita%20y%20el%20descuento%20de%20bienvenida" class="btn-whatsapp btn-responsive focus-visible" target="_blank">
               <i class="fab fa-whatsapp"></i>
-              CONSULTA GRATIS
+              <span class="d-none d-sm-inline">CONSULTA GRATIS</span>
+              <span class="d-inline d-sm-none">WHATSAPP</span>
             </a>
           </div>
-          <small class="text-muted mt-3 d-block">✅ Sin compromiso • ✅ Respuesta en 24 horas</small>
+          <small class="text-muted mt-3 d-block text-responsive">✅ Sin compromiso • ✅ Respuesta en 24 horas</small>
         </div>
       </div>
     </section>
@@ -164,11 +177,18 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container text-center py-4">
+  <footer class="no-print">
+    <div class="container-fluid container-fluid-responsive text-center py-3 py-md-4">
       <div class="text-glow">
-        <small>&copy; 2025 DUQUETEL - Innovación Eléctrica del Futuro | Todos los derechos reservados
-            <br><p>Hecho con <i class="fas fa-heart"></i> por <a href="https://www.instagram.com/freudiandev/" target="_blank">@freudianDev</a> By <a href="https://cpunkec.6te.net/" target="_blank">CiberPunk EC</a></p>
+        <small class="text-responsive">
+          <span class="d-block d-md-inline">&copy; 2025 DUQUETEL - Innovación Eléctrica del Futuro</span>
+          <span class="d-block d-md-inline"> | Todos los derechos reservados</span>
+          <br>
+          <p class="mt-2 mb-0 text-responsive">
+            Hecho con <i class="fas fa-heart text-danger"></i> por 
+            <a href="https://www.instagram.com/freudiandev/" target="_blank" class="focus-visible">@freudianDev</a> 
+            By <a href="https://cpunkec.6te.net/" target="_blank" class="focus-visible">CiberPunk EC</a>
+          </p>
         </small>
       </div>
     </div>
