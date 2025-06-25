@@ -1,0 +1,30 @@
+# Prohibir indexación a todos los motores de búsqueda
+User-agent: *
+Disallow: /
+
+# Prohibir específicamente a Google
+User-agent: Googlebot
+Disallow: /
+
+# Prohibir específicamente a Bing
+User-agent: Bingbot
+Disallow: /
+
+# Prohibir a otros motores de búsqueda conocidos
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /
+
+User-agent: Twitterbot
+Disallow: /

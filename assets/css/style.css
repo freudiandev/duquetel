@@ -1,0 +1,715 @@
+/* Paleta de colores futurista */
+:root {
+  --color1: #0a0a0a;
+  --color2: #00ffff;
+  --color3: #0066ff;
+  --color4: #00ff88;
+  --color5: #ffffff;
+  --electric-blue: #1e3a8a;
+  --neon-cyan: #00e5ff;
+  --neon-green: #39ff14;
+  --dark-bg: #0a0a0a;
+  --card-bg: rgba(15, 23, 42, 0.8);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* Importar fuente futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap');
+
+/* Configuración base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Partículas de fondo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, var(--neon-cyan), transparent),
+    radial-gradient(2px 2px at 40px 70px, var(--neon-green), transparent),
+    radial-gradient(1px 1px at 90px 40px, var(--color2), transparent),
+    radial-gradient(1px 1px at 130px 80px, var(--color4), transparent);
+  background-repeat: repeat;
+  background-size: 150px 150px;
+  opacity: 0.1;
+  animation: float 20s infinite linear;
+  z-index: -1;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-40px) translateX(-10px); }
+  75% { transform: translateY(-20px) translateX(10px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, var(--neon-green), var(--neon-cyan));
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+/* Animaciones avanzadas */
+@keyframes electricPulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 15px var(--neon-cyan);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes neonGlow {
+  0%, 100% { 
+    text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 15px var(--neon-cyan);
+  }
+  50% { 
+    text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateHue {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Header futurista */
+header {
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  border-bottom: 2px solid var(--neon-cyan);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  opacity: 0.1;
+  animation: electricFlow 3s infinite linear;
+}
+
+@keyframes electricFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.header-logo {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  font-size: 2rem;
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: neonGlow 2s infinite alternate;
+}
+
+/* Navegación futurista */
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--neon-cyan) !important;
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+/* Animaciones */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    box-shadow: 0 0 8px var(--color4);
+  }
+  20%, 24%, 55% {
+    box-shadow: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Secciones con efectos glass morphism */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.glass-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, var(--neon-cyan), transparent);
+  animation: rotateHue 10s infinite linear;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+/* Cards futuristas */
+.futuristic-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: slideInFromBottom 0.8s ease;
+}
+
+.futuristic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  transition: left 0.8s ease;
+}
+
+.futuristic-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 255, 255, 0.2),
+    0 0 20px rgba(0, 255, 255, 0.3),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  border-color: var(--neon-cyan);
+}
+
+.futuristic-card:hover::before {
+  left: 100%;
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+  animation: electricPulse 3s infinite;
+}
+
+/* Títulos con efectos */
+.neon-title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green), var(--color3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px var(--neon-cyan);
+  animation: neonGlow 3s infinite alternate;
+  margin: 2rem 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: slideInFromLeft 1s ease;
+}
+
+/* Botones futuristas */
+.btn-futuristic {
+  background: linear-gradient(45deg, var(--electric-blue), var(--neon-cyan));
+  border: 2px solid var(--neon-cyan);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-futuristic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-futuristic:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 20px rgba(0, 255, 255, 0.3),
+    0 0 30px var(--neon-cyan);
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
+}
+
+.btn-futuristic:hover::before {
+  left: 100%;
+}
+
+/* Formularios futuristas */
+.form-control-futuristic {
+  background: rgba(15, 23, 42, 0.8);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.form-control-futuristic:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.form-control-futuristic::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Header y footer */
+header, footer {
+  background-color: var(--color1);
+}
+header a, footer a {
+  color: #fff;
+}
+
+/* Enlaces del footer */
+footer a {
+  color: #ff4444 !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #ff6666 !important;
+  text-shadow: 0 0 10px #ff4444;
+  text-decoration: none;
+}
+
+/* Clases reutilizables */
+.shimmer {
+  animation: flicker 3s infinite;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Footer futurista */
+footer {
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  border-top: 2px solid var(--neon-cyan);
+  margin-top: 4rem;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green), var(--neon-cyan));
+  animation: electricFlow 2s infinite linear;
+}
+
+/* Clases de utilidad */
+.fade-in-up {
+  animation: slideInFromBottom 1s ease;
+}
+
+.fade-in-left {
+  animation: slideInFromLeft 1s ease;
+}
+
+.fade-in-right {
+  animation: slideInFromRight 1s ease;
+}
+
+.electric-border {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--neon-cyan), var(--neon-green), var(--neon-cyan)) 1;
+  animation: electricPulse 2s infinite;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Hero section */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(30, 58, 138, 0.3) 100%);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, transparent 40%, rgba(0, 255, 255, 0.03) 50%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(0, 255, 136, 0.03) 50%, transparent 60%);
+  animation: rotateHue 15s infinite linear;
+}
+
+/* Espacios para imágenes futuristas */
+.image-placeholder {
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 136, 0.1));
+  border: 2px dashed var(--neon-cyan);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, var(--neon-cyan), transparent);
+  animation: rotateHue 10s infinite linear;
+  opacity: 0.1;
+}
+
+.image-placeholder:hover {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.image-placeholder-text {
+  font-family: 'Orbitron', monospace;
+  color: var(--neon-cyan);
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Galería de proyectos */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+}
+
+.project-image {
+  height: 250px;
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 136, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  transform: translateY(0);
+}
+
+/* CTAs irresistibles */
+.cta-irresistible {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 136, 0.1));
+  border: 2px solid var(--neon-cyan);
+  border-radius: 20px;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.cta-irresistible::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green), var(--color3), var(--neon-cyan));
+  border-radius: 20px;
+  z-index: -1;
+  animation: electricPulse 3s infinite;
+}
+
+.cta-content {
+  background: var(--dark-bg);
+  border-radius: 18px;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-call {
+  background: linear-gradient(45deg, #ff6b35, #ff8c42);
+  border: 2px solid #ff6b35;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-call:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-whatsapp {
+  background: linear-gradient(45deg, #25d366, #128c7e);
+  border: 2px solid #25d366;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.cta-highlight {
+  color: var(--neon-green);
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+.cta-urgency {
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  animation: neonGlow 2s infinite alternate;
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    font-size: 1.5rem;
+  }
+  
+  .futuristic-card {
+    padding: 1.5rem;
+  }
+  
+  .neon-title {
+    font-size: 2rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-placeholder {
+    min-height: 150px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-call, .btn-whatsapp {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
