@@ -222,6 +222,161 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         });
     }, 3000);
+
+    // === FUNCIONALIDAD NAVBAR HAMBURGUESA === //
+    
+    // Variables del navbar
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarOverlay = document.querySelector('.navbar-overlay');
+    const navLinks = document.querySelectorAll('.navbar-nav-mobile .nav-link');
+    
+    // Función para abrir el menú
+    function openMobileMenu() {
+        navbarCollapse.classList.add('show');
+        navbarOverlay.classList.add('show');
+        navbarToggler.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+        
+        // Agregar efecto sonoro (opcional)
+        playMenuSound();
+    }
+    
+    // Función para cerrar el menú
+    function closeMobileMenu() {
+        navbarCollapse.classList.remove('show');
+        navbarOverlay.classList.remove('show');
+        navbarToggler.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = ''; // Restaurar scroll del body
+    }
+    
+    // Event listener para el botón hamburguesa
+    if (navbarToggler) {
+        navbarToggler.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            if (isExpanded) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+    }
+    
+    // Cerrar menú al hacer click en el overlay
+    if (navbarOverlay) {
+        navbarOverlay.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Cerrar menú al hacer click en un enlace
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Pequeño delay para que se vea el efecto del click
+            setTimeout(closeMobileMenu, 300);
+        });
+    });
+    
+    // Cerrar menú con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navbarCollapse.classList.contains('show')) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Cerrar menú al cambiar el tamaño de pantalla (responsive)
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Función para efecto sonoro (opcional)
+    function playMenuSound() {
+        // Crear un pequeño efecto de sonido con Web Audio API
+        try {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
+            
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.1);
+        } catch (e) {
+            // Si no se puede reproducir sonido, continuar silenciosamente
+        }
+    }
+    
+    // Efecto de pulso en el botón hamburguesa cuando está activo
+    function pulseHamburger() {
+        if (navbarToggler && navbarToggler.getAttribute('aria-expanded') === 'true') {
+            navbarToggler.style.boxShadow = '0 0 25px var(--neon-cyan)';
+            setTimeout(() => {
+                if (navbarToggler) {
+                    navbarToggler.style.boxShadow = '0 0 15px rgba(0, 255, 255, 0.3)';
+                }
+            }, 500);
+        }
+    }
+    
+    // Pulso cada 2 segundos cuando el menú está abierto
+    setInterval(pulseHamburger, 2000);
+    
+    // Detectar toque/swipe para cerrar menú en dispositivos móviles
+    let startY = 0;
+    let startX = 0;
+    
+    document.addEventListener('touchstart', function(e) {
+        startY = e.touches[0].clientY;
+        startX = e.touches[0].clientX;
+    });
+    
+    document.addEventListener('touchend', function(e) {
+        if (!navbarCollapse.classList.contains('show')) return;
+        
+        const endY = e.changedTouches[0].clientY;
+        const endX = e.changedTouches[0].clientX;
+        const diffY = startY - endY;
+        const diffX = startX - endX;
+        
+        // Swipe hacia arriba para cerrar
+        if (diffY > 50 && Math.abs(diffX) < 100) {
+            closeMobileMenu();
+        }
+        
+        // Swipe hacia la derecha para cerrar
+        if (diffX < -100 && Math.abs(diffY) < 50) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Animación de entrada de los elementos del menú
+    function animateMenuItems() {
+        const menuItems = document.querySelectorAll('.navbar-nav-mobile .nav-item');
+        menuItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.transform = 'translateX(0)';
+                item.style.opacity = '1';
+            }, index * 100);
+        });
+    }
+    
+    // Ejecutar animación cuando se abre el menú
+    const originalOpenMenu = openMobileMenu;
+    openMobileMenu = function() {
+        originalOpenMenu();
+        setTimeout(animateMenuItems, 100);
+    };
+
+    // === FIN FUNCIONALIDAD NAVBAR === //
 });
 
 // CSS adicional para los efectos JavaScript

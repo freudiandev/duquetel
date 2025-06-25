@@ -17,22 +17,60 @@
 <body>
   <header>
     <div class="container-fluid container-fluid-responsive">
-      <div class="d-flex justify-content-between align-items-center py-3 flex-wrap">
+      <div class="header-content">
         <h1 class="header-logo mb-0 h1-responsive">
           <img src="/assets/images/logo_base.png" alt="Logo Duquetel" class="img-responsive me-2" style="max-width: 50px;"> 
           <span class="d-none d-sm-inline">⚡ DUQUETEL</span>
           <span class="d-inline d-sm-none">⚡ DQ</span>
         </h1>
-        <nav class="navbar-responsive">
+        
+        <!-- Navegación desktop -->
+        <nav class="navbar-responsive d-none d-lg-block">
           <ul class="nav flex-wrap justify-content-center justify-content-lg-end">
             <li class="nav-item"><a class="nav-link focus-visible" href="index.html">Inicio</a></li>
             <li class="nav-item"><a class="nav-link focus-visible" href="about.html">Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link focus-visible" href="services.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link focus-visible active" href="services.html">Servicios</a></li>
             <li class="nav-item"><a class="nav-link focus-visible" href="contact.html">Contacto</a></li>
           </ul>
         </nav>
+        
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+            <span></span>
+          </span>
+        </button>
+      </div>
+      
+      <!-- Menú móvil -->
+      <div class="navbar-collapse collapse" id="navbarMobile">
+        <ul class="navbar-nav-mobile">
+          <li class="nav-item">
+            <a class="nav-link focus-visible" href="index.html">
+              <i class="fas fa-home me-2"></i>Inicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link focus-visible" href="about.html">
+              <i class="fas fa-info-circle me-2"></i>Nosotros
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active focus-visible" href="services.html">
+              <i class="fas fa-bolt me-2"></i>Servicios
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link focus-visible" href="contact.html">
+              <i class="fas fa-envelope me-2"></i>Contacto
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
+    
+    <!-- Overlay para cerrar menú -->
+    <div class="navbar-overlay" id="navbarOverlay"></div>
   </header>
 
   <main>
