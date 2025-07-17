@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, 3000);
 
-    // === FUNCIONALIDAD NAVBAR HAMBURGUESA === //
+    // === FUNCIONALIDAD NAVBAR HAMBURGUESA OPTIMIZADA === //
     
     // Variables del navbar
     const navbarToggler = document.querySelector('.navbar-toggler');
@@ -231,29 +231,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarOverlay = document.querySelector('.navbar-overlay');
     const navLinks = document.querySelectorAll('.navbar-nav-mobile .nav-link');
     
-    // Función para abrir el menú
+    // Función para abrir el menú (INSTANTÁNEA)
     function openMobileMenu() {
-        navbarCollapse.classList.add('show');
-        navbarOverlay.classList.add('show');
-        navbarToggler.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden'; // Prevenir scroll del body
-        
-        // Agregar efecto sonoro (opcional)
-        playMenuSound();
+        // Optimizar con requestAnimationFrame para mejor rendimiento
+        requestAnimationFrame(() => {
+            navbarCollapse.classList.add('show');
+            navbarOverlay.classList.add('show');
+            navbarToggler.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        });
     }
     
-    // Función para cerrar el menú
+    // Función para cerrar el menú (INSTANTÁNEA)
     function closeMobileMenu() {
-        navbarCollapse.classList.remove('show');
-        navbarOverlay.classList.remove('show');
-        navbarToggler.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = ''; // Restaurar scroll del body
+        requestAnimationFrame(() => {
+            navbarCollapse.classList.remove('show');
+            navbarOverlay.classList.remove('show');
+            navbarToggler.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
     }
     
-    // Event listener para el botón hamburguesa
+    // Event listener optimizado para el botón hamburguesa
     if (navbarToggler) {
         navbarToggler.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             
             if (isExpanded) {
@@ -264,58 +267,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Cerrar menú al hacer click en el overlay
+    // Cerrar menú al hacer click en el overlay (OPTIMIZADO)
     if (navbarOverlay) {
         navbarOverlay.addEventListener('click', closeMobileMenu);
     }
     
-    // Cerrar menú al hacer click en un enlace
+    // Cerrar menú al hacer click en un enlace (SIN DELAY)
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            // Pequeño delay para que se vea el efecto del click
-            setTimeout(closeMobileMenu, 300);
+            closeMobileMenu(); // Removido el setTimeout para que sea instantáneo
         });
     });
     
-    // Cerrar menú con tecla ESC
+    // Cerrar menú con tecla ESC (OPTIMIZADO)
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && navbarCollapse.classList.contains('show')) {
             closeMobileMenu();
         }
     });
     
-    // Cerrar menú al cambiar el tamaño de pantalla (responsive)
+    // Cerrar menú al cambiar el tamaño de pantalla (OPTIMIZADO)
+    let resizeTimer;
     window.addEventListener('resize', function() {
-        if (window.innerWidth >= 992) {
-            closeMobileMenu();
-        }
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth >= 992) {
+                closeMobileMenu();
+            }
+        }, 100);
     });
     
-    // Función para efecto sonoro (opcional)
-    function playMenuSound() {
-        // Crear un pequeño efecto de sonido con Web Audio API
-        try {
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-            oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
-            
-            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.1);
-        } catch (e) {
-            // Si no se puede reproducir sonido, continuar silenciosamente
-        }
-    }
-    
-    // Efecto de pulso en el botón hamburguesa cuando está activo
+    // Efecto de pulso en el botón hamburguesa cuando está activo (OPTIMIZADO)
     function pulseHamburger() {
         if (navbarToggler && navbarToggler.getAttribute('aria-expanded') === 'true') {
             navbarToggler.style.boxShadow = '0 0 25px var(--neon-cyan)';
@@ -330,14 +312,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Pulso cada 2 segundos cuando el menú está abierto
     setInterval(pulseHamburger, 2000);
     
-    // Detectar toque/swipe para cerrar menú en dispositivos móviles
+    // Detectar toque/swipe para cerrar menú en dispositivos móviles (OPTIMIZADO)
     let startY = 0;
     let startX = 0;
     
     document.addEventListener('touchstart', function(e) {
         startY = e.touches[0].clientY;
         startX = e.touches[0].clientX;
-    });
+    }, { passive: true });
     
     document.addEventListener('touchend', function(e) {
         if (!navbarCollapse.classList.contains('show')) return;
@@ -377,6 +359,37 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // === FIN FUNCIONALIDAD NAVBAR === //
+
+    // Efectos específicos para el logo de Duquetel
+    const duquetelLogo = document.querySelector('.duquetel-logo');
+    if (duquetelLogo) {
+        // Efecto de clic en el logo
+        duquetelLogo.addEventListener('click', function() {
+            this.style.animation = 'logoGlow 0.5s ease-in-out';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 500);
+        });
+
+        // Efecto de pulso periódico en el logo
+        setInterval(() => {
+            if (!duquetelLogo.matches(':hover')) {
+                duquetelLogo.style.filter = 'drop-shadow(0 0 25px rgba(0, 255, 255, 0.7))';
+                setTimeout(() => {
+                    duquetelLogo.style.filter = 'drop-shadow(0 0 20px rgba(0, 255, 255, 0.6))';
+                }, 300);
+            }
+        }, 3000);
+
+        // Efecto de rotación sutil en hover
+        duquetelLogo.addEventListener('mouseenter', function() {
+            this.style.transform += ' rotate(1deg)';
+        });
+
+        duquetelLogo.addEventListener('mouseleave', function() {
+            this.style.transform = this.style.transform.replace(' rotate(1deg)', '');
+        });
+    }
 });
 
 // CSS adicional para los efectos JavaScript

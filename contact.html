@@ -19,9 +19,7 @@
     <div class="container-fluid container-fluid-responsive">
       <div class="header-content">
         <h1 class="header-logo mb-0 h1-responsive">
-          <img src="/assets/images/logo_base.png" alt="Logo Duquetel" class="img-responsive me-2" style="max-width: 50px;"> 
-          <span class="d-none d-sm-inline">⚡ DUQUETEL</span>
-          <span class="d-inline d-sm-none">⚡ DQ</span>
+          <img src="/assets/images/logo_base.png" alt="Logo Duquetel" class="duquetel-logo img-responsive" style="width: 20rem; max-width: 90vw; height: auto; filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6)); transition: all 0.3s ease;"> 
         </h1>
         
         <!-- Navegación desktop -->
@@ -75,8 +73,9 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container text-center">
+    <section class="hero-section" style="background-image: url('assets/images/f.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+      <div class="container text-center" style="position: relative; z-index: 2;">
         <h1 class="neon-title display-4 mb-4">CONECTA CON EL FUTURO</h1>
         <p class="subtitle lead">Inicia tu proyecto tecnológico con nosotros</p>
       </div>
@@ -84,10 +83,23 @@
 
     <!-- Información de contacto -->
     <section class="container py-5">
+      <h2 class="neon-title h3 mb-5 text-center">INFORMACIÓN DE CONTACTO</h2>
       <div class="row">
-        <div class="col-lg-6 mb-5 fade-in-left">
-          <h2 class="neon-title h3 mb-4">INFORMACIÓN DE CONTACTO</h2>
-          <div class="futuristic-card">
+        <div class="col-lg-6 mb-4 fade-in-left">
+          <div class="futuristic-card h-100">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2233.792078683161!2d-79.20304605554817!3d-3.9864510763715617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cb480867d38d25%3A0xee434e8355e935b5!2sC.%20Bracamoros%2C%20Loja!5e0!3m2!1ses!2sec!4v1752721629974!5m2!1ses!2sec" 
+              width="100%" 
+              height="450" 
+              style="border:0; border-radius: 15px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4 fade-in-right">
+          <div class="futuristic-card h-100">
             <div class="mb-4">
               <div class="d-flex align-items-center mb-3">
                 <div class="card-icon me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
@@ -134,50 +146,8 @@
             </div>
           </div>
         </div>
-        
-        <div class="col-lg-6 mb-5 fade-in-right">
-          <h2 class="neon-title h3 mb-4">ENVÍANOS UN MENSAJE</h2>
-          <div class="futuristic-card">
-            <form>
-              <div class="mb-4">
-                <label for="name" class="form-label text-glow mb-2">Nombre Completo</label>
-                <input type="text" class="form-control form-control-futuristic" id="name" placeholder="Tu nombre completo" required>
-              </div>
-              <div class="mb-4">
-                <label for="email" class="form-label text-glow mb-2">Email</label>
-                <input type="email" class="form-control form-control-futuristic" id="email" placeholder="tu@email.com" required>
-              </div>
-              <div class="mb-4">
-                <label for="phone" class="form-label text-glow mb-2">Teléfono</label>
-                <input type="tel" class="form-control form-control-futuristic" id="phone" placeholder="+593 99 123 4567">
-              </div>
-              <div class="mb-4">
-                <label for="service" class="form-label text-glow mb-2">Servicio de Interés</label>
-                <select class="form-control form-control-futuristic" id="service">
-                  <option value="">Selecciona un servicio</option>
-                  <option value="redes">Redes Eléctricas</option>
-                  <option value="automatizacion">Automatización Industrial</option>
-                  <option value="solar">Energía Solar</option>
-                  <option value="tableros">Tableros de Distribución</option>
-                  <option value="ups">Sistemas UPS</option>
-                  <option value="iluminacion">Iluminación LED</option>
-                  <option value="seguridad">Sistemas de Seguridad</option>
-                  <option value="otro">Otro</option>
-                </select>
-              </div>
-              <div class="mb-4">
-                <label for="message" class="form-label text-glow mb-2">Mensaje</label>
-                <textarea class="form-control form-control-futuristic" id="message" rows="5" placeholder="Describe tu proyecto o consulta..." required></textarea>
-              </div>
-              <button type="submit" class="btn btn-futuristic w-100">
-                <i class="fas fa-paper-plane me-2"></i>ENVIAR MENSAJE
-              </button>
-            </form>
-          </div>
-        </div>
       </div>
     </section>
-
     <!-- CTA después del formulario -->
     <section class="container">
       <div class="cta-irresistible">
@@ -189,7 +159,7 @@
           </p>
           <p class="mb-4">
             🚀 <strong>RESPUESTA INMEDIATA:</strong> Por llamada o WhatsApp
-            <br>💼 <strong>ATENCIÓN PERSONALIZADA:</strong> <span class="cta-highlight">19 años de experiencia directa</span>
+            <br>💼 <strong>ATENCIÓN PERSONALIZADA:</strong> <span class="cta-highlight">22 años de experiencia directa</span>
           </p>
           <div class="cta-buttons">
             <a href="tel:+593997306549" class="btn-call">
@@ -215,7 +185,7 @@
             <div class="card-icon">
               <i class="fas fa-award"></i>
             </div>
-            <h4 class="text-glow mb-3">19 AÑOS</h4>
+            <h4 class="text-glow mb-3">22 AÑOS</h4>
             <p>De experiencia en el mercado ecuatoriano</p>
           </div>
         </div>
