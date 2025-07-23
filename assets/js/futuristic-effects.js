@@ -1,103 +1,53 @@
-// Efectos adicionales para la interfaz futurista
+// Scripts profesionales para la interfaz
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Efecto de parallax en el scroll
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const parallax = document.querySelectorAll('.hero-section');
-        const speed = 0.5;
-        
-        parallax.forEach(element => {
-            const yPos = -(scrolled * speed);
-            element.style.transform = `translateY(${yPos}px)`;
-        });
-    });
-
-    // Animación de aparición de elementos al hacer scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = 'slideInFromBottom 0.8s ease forwards';
-                entry.target.style.opacity = '1';
-            }
-        });
-    }, observerOptions);
-
-    // Observar todas las cards futuristas
-    document.querySelectorAll('.futuristic-card').forEach(card => {
-        card.style.opacity = '0';
-        observer.observe(card);
-    });
-
-    // Efecto de cursor personalizado
-    const cursor = document.createElement('div');
-    cursor.classList.add('custom-cursor');
-    document.body.appendChild(cursor);
-
-    document.addEventListener('mousemove', function(e) {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-
-    // Efecto hover en botones
-    document.querySelectorAll('.btn-futuristic').forEach(btn => {
-        btn.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.05)';
+    // Comportamiento de navegación móvil
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarMobile = document.getElementById('navbarMobile');
+    const navbarOverlay = document.getElementById('navbarOverlay');
+    
+    if (navbarToggler && navbarMobile && navbarOverlay) {
+        navbarToggler.addEventListener('click', function() {
+            navbarMobile.classList.toggle('show');
+            navbarOverlay.classList.toggle('active');
         });
         
-        btn.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+        navbarOverlay.addEventListener('click', function() {
+            navbarMobile.classList.remove('show');
+            this.classList.remove('active');
         });
-    });
-
-    // Efecto de escritura automática para títulos
-    function typeWriter(element, text, speed = 100) {
-        let i = 0;
-        element.innerHTML = '';
         
-        function type() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            }
+        document.querySelectorAll('#navbarMobile .nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navbarMobile.classList.remove('show');
+                navbarOverlay.classList.remove('active');
+            });
+        });
+    }
+    
+    // Mejora de accesibilidad para elementos interactivos
+    document.querySelectorAll('a, button').forEach(element => {
+        if (!element.getAttribute('tabindex')) {
+            element.setAttribute('tabindex', '0');
         }
-        type();
-    }
-
-    // Aplicar efecto de escritura a títulos principales
-    const mainTitles = document.querySelectorAll('.neon-title.display-3, .neon-title.display-4');
-    mainTitles.forEach(title => {
-        const originalText = title.textContent;
-        title.addEventListener('animationend', function() {
-            typeWriter(title, originalText, 80);
-        });
     });
 
-    // Efecto de partículas flotantes
-    function createParticle() {
-        const particle = document.createElement('div');
-        particle.classList.add('floating-particle');
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        document.body.appendChild(particle);
-
-        setTimeout(() => {
-            particle.remove();
-        }, 5000);
-    }
-
-    // Crear partículas cada cierto tiempo
-    setInterval(createParticle, 2000);
-
-    // Efecto de vibración en elementos con error
+    // Mejorar experiencia en formularios
+    document.querySelectorAll('input, textarea').forEach(field => {
+        field.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        field.addEventListener('blur', function() {
+            if (!this.value) {
+                this.parentElement.classList.remove('focused');
+            }
+        });
+    });
+    
+    // Función para hacer efecto de shake en elementos inválidos
     function shakeElement(element) {
-        element.style.animation = 'shake 0.5s ease-in-out';
+        element.style.animation = 'shake 0.5s';
         setTimeout(() => {
             element.style.animation = '';
         }, 500);
@@ -226,9 +176,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // === FUNCIONALIDAD NAVBAR HAMBURGUESA OPTIMIZADA === //
     
     // Variables del navbar
-    const navbarToggler = document.querySelector('.navbar-toggler');
+    // Reutilizamos las variables ya declaradas anteriormente
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    const navbarOverlay = document.querySelector('.navbar-overlay');
+    // Reutilizamos navbarOverlay ya declarado anteriormente
     const navLinks = document.querySelectorAll('.navbar-nav-mobile .nav-link');
     
     // Función para abrir el menú (INSTANTÁNEA)

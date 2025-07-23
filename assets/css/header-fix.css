@@ -1,0 +1,221 @@
+/* Estilos adicionales para corregir el header */
+
+/* Header fijo con mejor soporte */
+header {
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.duquetel-logo {
+  max-height: 60px;
+  width: auto !important;
+}
+
+main {
+  margin-top: 100px;
+}
+
+/* Menú móvil */
+#navbarMobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.navbar-nav-mobile {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.navbar-nav-mobile .nav-link {
+  display: block;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: var(--dark) !important;
+  text-decoration: none;
+}
+
+.navbar-nav-mobile .nav-link:hover,
+.navbar-nav-mobile .nav-link.active {
+  color: var(--primary) !important;
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+/* Overlay de fondo para menú móvil */
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 998;
+  display: none;
+}
+
+.navbar-overlay.active {
+  display: block;
+}
+
+/* Animación del botón hamburguesa */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  outline: none;
+}
+
+/* Estilos para mejorar las tarjetas */
+.futuristic-card {
+  background: rgba(0, 20, 40, 0.5);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: slideInFromBottom 0.8s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.futuristic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 102, 204, 0.2);
+  border-color: var(--primary);
+}
+
+.futuristic-card:hover .card-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+}
+
+.futuristic-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.futuristic-card:hover h3 {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(0, 170, 204, 0.3);
+}
+
+.futuristic-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.btn-futuristic {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: auto;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+}
+
+.btn-futuristic:hover {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Animaciones para tarjetas */
+@keyframes cardPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 102, 204, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 102, 204, 0);
+  }
+}
+
+.futuristic-card:hover .card-icon {
+  animation: cardPulse 1.5s infinite;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 991px) {
+  .duquetel-logo {
+    max-height: 50px;
+  }
+  
+  main {
+    margin-top: 80px;
+  }
+  
+  .header-content {
+    padding: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .duquetel-logo {
+    max-height: 40px;
+  }
+  
+  main {
+    margin-top: 70px;
+  }
+}

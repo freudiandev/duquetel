@@ -5,7 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   <!-- Evitar indexación en motores de búsqueda -->
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <!-- CTA 2: Energía renovable -->
+    <section class="container" style="margin    <!-- CTA 3: Servicios de mantenimiento -->
+    <section class="container" style="margin-top: 0.5rem; padding-top: 0;">
+      <div class="cta-irresistible">
+        <div class="cta-content text-center">
+          <h3 class="neon-title h3 mb-3">MANTENIMIENTO PREVENTIVO Y CORRECTIVO</h3> 0.5rem; padding-top: 0; margin-bottom: 0.5rem;">
+      <div class="cta-irresistible">
+        <div class="cta-content text-center">
+          <h3 class="neon-title h3 mb-3">SOLUCIONES EN ENERGÍA RENOVABLE</h3>
+          <p class="lead mb-3">
+            Optimice sus costos operativos con <span class="cta-highlight">tecnología fotovoltaica de alta eficiencia</span> y 
+            <span class="cta-urgency">RETORNO DE INVERSIÓN</span> a mediano plazo
+          </p>
+          <p class="mb-4">
+            <strong>BENEFICIOS CORPORATIVOS:</strong> Reducción de costos energéticos + Cumplimiento normativo + Certificación ambiental
+            <br><span class="cta-highlight">Ofrecemos estudio técnico-financiero para evaluar la viabilidad del proyecto energético en su empresa.</span>
+          </p>"robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
   <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
   
@@ -19,7 +35,7 @@
     <div class="container-fluid container-fluid-responsive">
       <div class="header-content">
         <h1 class="header-logo mb-0 h1-responsive">
-          <img src="assets/images/logo.png" alt="Logo Duquetel" class="duquetel-logo img-responsive" style="width: 40rem; max-width: 90vw; height: auto; transition: all 0.3s ease;"> 
+          <img src="assets/images/logo.png" alt="Logo Duquetel" class="duquetel-logo img-responsive" style="width: 20rem; max-width: 90vw; height: auto; transition: all 0.3s ease;"> 
         </h1>
         
         <!-- Navegación desktop -->
@@ -224,8 +240,8 @@
             <span class="cta-urgency">RETORNO DE INVERSIÓN</span> a mediano plazo
           </p>
           <p class="mb-4">
-            <strong>BENEFICIOS CORPORATIVOS:</strong> Reducción de costos energéticos + Cumplimiento normativo + Certificación ambiental
-            <br><span class="cta-highlight">Ofrecemos estudio técnico-financiero para evaluar la viabilidad del proyecto energético en su empresa.</span>
+            � <strong>BENEFICIOS EXCLUSIVOS:</strong> Estudio energético profesional + Diseño 3D personalizado + Plan de sostenibilidad a 5 años
+            <br><span class="cta-highlight">¡Al cotizar hoy, recibes un análisis personalizado de impacto ambiental para tu empresa!</span>
           </p>
           <div class="cta-buttons">
             <a href="tel:+593997306549" class="btn-call">
@@ -285,11 +301,11 @@
       </div>
     </section>
 
-    <!-- CTA 3: Servicios de mantenimiento -->
+    <!-- CTA 3: Protección y tranquilidad -->
     <section class="container" style="margin-top: 0.5rem; padding-top: 0;">
       <div class="cta-irresistible">
         <div class="cta-content text-center">
-          <h3 class="neon-title h3 mb-3">MANTENIMIENTO PREVENTIVO Y CORRECTIVO</h3>
+          <h3 class="neon-title h3 mb-3">� PROTECCIÓN PARA LO QUE MÁS VALORA</h3>
           <p class="lead mb-3">
             <span class="cta-highlight">SERVICIO TÉCNICO ESPECIALIZADO</span> para garantizar la continuidad 
             <span class="cta-urgency">operativa de sus sistemas</span>
@@ -362,9 +378,7 @@
     <div class="container text-center py-3">
       <div class="text-glow">
         <small>&copy; 2025 DUQUETEL - Innovación Eléctrica del Futuro | Todos los derechos reservados
-            <br><p style="margin-top: 0.5rem; margin-bottom: 0;">Hecho con <i class="fas fa-heart text-danger"></i> por 
-            <a href="https://freudiandev.github.io/freudiandev/" target="_blank" class="focus-visible">@freudianDev</a> 
-            By <a href="https://www.facebook.com/CiberPunkEc/" target="_blank" class="focus-visible">CiberPunk EC</a></p>
+            <br><p>Hecho con <i class="fas fa-heart"></i> por <a href="https://www.instagram.com/freudiandev/" target="_blank">@freudianDev</a> By <a href="https://cpunkec.6te.net/" target="_blank">CiberPunk EC</a></p>
         </small>
       </div>
     </div>

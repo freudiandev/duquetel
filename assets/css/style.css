@@ -1,20 +1,20 @@
-/* Paleta de colores futurista */
+/* Paleta de colores profesional basada en marca */
 :root {
-  --color1: #0a0a0a;
-  --color2: #00ffff;
-  --color3: #0066ff;
-  --color4: #00ff88;
-  --color5: #ffffff;
-  --electric-blue: #1e3a8a;
-  --neon-cyan: #00e5ff;
-  --neon-green: #39ff14;
-  --dark-bg: #0a0a0a;
-  --card-bg: rgba(15, 23, 42, 0.8);
-  --glass-bg: rgba(255, 255, 255, 0.05);
+  --primary: #0066cc; /* Color principal (azul corporativo) */
+  --secondary: #005599; /* Variante oscura del azul */
+  --accent: #00aacc; /* Acento */
+  --light: #ffffff; /* Blanco para fondos y texto claro */
+  --dark: #333333; /* Casi negro para texto */
+  --gray: #f8f9fa; /* Gris claro para fondos alternos */
+  --gray-alt: #f0f2f5; /* Gris alternativo para secciones */
+  --gray-dark: #e0e3e8; /* Gris más oscuro para contraste */
+  --blue-light: #e6f2ff; /* Azul muy claro para fondos */
+  --blue-pale: #f0f7ff; /* Azul pálido para fondos alternativos */
+  --border: #e5e5e5; /* Color para bordes */
 }
 
-/* Importar fuente futurista */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap');
+/* Importar fuentes profesionales - Añadiendo fuentes con serifas para títulos */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700;900&family=Playfair+Display:wght@400;600;700&display=swap');
 
 /* Configuración base */
 * {
@@ -29,60 +29,34 @@ html {
 }
 
 body {
-  font-family: 'Exo 2', sans-serif;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-  background-attachment: fixed;
-  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  background: var(--light);
+  color: var(--dark);
   line-height: 1.7;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Partículas de fondo */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, var(--neon-cyan), transparent),
-    radial-gradient(2px 2px at 40px 70px, var(--neon-green), transparent),
-    radial-gradient(1px 1px at 90px 40px, var(--color2), transparent),
-    radial-gradient(1px 1px at 130px 80px, var(--color4), transparent);
-  background-repeat: repeat;
-  background-size: 150px 150px;
-  opacity: 0.1;
-  animation: float 20s infinite linear;
-  z-index: -1;
+main {
+  margin-top: 100px; /* Ajusta este valor según la altura de tu header */
 }
 
-@keyframes float {
-  0% { transform: translateY(0px) translateX(0px); }
-  25% { transform: translateY(-20px) translateX(10px); }
-  50% { transform: translateY(-40px) translateX(-10px); }
-  75% { transform: translateY(-20px) translateX(10px); }
-  100% { transform: translateY(0px) translateX(0px); }
-}
 /* Scrollbar personalizado */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--dark-bg);
+  background: var(--gray);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
-  border-radius: 10px;
-  box-shadow: 0 0 10px var(--neon-cyan);
+  background: var(--primary);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, var(--neon-green), var(--neon-cyan));
-  box-shadow: 0 0 20px var(--neon-cyan);
+  background: var(--secondary);
 }
 
 /* Animaciones avanzadas */
@@ -91,25 +65,24 @@ body::before {
     box-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 15px var(--neon-cyan);
     transform: scale(1);
   }
-  50% { 
+  50% {
     box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
-    transform: scale(1.02);
+    transform: scale(1.05);
   }
 }
-
-@keyframes neonGlow {
-  0%, 100% { 
-    text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 15px var(--neon-cyan);
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  50% { 
-    text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+  100% {
+    opacity: 1;
   }
 }
 
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-20px);
   }
   100% {
     opacity: 1;
@@ -120,7 +93,7 @@ body::before {
 @keyframes slideInFromRight {
   0% {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(20px);
   }
   100% {
     opacity: 1;
@@ -144,53 +117,48 @@ body::before {
   100% { filter: hue-rotate(360deg); }
 }
 
-/* Header futurista */
+/* Header profesional fijo */
 header {
-  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%);
-  backdrop-filter: blur(20px);
-  border-bottom: 2px solid var(--neon-cyan);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-header::before {
-  content: '';
-  position: absolute;
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-  opacity: 0.1;
-  animation: electricFlow 3s infinite linear;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-@keyframes electricFlow {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
 }
 
 .header-logo {
-  font-family: 'Orbitron', monospace;
-  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   font-size: 2rem;
-  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: neonGlow 2s infinite alternate;
+  color: var(--primary);
 }
 
-/* Navegación futurista */
+.duquetel-logo {
+  max-height: 140px; /* Duplicado de 70px */
+  width: auto !important;
+}
+
+/* Navegación profesional */
 .nav-link {
   position: relative;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--dark) !important;
+  margin: 0 10px;
 }
 
 .nav-link::before {
@@ -200,13 +168,12 @@ header::before {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+  background: var(--primary);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--neon-cyan) !important;
-  text-shadow: 0 0 10px var(--neon-cyan);
+  color: var(--primary) !important;
 }
 
 .nav-link:hover::before {
@@ -241,12 +208,12 @@ section {
 }
 
 .glass-section {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  margin: 2rem 0;
+  background: var(--gray-alt);
+  border: 1px solid rgba(0, 102, 204, 0.1);
+  border-radius: 12px;
+  margin: 1rem auto;
   position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .glass-section::before {
@@ -276,125 +243,95 @@ section {
   animation: slideInFromBottom 0.8s ease;
 }
 
-.futuristic-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
-  transition: left 0.8s ease;
-}
-
 .futuristic-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 
-    0 20px 40px rgba(0, 255, 255, 0.2),
-    0 0 20px rgba(0, 255, 255, 0.3),
-    inset 0 0 20px rgba(0, 255, 255, 0.1);
-  border-color: var(--neon-cyan);
-}
-
-.futuristic-card:hover::before {
-  left: 100%;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
 }
 
 .card-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
+  background: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
   font-size: 1.5rem;
-  animation: electricPulse 3s infinite;
 }
 
-/* Títulos con efectos */
+/* Títulos profesionales */
 .neon-title {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   text-align: center;
-  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green), var(--color3));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px var(--neon-cyan);
-  animation: neonGlow 3s infinite alternate;
+  color: var(--primary);
   margin: 2rem 0;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .subtitle {
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--light);
   text-align: center;
   margin-bottom: 3rem;
-  animation: slideInFromLeft 1s ease;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
-/* Botones futuristas */
+/* Estilos para textos */
+p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+}
+
+/* Botones profesionales */
 .btn-futuristic {
-  background: linear-gradient(45deg, var(--electric-blue), var(--neon-cyan));
-  border: 2px solid var(--neon-cyan);
+  background: var(--primary);
+  border: none;
   color: white;
   padding: 12px 30px;
-  border-radius: 30px;
+  border-radius: 5px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.btn-futuristic::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
 .btn-futuristic:hover {
+  background: var(--secondary);
   transform: translateY(-2px);
-  box-shadow: 
-    0 10px 20px rgba(0, 255, 255, 0.3),
-    0 0 30px var(--neon-cyan);
-  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn-futuristic:hover::before {
-  left: 100%;
-}
-
-/* Formularios futuristas */
+/* Formularios profesionales */
 .form-control-futuristic {
-  background: rgba(15, 23, 42, 0.8);
-  border: 2px solid rgba(0, 255, 255, 0.3);
-  border-radius: 10px;
-  padding: 15px;
-  color: white;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 12px 15px;
+  color: var(--dark);
   font-size: 1rem;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
 .form-control-futuristic:focus {
   outline: none;
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-  background: rgba(15, 23, 42, 0.9);
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
 }
 
 .form-control-futuristic::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: #999;
 }
 
 /* Header y footer */
@@ -407,15 +344,14 @@ header a, footer a {
 
 /* Enlaces del footer */
 footer a {
-  color: #ff4444 !important;
+  color: var(--light) !important;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 footer a:hover {
-  color: #ff6666 !important;
-  text-shadow: 0 0 10px #ff4444;
-  text-decoration: none;
+  color: var(--accent) !important;
+  text-decoration: underline;
 }
 
 /* Clases reutilizables */
@@ -430,45 +366,33 @@ footer a:hover {
 
 /* Footer futurista */
 footer {
-  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%);
-  backdrop-filter: blur(20px);
-  border-top: 2px solid var(--neon-cyan);
+  background: var(--dark);
+  border-top: 3px solid var(--primary);
   margin-top: 4rem;
   position: relative;
-}
-
-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green), var(--neon-cyan));
-  animation: electricFlow 2s infinite linear;
+  padding: 2rem 0;
 }
 
 /* Clases de utilidad */
 .fade-in-up {
-  animation: slideInFromBottom 1s ease;
+  opacity: 1;
 }
 
 .fade-in-left {
-  animation: slideInFromLeft 1s ease;
+  opacity: 1;
 }
 
 .fade-in-right {
-  animation: slideInFromRight 1s ease;
+  opacity: 1;
 }
 
 .electric-border {
-  border: 2px solid;
-  border-image: linear-gradient(45deg, var(--neon-cyan), var(--neon-green), var(--neon-cyan)) 1;
-  animation: electricPulse 2s infinite;
+  border: 2px solid var(--primary);
 }
 
 .text-glow {
-  text-shadow: 0 0 10px var(--neon-cyan);
+  font-weight: bold;
+  color: var(--primary);
 }
 
 /* Hero section */
@@ -476,8 +400,10 @@ footer::before {
   min-height: 80vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(30, 58, 138, 0.3) 100%);
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8) 0%, rgba(30, 30, 30, 0.7) 100%);
+  overflow: hidden;
 }
 
 .hero-section::before {
@@ -487,20 +413,16 @@ footer::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    linear-gradient(45deg, transparent 40%, rgba(0, 255, 255, 0.03) 50%, transparent 60%),
-    linear-gradient(-45deg, transparent 40%, rgba(0, 255, 136, 0.03) 50%, transparent 60%);
-  animation: rotateHue 15s infinite linear;
+  background: rgba(0, 0, 0, 0.2);
 }
 
-/* Hero Section con imagen de fondo */
+/* Hero Section con imagen de fondo - Estilo empresarial */
 .hero-with-background {
   position: relative;
-  min-height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(10, 10, 10, 0.7)), url('../images/PREDIAL.jpg');
+  min-height: 80vh; /* Unificando la altura con hero-section */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../images/PREDIAL.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -514,27 +436,12 @@ footer::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(57, 255, 20, 0.1));
-  animation: electricFlow 5s infinite linear;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
 .hero-with-background::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, var(--neon-cyan), transparent),
-    radial-gradient(2px 2px at 40px 70px, var(--neon-green), transparent),
-    radial-gradient(1px 1px at 90px 40px, var(--color2), transparent);
-  background-repeat: repeat;
-  background-size: 150px 150px;
-  opacity: 0.2;
-  animation: float 20s infinite linear;
-  z-index: 1;
+  display: none;
 }
 
 .hero-content {
@@ -547,41 +454,39 @@ footer::before {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  font-weight: 900;
-  font-family: 'Orbitron', monospace;
-  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green), var(--color5));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   margin-bottom: 1.5rem;
-  animation: neonGlow 3s infinite alternate;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.1rem, 3vw, 1.8rem);
-  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 2rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   line-height: 1.6;
+  font-weight: 400;
 }
 
 .hero-description {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 255, 255, 0.3);
-  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-description p {
-  color: var(--neon-cyan);
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #ffffff;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   margin: 0;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  font-weight: 300;
 }
 
 /* Responsive para el hero */
@@ -696,13 +601,14 @@ footer::before {
 
 /* CTAs irresistibles */
 .cta-irresistible {
-  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 136, 0.1));
-  border: 2px solid var(--neon-cyan);
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.15), rgba(0, 170, 204, 0.2));
+  border: 2px solid var(--primary);
   border-radius: 20px;
-  margin: 3rem 0;
+  margin: 2rem 0;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(20px);
+  box-shadow: 0 5px 25px rgba(0, 102, 204, 0.2);
 }
 
 .cta-irresistible::before {
@@ -712,18 +618,29 @@ footer::before {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green), var(--color3), var(--neon-cyan));
+  background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
   border-radius: 20px;
   z-index: -1;
   animation: electricPulse 3s infinite;
 }
 
 .cta-content {
-  background: var(--dark-bg);
+  background: var(--light);
   border-radius: 18px;
   padding: 2.5rem;
   position: relative;
   z-index: 2;
+  border: 1px solid rgba(0, 102, 204, 0.2);
+}
+
+.highlight-banner {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .cta-buttons {
@@ -1561,7 +1478,7 @@ footer::before {
     color: black !important;
   }
   
-  .neon-title {
+  .neon-title, .hero-title {
     color: black !important;
     text-shadow: none !important;
   }
@@ -2019,21 +1936,21 @@ header .container-fluid {
 @media (max-width: 768px) {
   .duquetel-logo {
     width: 60vw !important;
-    max-width: 400px !important;
+    max-width: 800px !important; /* Duplicado de 400px */
   }
 }
 
 @media (max-width: 576px) {
   .duquetel-logo {
     width: 70vw !important;
-    max-width: 300px !important;
+    max-width: 600px !important; /* Duplicado de 300px */
   }
 }
 
 @media (max-width: 400px) {
   .duquetel-logo {
     width: 80vw !important;
-    max-width: 250px !important;
+    max-width: 500px !important; /* Duplicado de 250px */
   }
 }
 
@@ -2110,4 +2027,462 @@ header .container-fluid {
 /* Mejorar el contraste del overlay para mejor visibilidad */
 .navbar-overlay.show {
   backdrop-filter: blur(3px);
+}
+
+/* ========== ESTILOS DEL HEADER Y TARJETAS ========== */
+/* Estos estilos estaban en header-fix.css y se han consolidado aquí */
+
+/* Header fijo con mejor soporte */
+header {
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.duquetel-logo {
+  max-height: 120px; /* Duplicado de 60px */
+  width: auto !important;
+}
+
+main {
+  margin-top: 100px;
+}
+
+/* Menú móvil */
+#navbarMobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.navbar-nav-mobile {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.navbar-nav-mobile .nav-link {
+  display: block;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: var(--dark) !important;
+  text-decoration: none;
+}
+
+.navbar-nav-mobile .nav-link:hover,
+.navbar-nav-mobile .nav-link.active {
+  color: var(--primary) !important;
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+/* Overlay de fondo para menú móvil */
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 998;
+  display: none;
+}
+
+.navbar-overlay.active {
+  display: block;
+}
+
+/* Animación del botón hamburguesa */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  outline: none;
+}
+
+/* ========== TARJETAS MEJORADAS ========== */
+/* Estilos para mejorar las tarjetas */
+.futuristic-card {
+  background: var(--blue-pale);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.futuristic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.futuristic-card:hover .card-icon {
+  transform: scale(1.05);
+  background: var(--primary);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.futuristic-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Merriweather', serif;
+}
+
+.futuristic-card:hover h3 {
+  color: var(--secondary);
+}
+
+.futuristic-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn-futuristic {
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: auto;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-futuristic:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: white;
+  text-decoration: none;
+}
+
+/* ========== ESTILOS PARA SECCIÓN DE OFERTA ESPECIAL ========== */
+.oferta-especial {
+  background: linear-gradient(135deg, #ffffff, var(--blue-light), #f0f7ff);
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 102, 204, 0.15);
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.oferta-badge {
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.4rem 1.5rem;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1.2px;
+  box-shadow: 0 3px 10px rgba(0, 102, 204, 0.2);
+}
+
+.oferta-title {
+  color: var(--dark);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.6px;
+  position: relative;
+  display: inline-block;
+}
+
+.oferta-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 30%;
+  right: 30%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--primary), transparent);
+}
+
+.oferta-description {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.highlight {
+  color: var(--primary);
+  font-weight: 700;
+  position: relative;
+}
+
+.highlight:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  opacity: 0.4;
+}
+
+.oferta-features {
+  margin: 1.5rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 102, 204, 0.1);
+  box-shadow: 0 3px 15px rgba(0, 102, 204, 0.08);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 102, 204, 0.15);
+}
+
+.feature-item i {
+  color: var(--primary);
+  font-size: 1.4rem;
+  background-color: rgba(0, 102, 204, 0.1);
+  padding: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Estilos para elementos persuasivos */
+.persuasion-text, .emotional-trigger {
+  font-style: italic;
+  color: #304b78;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.security-text, .prestige-text {
+  color: #555;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.quality-highlight {
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: 0.5px;
+}
+
+.quality-accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.quality-subtext {
+  font-size: 0.95rem;
+  font-style: italic;
+  display: block;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.oferta-deseo {
+  font-weight: 600;
+  color: #304b78;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 102, 204, 0.05);
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subconsciente-trigger {
+  font-size: 1rem;
+  color: #304b78;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.btn-oferta-call, .btn-oferta-whatsapp {
+  padding: 15px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+.btn-oferta-call {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.btn-oferta-call:hover {
+  background-color: var(--secondary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  color: white;
+}
+
+.btn-oferta-whatsapp {
+  background-color: #25d366;
+  color: white;
+  border: none;
+}
+
+.btn-oferta-whatsapp:hover {
+  background-color: #128c7e;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  color: white;
+}
+
+.oferta-terminos {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* Estilos para alternar secciones */
+.section-alt {
+  background-color: var(--gray-alt);
+  padding: 2rem 0;
+  margin: 0.5rem auto;
+  border-top: 1px solid var(--gray-dark);
+  border-bottom: 1px solid var(--gray-dark);
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 991px) {
+  .duquetel-logo {
+    max-height: 100rem; /* Duplicado de 50rem */
+  }
+  
+  main {
+    margin-top: 80px;
+  }
+  
+  .header-content {
+    padding: 5px 0;
+  }
+  
+  .oferta-title {
+    font-size: 1.6rem;
+  }
+  
+  .oferta-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .duquetel-logo {
+    max-height: 80px; /* Duplicado de 40px */
+  }
+  
+  main {
+    margin-top: 70px;
+  }
+  
+  .oferta-especial {
+    padding: 1.5rem;
+  }
+  
+  .oferta-title {
+    font-size: 1.4rem;
+  }
+  
+  .feature-item {
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilos para la sección de oferta */
+.oferta-section {
+  position: relative;
+  background-color: rgba(240, 247, 255, 0.5);
+  border-top: 1px solid rgba(0, 102, 204, 0.1);
+  border-bottom: 1px solid rgba(0, 102, 204, 0.1);
 }
