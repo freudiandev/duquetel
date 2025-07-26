@@ -18,6 +18,7 @@ Sitemap: https://duquetel.com/sitemap.xml
 # DUQUETEL - Servicios de Ingeniería Eléctrica en Ecuador
 # Especialistas en automatización industrial y energías renovables
 # Más de 22 años de experiencia profesional
+# Sitio web seguro con HTTPS
 
 # Crawl-delay para evitar sobrecarga del servidor
 Crawl-delay: 1 /

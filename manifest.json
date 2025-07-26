@@ -1,0 +1,27 @@
+{
+  "name": "DUQUETEL - Servicios de Ingeniería Eléctrica Ecuador",
+  "short_name": "DUQUETEL",
+  "description": "Empresa especializada en ingeniería eléctrica, automatización industrial y energías renovables en Ecuador con más de 22 años de experiencia profesional.",
+  "lang": "es-EC",
+  "start_url": "https://duquetel.com/",
+  "scope": "https://duquetel.com/",
+  "display": "standalone",
+  "theme_color": "#005B8C",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "https://duquetel.com/assets/images/logo_base.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "https://duquetel.com/assets/images/logo_base.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

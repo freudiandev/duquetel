@@ -1,7 +1,33 @@
 # Configuración SEO para DUQUETEL
 # Ingeniería Eléctrica Ecuador - duquetel.com
 
-# Habilitar compresión GZIP para mejor velocidad
+# FORZAR HTTPS - CONFIGURACIÓN DE SEGURIDAD
+RewriteEngine On
+
+# Forzar HTTPS en todas las páginas
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Forzar www o sin www (sin www en este caso)
+RewriteCond %{HTTP_HOST} ^www\.duquetel\.com [NC]
+RewriteRule ^(.*)$ https://duquetel.com/$1 [L,R=301]
+
+# Headers de seguridad HTTPS
+<IfModule mod_headers.c>
+    # Forzar HTTPS por 1 año
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # Seguridad adicional
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:;"
+    
+    # SEO y rendimiento
+    Header set Cache-Control "max-age=31536000, public"
+    Header unset ETag
+</IfModule>
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
