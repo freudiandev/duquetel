@@ -4364,3 +4364,45 @@ main.industrial-bg .elegant-card.border-card.accent p {
   color: #ffffff !important; /* FORZAR TEXTO BLANCO EN PÁRRAFOS */
   background: transparent !important;
 }
+
+/* Estilos para Breadcrumbs SEO */
+.breadcrumb-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-item {
+  color: var(--dark);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0 0.5rem;
+}
+
+.breadcrumb-item a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: var(--dark);
+  font-weight: 500;
+}

@@ -1,0 +1,148 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://duquetel.com/#organization",
+      "name": "DUQUETEL",
+      "legalName": "DUQUETEL - Innovación Eléctrica del Futuro",
+      "url": "https://duquetel.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://duquetel.com/assets/images/logo_base.png",
+        "width": 300,
+        "height": 150
+      },
+      "description": "Empresa especializada en servicios de ingeniería eléctrica, automatización industrial y energías renovables en Ecuador con más de 22 años de experiencia profesional.",
+      "foundingDate": "2003",
+      "numberOfEmployees": "10-20",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EC",
+        "addressLocality": "Ecuador"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+593-99-730-6549",
+          "contactType": "customer service",
+          "areaServed": "EC",
+          "availableLanguage": "Spanish",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday", 
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        }
+      ],
+      "sameAs": [
+        "https://wa.me/593997306549"
+      ],
+      "serviceType": [
+        "Ingeniería Eléctrica",
+        "Automatización Industrial",
+        "Energías Renovables", 
+        "Instalaciones Eléctricas Industriales",
+        "Mantenimiento Eléctrico Preventivo",
+        "Diagnóstico Eléctrico Profesional",
+        "Sistemas de Control Eléctrico",
+        "Eficiencia Energética",
+        "Auditorías Energéticas"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ecuador"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://duquetel.com/#website",
+      "url": "https://duquetel.com/",
+      "name": "DUQUETEL - Servicios de Ingeniería Eléctrica en Ecuador",
+      "description": "Sitio web oficial de DUQUETEL, empresa especializada en ingeniería eléctrica, automatización industrial y energías renovables en Ecuador.",
+      "publisher": {
+        "@id": "https://duquetel.com/#organization"
+      },
+      "inLanguage": "es-EC",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://duquetel.com/services.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://duquetel.com/#localbusiness",
+      "name": "DUQUETEL",
+      "description": "Servicios profesionales de ingeniería eléctrica en Ecuador",
+      "url": "https://duquetel.com/",
+      "telephone": "+593-99-730-6549",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EC"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-1.831239",
+        "longitude": "-78.183406"
+      },
+      "openingHours": "Mo-Fr 08:00-18:00",
+      "priceRange": "$$",
+      "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+      "currenciesAccepted": "USD"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://duquetel.com/#services",
+      "name": "Servicios de Ingeniería Eléctrica",
+      "description": "Servicios especializados en ingeniería eléctrica, automatización industrial y energías renovables",
+      "provider": {
+        "@id": "https://duquetel.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ecuador"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios DUQUETEL",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Instalaciones Eléctricas Industriales",
+              "description": "Diseño e instalación de sistemas eléctricos para industrias"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automatización Industrial",
+              "description": "Sistemas de control y automatización para procesos industriales"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Energías Renovables",
+              "description": "Instalación de sistemas solares y energías alternativas"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

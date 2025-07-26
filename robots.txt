@@ -1,6 +1,26 @@
 # Prohibir indexación a todos los motores de búsqueda
 User-agent: *
-Disallow: /
+Allow: /
+
+# Permitir a todos los bots acceder al contenido principal
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /contact.html
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Archivos importantes para SEO
+Sitemap: https://duquetel.com/sitemap.xml
+
+# Información adicional para bots
+# DUQUETEL - Servicios de Ingeniería Eléctrica en Ecuador
+# Especialistas en automatización industrial y energías renovables
+# Más de 22 años de experiencia profesional
+
+# Crawl-delay para evitar sobrecarga del servidor
+Crawl-delay: 1 /
 
 # Prohibir específicamente a Google
 User-agent: Googlebot
