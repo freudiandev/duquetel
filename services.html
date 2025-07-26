@@ -6,35 +6,43 @@
   
   <!-- Evitar indexación en motores de búsqueda -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noim  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>ndex">
   <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
   
   <title>Duquetel - Servicios Tecnológicos Avanzados</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?0002">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
+  <!-- Header corporativo elegante y profesional -->
   <header>
-    <div class="container-fluid container-fluid-responsive">
+    <div class="header-container">
       <div class="header-content">
-        <h1 class="header-logo mb-0 h1-responsive">
-          <img src="assets/images/logo.png" alt="Logo Duquetel" class="duquetel-logo img-responsive" style="width: 40rem; max-width: 90vw; height: auto; transition: all 0.3s ease;"> 
+        <h1 class="header-logo mb-0">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo Duquetel" class="duquetel-logo img-responsive">
+          </a>
         </h1>
         
         <!-- Navegación desktop -->
-        <nav class="navbar-responsive d-none d-lg-block">
+        <nav class="navbar-responsive d-none d-lg-flex">
           <ul class="nav flex-wrap justify-content-center justify-content-lg-end">
-            <li class="nav-item"><a class="nav-link focus-visible" href="index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link focus-visible" href="about.html">Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link focus-visible active" href="services.html">Servicios</a></li>
-            <li class="nav-item"><a class="nav-link focus-visible" href="contact.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link active" href="services.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
           </ul>
         </nav>
         
-        <!-- Botón hamburguesa -->
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Botón hamburguesa con animación -->
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Abrir menú de navegación">
           <span class="navbar-toggler-icon">
+            <span></span>
+            <span></span>
             <span></span>
           </span>
         </button>
@@ -71,11 +79,11 @@
     <div class="navbar-overlay" id="navbarOverlay"></div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section" style="background-image: url('assets/images/e.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;">
-      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-      <div class="container text-center" style="position: relative; z-index: 2;">
+  <main class="services-bg">
+    <!-- Hero Section con estilo elegante -->
+    <section class="hero-section hero-services" style="background-image: url('assets/images/c.jpg');">
+      <div class="elegant-particles"></div>
+      <div class="container text-center hero-content-services">
         <h1 class="hero-title mb-4">SERVICIOS ESPECIALIZADOS</h1>
         <p class="hero-subtitle">Soluciones eléctricas profesionales para empresas e industrias</p>
       </div>
@@ -85,91 +93,97 @@
     <section class="container py-5">
       <h2 class="neon-title h2 mb-5 text-center">ÁREAS DE ESPECIALIZACIÓN</h2>
       <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-left">
-          <div class="futuristic-card h-100">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="elegant-card border-card h-100">
             <div class="card-icon">
               <i class="fas fa-bolt"></i>
             </div>
-            <h3 class="text-glow mb-3">Redes Eléctricas</h3>
+            <h3>Redes Eléctricas</h3>
             <p>Sistemas aéreos y subterráneos de media y baja tensión con 
               tecnología de vanguardia</p>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-check text-glow me-2"></i> Diseño optimizado</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Instalación profesional</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Mantenimiento preventivo</li>
+            <ul class="list-unstyled mb-4">
+              <li><i class="fas fa-check me-2 check-icon-accent"></i> Diseño optimizado</li>
+              <li><i class="fas fa-check me-2 check-icon-accent"></i> Instalación profesional</li>
+              <li><i class="fas fa-check me-2 check-icon-accent"></i> Mantenimiento preventivo</li>
             </ul>
+            <a href="https://wa.me/593997306549?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20redes%20eléctricas." class="btn btn-outline">Más detalles</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up">
-          <div class="futuristic-card h-100">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="elegant-card gradient-card h-100">
             <div class="card-icon">
               <i class="fas fa-microchip"></i>
             </div>
-            <h3 class="text-glow mb-3">Automatización Industrial</h3>
+            <h3>Automatización Industrial</h3>
             <p>Control inteligente y sistemas automatizados para la industria 4.0</p>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-check text-glow me-2"></i> Control Industrial</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Automatismos</li>
-              <li><i class="fas fa-check text-glow me-2"></i> PLC </li>
+            <ul class="list-unstyled mb-4">
+              <li><i class="fas fa-check me-2 check-icon-white"></i> Control Industrial</li>
+              <li><i class="fas fa-check me-2 check-icon-white"></i> Automatismos</li>
+              <li><i class="fas fa-check me-2 check-icon-white"></i> PLC </li>
             </ul>
+            <a href="https://wa.me/593997306549?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20automatización%20industrial." class="btn btn-outline btn-outline-white">Más detalles</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-right">
-          <div class="futuristic-card h-100">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="elegant-card special-card h-100">
             <div class="card-icon">
               <i class="fas fa-solar-panel"></i>
             </div>
-            <h3 class="text-glow mb-3">Energía Solar</h3>
+            <h3>Energía Solar</h3>
             <p>Distribuidores autorizados de paneles solares y sistemas fotovoltaicos
               <br> Generación Eléctrica fotovoltáica
             </p>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-check text-glow me-2"></i> Paneles de alta eficiencia</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Inversores inteligentes</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Monitoreo remoto</li>
+            <ul class="list-unstyled mb-4">
+              <li><i class="fas fa-check me-2" check-icon-accent></i> Paneles de alta eficiencia</li>
+              <li><i class="fas fa-check me-2" check-icon-accent></i> Inversores inteligentes</li>
+              <li><i class="fas fa-check me-2" check-icon-accent></i> Monitoreo remoto</li>
             </ul>
+            <a href="https://wa.me/593997306549?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20energía%20solar." class="btn btn-accent">Más detalles</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-left">
-          <div class="futuristic-card h-100">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="elegant-card border-card accent h-100">
             <div class="card-icon">
               <i class="fas fa-cogs"></i>
             </div>
-            <h3 class="text-glow mb-3">Tableros de Distribución</h3>
+            <h3>Tableros de Distribución</h3>
             <p>Diseño y fabricación de tableros eléctricos personalizados</p>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-check text-glow me-2"></i> Diseño personalizado</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Componentes certificados</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Pruebas rigurosas</li>
+            <ul class="list-unstyled mb-4">
+              <li><i class="fas fa-check me-2" check-icon-accent></i> Diseño personalizado</li>
+              <li><i class="fas fa-check me-2" check-icon-accent></i> Componentes certificados</li>
+              <li><i class="fas fa-check me-2" check-icon-accent></i> Pruebas rigurosas</li>
             </ul>
+            <a href="https://wa.me/593997306549?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20tableros%20de%20distribución." class="btn btn-outline">Más detalles</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-up">
-          <div class="futuristic-card h-100">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="elegant-card special-card pulse-animation h-100">
             <div class="card-icon">
               <i class="fas fa-chart-line"></i>
             </div>
-            <h3 class="text-glow mb-3">Corrección Factor Potencia</h3>
+            <h3>Corrección Factor Potencia</h3>
             <p>Optimización energética para reducir costos y mejorar eficiencia</p>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-check text-glow me-2"></i> Análisis energético</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Bancos de capacitores</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Control automático</li>
+            <ul class="list-unstyled mb-4">
+              <li><i class="fas fa-check me-2" check-icon-accent></i> Análisis energético</li>
+              <li><i class="fas fa-check me-2" check-icon-accent></i> Bancos de capacitores</li>
+              <li><i class="fas fa-check me-2" check-icon-accent></i> Control automático</li>
             </ul>
+            <a href="https://wa.me/593997306549?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20corrección%20de%20factor%20de%20potencia." class="btn btn-outline">Más detalles</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4 fade-in-right">
-          <div class="futuristic-card h-100">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="elegant-card gradient-card h-100">
             <div class="card-icon">
               <i class="fas fa-power-off"></i>
             </div>
-            <h3 class="text-glow mb-3">Generadores & UPS</h3>
+            <h3>Generadores & UPS</h3>
             <p>Sistemas de respaldo y continuidad energética</p>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-check text-glow me-2"></i> Transferencia automática</li>
-              <li><i class="fas fa-check text-glow me-2"></i> UPS modulares</li>
-              <li><i class="fas fa-check text-glow me-2"></i> Monitoreo 24/7</li>
+            <ul class="list-unstyled mb-4">
+              <li><i class="fas fa-check me-2" check-icon-white></i> Transferencia automática</li>
+              <li><i class="fas fa-check me-2" check-icon-white></i> UPS modulares</li>
+              <li><i class="fas fa-check me-2" check-icon-white></i> Monitoreo 24/7</li>
             </ul>
+            <a href="https://wa.me/593997306549?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20generadores%20y%20UPS." class="btn btn-outline btn-outline-white">Más detalles</a>
           </div>
         </div>
       </div>
@@ -177,7 +191,7 @@
 
     <!-- Compromiso ambiental -->
     <section class="container py-5">
-      <div class="glass-section p-5 text-center">
+      <div class="glass-section p-5 text-center environmental-section">
         <div class="card-icon mx-auto mb-4">
           <i class="fas fa-leaf"></i>
         </div>
@@ -188,7 +202,7 @@
     </section>
 
     <!-- CTA 1: Soluciones profesionales -->
-    <section class="container" style="margin-top: 0; padding-top: 0.5rem;">
+    <section class="container section-no-margin-top section-padding-top-small">
       <div class="cta-irresistible">
         <div class="cta-content text-center">
           <h3 class="neon-title h3 mb-3">SOLUCIONES TÉCNICAS PROFESIONALES</h3>
@@ -215,8 +229,8 @@
     </section>
 
     <!-- CTA 2: Energía renovable -->
-    <section class="container" style="margin-top: 0.5rem; padding-top: 0; margin-bottom: 0.5rem;">
-      <div class="cta-irresistible">
+    <section class="container section-margin-small-top section-no-padding-top section-margin-bottom-small">
+      <div class="cta-irresistible environmental-section">
         <div class="cta-content text-center">
           <h3 class="neon-title h3 mb-3">SOLUCIONES EN ENERGÍA RENOVABLE</h3>
           <p class="lead mb-3">
@@ -243,7 +257,7 @@
     </section>
 
     <!-- Servicios adicionales -->
-    <section class="container py-4" style="margin-top: 0;">
+    <section class="container py-4 section-no-margin-top">
       <h2 class="neon-title h2 mb-4 text-center">SERVICIOS COMPLEMENTARIOS</h2>
       <div class="row">
         <div class="col-lg-3 col-md-6 mb-4">
@@ -286,7 +300,7 @@
     </section>
 
     <!-- CTA 3: Servicios de mantenimiento -->
-    <section class="container" style="margin-top: 0.5rem; padding-top: 0;">
+    <section class="container section-margin-small-top section-no-padding-top">
       <div class="cta-irresistible">
         <div class="cta-content text-center">
           <h3 class="neon-title h3 mb-3">MANTENIMIENTO PREVENTIVO Y CORRECTIVO</h3>
@@ -314,7 +328,7 @@
     </section>
 
     <!-- CTA Section Final - Garantía Profesional -->
-    <section class="container py-3" style="margin-top: 0;">
+    <section class="container py-3 section-no-margin-top">
       <div class="cta-irresistible">
         <div class="cta-content text-center">
           <h3 class="neon-title h2 mb-4">GARANTÍA DE CALIDAD</h3>
@@ -358,19 +372,24 @@
     </section>
   </main>
 
-  <footer style="margin-top: 0; padding-top: 0;">
-    <div class="container text-center py-3">
+   <footer class="no-print">
+    <div class="container-fluid container-fluid-responsive text-center py-3 py-md-4 mt-3">
       <div class="text-glow">
-        <small>&copy; 2025 DUQUETEL - Innovación Eléctrica del Futuro | Todos los derechos reservados
-            <br><p style="margin-top: 0.5rem; margin-bottom: 0;">Hecho con <i class="fas fa-heart text-danger"></i> por 
-            <a href="https://freudiandev.github.io/freudiandev/" target="_blank" class="focus-visible">@freudianDev</a> 
-            By <a href="https://www.facebook.com/CiberPunkEc/" target="_blank" class="focus-visible">CiberPunk EC</a></p>
-        </small>
+        <small class="text-responsive">
+          <span class="d-block d-md-inline">&copy; 2025 DUQUETEL - Innovación Eléctrica del Futuro</span>
+          <span class="d-block d-md-inline"> | Todos los derechos reservados</span>
+        </small> 
+        <!-- Cuadro de detalles del estudio creativo -->
+        <details class="footer-details">
+          <summary>Diseñado y programado por:</summary>
+          <div class="footer-details-content">
+            Desarrollo web y diseño digital por el Estudio Creativo <a href="https://www.facebook.com/CiberPunkEc/" target="_blank">CiberPunk EC</a>
+          </div>
+        </details>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="assets/js/futuristic-effects.js"></script>
 </body>
 </html>

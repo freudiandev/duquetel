@@ -1,0 +1,4366 @@
+﻿/**
+ * DUQUETEL 
+ */
+
+/* Paleta de colores elegante empresarial con toques llamativos 
+basada en logo */
+:root {                                                                                                                               
+  --primary: #005B8C; /* Azul elegante corporativo */
+  --secondary: #004C70; /* Azul oscuro para detalles importantes */
+  --accent: #1AB364; /* Verde para acentos y llamados a la acciÃ³n */
+  --accent-light: #3BD880; /* Verde claro para detalles y hover */
+  --light: #ffffff; /* Blanco para fondos y texto claro */
+  --dark: #1A2233; /* Azul muy oscuro para texto, mÃ¡s sofisticado */
+  --gray: #F5F7FA; /* Gris muy claro para fondos elegantes */
+  --gray-alt: #EAEFF5; /* Gris azulado para secciones */
+  --gray-dark: #C5D0DF; /* Gris azulado para contraste y bordes */
+  --blue-light: #E6F4FF; /* Azul muy claro para fondos sutiles */
+  --green-pale: #E8F7F0; /* Verde muy pÃ¡lido para fondos alternativos */
+  --border: #D0DDE9; /* Color para bordes, mÃ¡s corporativo */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary)); /* Gradiente elegante */
+  --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-light)); /* Gradiente verde */
+  --shadow-soft: 0 10px 30px rgba(26, 34, 51, 0.08); /* Sombra sutil para elementos */
+  --shadow-card: 0 5px 15px rgba(26, 34, 51, 0.06); /* Sombra para tarjetas */
+}
+
+/* Importar fuentes profesionales - Agregando fuentes elegantes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700;900&family=Playfair+Display:wght@400;600;700;900&family=Cormorant+Garamond:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+/* Configuración base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+main {
+  margin-top: 60px; /* Reducido para el header más pequeño */
+}
+
+/* TipografÃ­a elegante y profesional */
+h1, h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2.75rem;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 70px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+h2.text-center:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: rgba(26, 34, 51, 0.85);
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+/* Título TECNOLOGÍA DE VANGUARDIA en blanco */
+.container .text-center h2.position-relative.d-inline-block {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7), 0 0 16px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Párrafo "Soluciones de última generación" en blanco */
+.container .text-center p.text-muted {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7), 0 0 16px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 0, 0, 0.3);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Animaciones avanzadas */
+@keyframes electricPulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 15px var(--neon-cyan);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+    transform: scale(1.05);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateHue {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Header profesional fijo */
+header {
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 0 !important;
+}
+
+.header-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header con scroll - fondo oscuro */
+header.scrolled {
+  background: rgba(0, 44, 68, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--accent);
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: center;
+  padding: 10px 50px 10px 250px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100px;
+  gap: 0;
+  position: relative;
+}
+
+.header-logo {
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: auto !important;
+  height: 100px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 0 0 0 5px !important;
+  margin: 0 !important;
+  z-index: 1001 !important;
+  background: transparent !important;
+}
+
+.header-logo a {
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+/* Logo Duquetel - Estilo unificado */
+.duquetel-logo {
+  max-width: 180px !important;
+  max-height: 72px !important;
+  height: auto !important;
+  width: auto !important;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Navegación desktop con Grid */
+.navbar-responsive {
+  justify-self: end;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+/* Navegación profesional - Estado normal (fondo claro) */
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  color: var(--primary) !important; /* Azul oscuro para contraste con fondo blanco */
+  margin: 0 10px;
+}
+
+/* OVERRIDE ESPECÍFICO PARA PÁGINA ACTUAL */
+.nav-link.active {
+  color: #0B5D2A !important;
+  font-weight: 600 !important;
+}
+
+/* Específico para navegación desktop */
+.navbar-responsive .nav-link {
+  color: var(--primary) !important; /* Azul oscuro para fondo blanco */
+}
+
+/* OVERRIDE ESPECÍFICO PARA PÁGINA ACTUAL EN NAVBAR RESPONSIVE */
+.navbar-responsive .nav-link.active {
+  color: #0B5D2A !important;
+  font-weight: 600 !important;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0B5D2A !important; /* Verde oscuro para hover */
+}
+
+.nav-link:hover::before {
+  width: 100%;
+  background: #0B5D2A; /* Verde oscuro para la línea de hover */
+}
+
+/* Navegación cuando el header tiene scroll (fondo oscuro) */
+header.scrolled .nav-link {
+  color: white !important;
+}
+
+/* Específico para navegación desktop con scroll */
+header.scrolled .navbar-responsive .nav-link {
+  color: white !important;
+}
+
+header.scrolled .nav-link:hover {
+  color: #0B5D2A !important; /* Verde oscuro para hover con scroll */
+}
+
+header.scrolled .nav-link::before {
+  background: #0B5D2A; /* Verde oscuro para línea con scroll */
+}
+
+header.scrolled .nav-link:hover::before {
+  background: #0B5D2A; /* Verde oscuro para línea de hover con scroll */
+}
+
+/* Menú móvil cuando el header tiene scroll */
+header.scrolled .navbar-nav-mobile .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid rgba(26, 179, 100, 0.1);
+}
+
+header.scrolled .navbar-nav-mobile .nav-link:hover,
+header.scrolled .navbar-nav-mobile .nav-link:focus {
+  color: #0B5D2A !important; /* Verde oscuro para hover en móvil con scroll */
+  background: rgba(11, 93, 42, 0.05);
+  text-shadow: none;
+  border-left: 4px solid #0B5D2A;
+}
+
+header.scrolled .navbar-nav-mobile .nav-link.active {
+  color: #0B5D2A !important; /* Verde oscuro para página actual */
+  background: rgba(11, 93, 42, 0.1);
+  border-left: 4px solid #0B5D2A;
+  text-shadow: none;
+  font-weight: 600;
+}
+
+/* Botón hamburguesa cuando el header tiene scroll */
+header.scrolled .navbar-toggler {
+  border-color: white;
+}
+
+header.scrolled .navbar-toggler:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(26, 179, 100, 0.3);
+}
+
+header.scrolled .navbar-toggler:focus {
+  box-shadow: 0 0 20px var(--accent);
+}
+
+header.scrolled .navbar-toggler-icon::before,
+header.scrolled .navbar-toggler-icon::after,
+header.scrolled .navbar-toggler-icon span {
+  background: linear-gradient(90deg, white, var(--accent));
+  box-shadow: 0 0 5px var(--accent);
+}
+
+/* Animaciones */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    box-shadow: 0 0 8px var(--color4);
+  }
+  20%, 24%, 55% {
+    box-shadow: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Secciones con efectos modernos y elegantes */
+section {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+}
+
+.glass-section {
+  background: var(--light);
+  border: none;
+  border-radius: 14px;
+  margin: 1.5rem auto;
+  position: relative;
+  box-shadow: var(--shadow-soft);
+  padding: 2.5rem;
+  border-bottom: 4px solid var(--primary);
+}
+
+.glass-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 5px;
+  background: var(--gradient-accent);
+  border-top-right-radius: 14px;
+}
+
+.glass-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 5px;
+  background: var(--gradient-primary);
+  border-bottom-left-radius: 14px;
+}
+
+/* Cards elegantes con detalle llamativo */
+.futuristic-card {
+  background: var(--light);
+  border: none;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: var(--shadow-card);
+  border-top: 4px solid var(--accent);
+  animation: slideInFromBottom 0.8s ease;
+}
+
+.futuristic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 91, 140, 0.12);
+  border-top-color: var(--primary);
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.8rem;
+  color: var(--light);
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 91, 140, 0.15);
+  transition: all 0.3s ease;
+}
+
+.card-icon::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  top: 3px;
+  left: 3px;
+}
+
+/* TÃ­tulos elegantes empresariales */
+.neon-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff !important;
+  margin: 2.5rem 0;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.neon-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+}
+
+.subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  color: var(--light);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Estilos para textos */
+p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+}
+
+/* Botones elegantes con detalles llamativos y profesionales */
+.btn-futuristic {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px; /* MÃ¡s redondeado para un aspecto mÃ¡s moderno */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 91, 140, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-futuristic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.6s ease;
+}
+
+.btn-futuristic:hover {
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 91, 140, 0.25);
+}
+
+.btn-futuristic:hover::before {
+  left: 100%;
+}
+
+/* Botones con diferentes estilos */
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 91, 140, 0.15);
+}
+
+.btn-accent {
+  background: var(--gradient-accent);
+  border: none;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 6px 15px rgba(26, 179, 100, 0.15);
+}
+
+.btn-accent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(26, 179, 100, 0.25);
+}
+
+/* Formularios profesionales */
+.form-control-futuristic {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 12px 15px;
+  color: var(--dark);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control-futuristic:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
+}
+
+.form-control-futuristic::placeholder {
+  color: #999;
+}
+
+/* Header y footer */
+header, footer {
+  background-color: var(--color1);
+}
+header a, footer a {
+  color: #fff;
+}
+
+/* Enlaces del footer */
+footer a {
+  color: var(--light) !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent) !important;
+  text-decoration: underline;
+}
+
+/* Clases reutilizables */
+.shimmer {
+  animation: flicker 3s infinite;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Footer elegante empresarial */
+footer {
+  background: var(--dark);
+  position: relative;
+  margin-top: 5rem;
+  padding: 2.5rem 0 2rem;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+/* Clases de utilidad */
+.fade-in-up {
+  opacity: 1;
+}
+
+.fade-in-left {
+  opacity: 1;
+}
+
+.fade-in-right {
+  opacity: 1;
+}
+
+.electric-border {
+  border: 2px solid var(--primary);
+}
+
+.text-glow {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Hero section con estilo moderno, elegante y profesional */
+.hero-section {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top:-7.92rem;
+  background-color: var(--blue-light);
+  background-image: linear-gradient(120deg, rgba(0, 91, 140, 0.85), rgba(0, 44, 68, 0.9));
+  overflow: hidden;
+  z-index: 1;
+  padding: 0 2rem;
+}
+
+/* Efecto de partículas y decoraciones elegantes */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(26, 179, 100, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 91, 140, 0.08) 0%, transparent 50%);
+  z-index: -1;
+}
+
+/* Borde decorativo inferior */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+  opacity: 0.8;
+}
+
+/* Hero Section con imagen de fondo - Estilo empresarial */
+.hero-with-background {
+  position: relative;
+  min-height: 80vh; /* Unificando la altura con hero-section */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../images/PREDIAL.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-with-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-with-background::after {
+  display: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-weight: 700;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(128, 128, 128, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  text-shadow: 1px 1px 6px rgba(128, 128, 128, 0.7), 0 0 15px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+  font-weight: 400;
+  padding: 0 5%;
+}
+
+.hero-description {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem 3rem;
+  margin: 0 auto 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  max-width: 900px;
+  border-left: 4px solid var(--accent);
+}
+
+.hero-description p {
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.7;
+  text-shadow: 1px 1px 6px rgba(128, 128, 128, 0.7), 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive para el hero */
+@media (max-width: 768px) {
+  .hero-with-background {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+  }
+  
+  .hero-description {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-with-background {
+    min-height: 70vh;
+  }
+  
+  .hero-description {
+    padding: 1rem;
+  }
+}
+
+/* Espacios para imÃ¡genes futuristas */
+.image-placeholder {
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 136, 0.1));
+  border: 2px dashed var(--neon-cyan);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, var(--neon-cyan), transparent);
+  animation: rotateHue 10s infinite linear;
+  opacity: 0.1;
+}
+
+.image-placeholder:hover {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.image-placeholder-text {
+  font-family: 'Orbitron', monospace;
+  color: var(--neon-cyan);
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* GalerÃ­a de proyectos */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+}
+
+.project-image {
+  height: 250px;
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 136, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  transform: translateY(0);
+}
+
+/* CTAs irresistibles */
+.cta-irresistible {
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.15), rgba(0, 170, 204, 0.2));
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 5px 25px rgba(0, 102, 204, 0.2);
+}
+
+.cta-irresistible::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+  border-radius: 20px;
+  z-index: -1;
+  animation: electricPulse 3s infinite;
+}
+
+.cta-content {
+  background: var(--light);
+  border-radius: 18px;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(0, 102, 204, 0.2);
+}
+
+.highlight-banner {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-call {
+  background: linear-gradient(45deg, #ff6b35, #ff8c42);
+  border: 2px solid #ff6b35;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-call:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-whatsapp {
+  background: linear-gradient(45deg, #25d366, #128c7e);
+  border: 2px solid #25d366;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.cta-highlight {
+  color: var(--neon-green);
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+.cta-urgency {
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  animation: neonGlow 2s infinite alternate;
+}
+
+/* === RESPONSIVE DESIGN COMPLETO === */
+
+/* Extra Small Devices - Celulares pequeÃ±os (portrait) */
+@media (max-width: 575.98px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .header-logo {
+    font-size: 1.2rem;
+  }
+  
+  .header-logo img {
+    max-width: 30px;
+    height: auto;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  
+  .neon-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .futuristic-card {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .image-placeholder {
+    min-height: 120px;
+  }
+  
+  .hero-section {
+    min-height: 60vh;
+    padding: 2rem 0;
+  }
+  
+  .cta-content {
+    padding: 1.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .btn-call, .btn-whatsapp, .btn-futuristic {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .form-control-futuristic {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .glass-section {
+    margin: 1rem 0;
+    border-radius: 15px;
+  }
+}
+
+/* Small Devices - Celulares medianos y pequeÃ±as tablets (landscape) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .header-logo {
+    font-size: 1.4rem;
+  }
+  
+  .header-logo img {
+    max-width: 35px;
+    height: auto;
+  }
+  
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .neon-title {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .futuristic-card {
+    padding: 1.2rem;
+  }
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .image-placeholder {
+    min-height: 140px;
+  }
+  
+  .hero-section {
+    min-height: 45vh;
+  }
+  
+  .cta-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .btn-call, .btn-whatsapp {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+/* Medium Devices - Tablets medianas */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .header-logo {
+    font-size: 1.6rem;
+  }
+  
+  .header-logo img {
+    max-width: 40px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .futuristic-card {
+    padding: 1.5rem;
+  }
+  
+  .card-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
+  
+  .image-placeholder {
+    min-height: 160px;
+  }
+  
+  .hero-section {
+    min-height: 50vh;
+  }
+  
+  .cta-content {
+    padding: 2rem;
+  }
+}
+
+/* Large Devices - Tablets grandes y laptops pequeÃ±as */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .header-logo {
+    font-size: 1.8rem;
+  }
+  
+  .header-logo img {
+    max-width: 45px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 3rem;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .futuristic-card {
+    padding: 1.8rem;
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .image-placeholder {
+    min-height: 180px;
+  }
+  
+  .hero-section {
+    min-height: 80vh;
+  }
+}
+
+/* Extra Large Devices - Laptops medianas y desktops pequeÃ±os */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  html {
+    font-size: 17px;
+  }
+  
+  .header-logo {
+    font-size: 2rem;
+  }
+  
+  .header-logo img {
+    max-width: 50px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 3.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .futuristic-card {
+    padding: 2rem;
+  }
+  
+  .card-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.5rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.2rem;
+  }
+  
+  .image-placeholder {
+    min-height: 200px;
+  }
+  
+  .hero-section {
+    min-height: 85vh;
+  }
+  
+  .cta-content {
+    padding: 2.5rem;
+  }
+}
+
+/* XXL Devices - Desktops medianos y grandes */
+@media (min-width: 1400px) and (max-width: 1919.98px) {
+  html {
+    font-size: 18px;
+  }
+  
+  .container {
+    max-width: 1320px;
+  }
+  
+  .header-logo {
+    font-size: 2.2rem;
+  }
+  
+  .header-logo img {
+    max-width: 55px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 4rem;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .futuristic-card {
+    padding: 2.2rem;
+  }
+  
+  .card-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.6rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .image-placeholder {
+    min-height: 220px;
+  }
+  
+  .hero-section {
+    min-height: 90vh;
+  }
+  
+  .cta-content {
+    padding: 3rem;
+  }
+}
+
+/* Ultra Wide Screens - Smart TVs pequeÃ±as y monitores ultra anchos */
+@media (min-width: 1920px) and (max-width: 2559.98px) {
+  html {
+    font-size: 20px;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
+  
+  .header-logo {
+    font-size: 2.5rem;
+  }
+  
+  .header-logo img {
+    max-width: 60px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 4.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .futuristic-card {
+    padding: 2.5rem;
+  }
+  
+  .card-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 1.8rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+  }
+  
+  .image-placeholder {
+    min-height: 250px;
+  }
+  
+  .hero-section {
+    min-height: 95vh;
+  }
+  
+  .cta-content {
+    padding: 3.5rem;
+  }
+  
+  .btn-call, .btn-whatsapp, .btn-futuristic {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Smart TVs medianas y grandes */
+@media (min-width: 2560px) {
+  html {
+    font-size: 24px;
+  }
+  
+  .container {
+    max-width: 2000px;
+  }
+  
+  .header-logo {
+    font-size: 3rem;
+  }
+  
+  .header-logo img {
+    max-width: 80px;
+    height: auto;
+  }
+  
+  .neon-title {
+    font-size: 5.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .futuristic-card {
+    padding: 3rem;
+  }
+  
+  .card-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+  }
+  
+  .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 4rem;
+  }
+  
+  .image-placeholder {
+    min-height: 300px;
+  }
+  
+  .hero-section {
+    min-height: 100vh;
+  }
+  
+  .cta-content {
+    padding: 4rem;
+  }
+  
+  .btn-call, .btn-whatsapp, .btn-futuristic {
+    padding: 25px 50px;
+    font-size: 1.3rem;
+  }
+  
+  .form-control-futuristic {
+    padding: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+  }
+}
+
+/* Responsive utilities para mejorar la legibilidad */
+@media (max-width: 991.98px) {
+  .d-md-none {
+    display: none !important;
+  }
+  
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  
+  .mb-mobile-3 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .px-mobile-2 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* Mejoras especÃ­ficas para touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .btn-call, .btn-whatsapp, .btn-futuristic {
+    padding: 18px 25px;
+    min-height: 50px;
+  }
+  
+  .nav-link {
+    padding: 15px;
+    min-height: 44px;
+  }
+  
+  .form-control-futuristic {
+    padding: 18px;
+    min-height: 50px;
+  }
+  
+  .futuristic-card:hover {
+    transform: none;
+  }
+  
+  .futuristic-card:active {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+/* Mejoras para orientaciÃ³n landscape en mÃ³viles */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh;
+    padding: 1rem 0;
+  }
+  
+  .neon-title {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  .subtitle {
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-content {
+    padding: 1.5rem;
+  }
+}
+
+/* === UTILIDADES RESPONSIVE ADICIONALES === */
+
+/* Flexbox responsive utilities */
+.flex-wrap-mobile {
+  flex-wrap: wrap;
+}
+
+.justify-content-center-mobile {
+  justify-content: center;
+}
+
+/* Typography responsive */
+.h1-responsive {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.h2-responsive {
+  font-size: clamp(1.3rem, 3.5vw, 2.5rem);
+}
+
+.h3-responsive {
+  font-size: clamp(1.1rem, 3vw, 2rem);
+}
+
+.text-responsive {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+}
+
+/* Container fluid responsive */
+.container-fluid-responsive {
+  padding-left: 0 !important;
+  padding-right: clamp(15px, 3vw, 50px);
+}
+
+/* Override Bootstrap container-fluid padding */
+header .container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Cards responsive improvements */
+.card-responsive {
+  width: 100%;
+  max-width: none;
+}
+
+@media (min-width: 576px) {
+  .card-responsive {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-responsive {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-responsive {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-responsive {
+    max-width: 1140px;
+  }
+}
+
+/* Grid responsive improvements */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+/* Spacing responsive */
+.spacing-responsive {
+  margin: clamp(1rem, 3vw, 3rem) 0;
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* Image responsive improvements */
+.img-responsive:not(.duquetel-logo) {
+  width: 100%;
+  height: 100%;
+}
+
+/* Video responsive */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Table responsive */
+.table-responsive-custom {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive-custom table {
+  min-width: 600px;
+}
+
+/* Navigation responsive improvements */
+.navbar-responsive {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-responsive .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbar-responsive .nav-link {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Form responsive improvements */
+.form-responsive .form-control {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  padding: clamp(0.75rem, 2vw, 1rem);
+}
+
+/* Button responsive improvements */
+.btn-responsive {
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  min-height: 44px;
+}
+
+/* Footer responsive */
+@media (max-width: 767.98px) {
+  footer .container {
+    text-align: center;
+  }
+  
+  footer .row > div {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Accessibility improvements for all screen sizes */
+.sr-only-responsive {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus improvements for keyboard navigation */
+.focus-visible:focus {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .neon-title, .hero-title {
+    color: black !important;
+    text-shadow: none !important;
+  }
+  
+  .futuristic-card {
+    border: 1px solid #ccc !important;
+    background: white !important;
+  }
+}
+
+/* === NAVBAR HAMBURGUESA FUTURISTA === */
+
+/* BotÃ³n hamburguesa */
+.navbar-toggler {
+  border: 2px solid var(--neon-cyan);
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.navbar-toggler:hover {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+/* LÃ­neas del hamburguesa */
+.navbar-toggler-icon {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  display: block;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px var(--neon-cyan);
+}
+
+.navbar-toggler-icon::before {
+  top: 0;
+}
+
+.navbar-toggler-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;
+}
+
+/* AnimaciÃ³n al activar */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span {
+  opacity: 0;
+  transform: translateY(-50%) scale(0);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* MenÃº mÃ³vil - OPTIMIZADO PARA VELOCIDAD */
+.navbar-collapse {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(30, 58, 138, 0.98) 100%);
+  backdrop-filter: blur(30px);
+  border: 2px solid var(--neon-cyan);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 255, 255, 0.2),
+    inset 0 0 20px rgba(0, 255, 255, 0.05);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.1s ease-out;
+  will-change: opacity, visibility, transform;
+}
+
+.navbar-collapse.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Efecto de apariciÃ³n instantÃ¡nea sin delays */
+.navbar-collapse.show .nav-item {
+  animation: slideInMobile 0.15s ease forwards;
+}
+
+.navbar-collapse.show .nav-item:nth-child(1) { animation-delay: 0s; }
+.navbar-collapse.show .nav-item:nth-child(2) { animation-delay: 0.02s; }
+.navbar-collapse.show .nav-item:nth-child(3) { animation-delay: 0.04s; }
+.navbar-collapse.show .nav-item:nth-child(4) { animation-delay: 0.06s; }
+
+@keyframes slideInMobile {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Estilos del menÃº mÃ³vil */
+.navbar-nav-mobile {
+  padding: 1.5rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar-nav-mobile .nav-item {
+  margin: 0;
+  opacity: 0;
+  transform: translateX(-15px);
+}
+
+.navbar-nav-mobile .nav-link {
+  display: block;
+  padding: 15px 25px;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-nav-mobile .nav-link::before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  transition: left 0.2s ease;
+}
+
+.navbar-nav-mobile .nav-link:hover,
+.navbar-nav-mobile .nav-link:focus {
+  color: #0B5D2A !important; /* Verde oscuro para hover en móvil */
+  background: rgba(11, 93, 42, 0.05);
+  text-shadow: none;
+  border-left: 4px solid #0B5D2A;
+  padding-left: 21px;
+}
+
+.navbar-nav-mobile .nav-link:hover::before {
+  left: 100%;
+}
+
+.navbar-nav-mobile .nav-link.active {
+  color: #0B5D2A !important; /* Verde oscuro para página actual */
+  background: rgba(11, 93, 42, 0.1);
+  border-left: 4px solid #0B5D2A;
+  padding-left: 21px;
+  text-shadow: none;
+  font-weight: 600;
+}
+
+/* Overlay para cerrar el menÃº - OPTIMIZADO */
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease;
+  will-change: opacity, visibility;
+}
+
+.navbar-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive breakpoints para el menÃº hamburguesa */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none !important;
+  }
+  
+  .navbar-collapse {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+  
+  .navbar-nav-mobile {
+    display: flex !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+    gap: 1rem;
+  }
+  
+  .navbar-nav-mobile .nav-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .navbar-nav-mobile .nav-link {
+    padding: 8px 16px !important;
+    border-bottom: none !important;
+    border-left: none !important;
+  }
+  
+  .navbar-nav-mobile .nav-link:hover,
+  .navbar-nav-mobile .nav-link:focus {
+    padding-left: 16px !important;
+    border-left: none !important;
+    background: transparent !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    display: none !important;
+  }
+  
+  .navbar-responsive {
+    position: relative;
+  }
+  
+  .header-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    width: 100%;
+    gap: 1rem; /* Reduce el espacio entre logo y navegación */
+  }
+}
+
+/* Animaciones adicionales para el menÃº */
+.navbar-collapse::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green), var(--neon-cyan));
+  animation: electricFlow 3s infinite linear;
+}
+
+/* Efectos de partÃ­culas en el menÃº mÃ³vil */
+.navbar-collapse::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, var(--neon-cyan), transparent),
+    radial-gradient(1px 1px at 40px 70px, var(--neon-green), transparent);
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  opacity: 0.1;
+  animation: float 20s infinite linear;
+  pointer-events: none;
+}
+
+/* Mejoras de accesibilidad para el menÃº mÃ³vil */
+.navbar-toggler[aria-expanded="true"] {
+  background: rgba(0, 255, 255, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-collapse,
+  .navbar-nav-mobile .nav-item,
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after,
+  .navbar-toggler-icon span {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* === MEJORAS ADICIONALES NAVBAR === */
+
+/* Padding del header responsive */
+header .container-fluid {
+  padding-top: clamp(0.75rem, 2vw, 1.5rem);
+  padding-bottom: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+/* Efecto active en navegaciÃ³n desktop - MÁS ESPECÍFICO */
+.navbar-responsive .nav-link.active,
+.nav-link.active {
+  color: #0B5D2A !important; /* Verde oscuro para página actual */
+  font-weight: 600 !important;
+  text-shadow: none !important;
+  position: relative;
+}
+
+.navbar-responsive .nav-link.active::before,
+.nav-link.active::before {
+  width: 100% !important;
+  background: #0B5D2A !important; /* Verde oscuro para la línea indicadora */
+  opacity: 1 !important;
+}
+
+/* Indicador visual del menÃº activo */
+.navbar-toggler[aria-expanded="true"]::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid var(--neon-green);
+  border-radius: 10px;
+  animation: electricPulse 2s infinite;
+}
+
+/* Mejora visual del overlay */
+.navbar-overlay.show {
+  animation: fadeInOverlay 0.3s ease;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(5px);
+  }
+}
+
+/* Cursor pointer en elementos interactivos */
+.navbar-toggler,
+.navbar-nav-mobile .nav-link,
+.navbar-overlay {
+  cursor: pointer;
+}
+
+/* Mejora de accesibilidad - modo de alto contraste */
+@media (prefers-contrast: high) {
+  .navbar-toggler {
+    border-color: #ffffff;
+  }
+  
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after,
+  .navbar-toggler-icon span {
+    background: #ffffff;
+  }
+  
+  .navbar-nav-mobile .nav-link {
+    color: #ffffff !important;
+  }
+}
+
+/* Mejora para dispositivos con pantalla tÃ¡ctil */
+@media (pointer: coarse) {
+  .navbar-toggler {
+    padding: 12px 16px;
+    min-width: 50px;
+    min-height: 50px;
+  }
+  
+  .navbar-nav-mobile .nav-link {
+    padding: 20px 25px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Efecto de vibraciÃ³n para feedback tÃ¡ctil */
+@keyframes vibrate {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+.navbar-toggler:active {
+  animation: vibrate 0.2s ease;
+}
+
+/* OptimizaciÃ³n para pantallas pequeÃ±as en landscape */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .navbar-collapse {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .navbar-nav-mobile .nav-link {
+    padding: 12px 25px;
+  }
+}
+
+/* Media queries responsivas unificadas */
+@media (max-width: 991.98px) {
+  .header-content {
+    grid-template-columns: 1fr auto;
+    min-height: 80px;
+    padding: 10px 0;
+  }
+  
+  .duquetel-logo {
+    max-width: 160px !important;
+    max-height: 64px !important;
+  }
+  
+  .navbar-responsive {
+    display: none;
+  }
+  
+  .navbar-toggler {
+    display: block;
+  }
+  
+  main {
+    margin-top: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    min-height: 70px;
+    padding: 5px 0;
+  }
+  
+  .duquetel-logo {
+    max-width: 140px;
+    max-height: 56px;
+  }
+  
+  main {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-content {
+    min-height: 65px;
+    padding: 5px 0;
+  }
+  
+  .duquetel-logo {
+    max-width: 115px !important;
+    max-height: 46px !important;
+  }
+  
+  main {
+    margin-top: 65px;
+  }
+}
+
+/* Estilos para acercar el navbar al logo */
+.header-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  width: 100%;
+  gap: 1rem; /* Reduce el espacio entre logo y navegación */
+}
+
+.navbar-responsive {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.navbar-responsive .nav {
+  margin-bottom: 0;
+  gap: 0.5rem; /* Reduce el espacio entre elementos del menÃº */
+}
+
+.navbar-responsive .nav-link {
+  padding: 0.5rem 0.75rem; /* Reduce el padding de los enlaces */
+}
+
+/* Ajustes responsive para mantener la proximidad */
+@media (min-width: 992px) {
+  .header-content {
+    gap: 2rem; /* Aumenta ligeramente en pantallas grandes */
+  }
+  
+  .navbar-responsive .nav {
+    gap: 1rem;
+  }
+}
+
+/* === OPTIMIZACIONES DE RENDIMIENTO PARA MENÃš MÃ“VIL === */
+
+/* Forzar aceleraciÃ³n de hardware */
+.navbar-collapse,
+.navbar-overlay,
+.navbar-nav-mobile .nav-item {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reducir la complejidad visual durante las transiciones */
+.navbar-collapse.collapsing {
+  transition: none !important;
+  opacity: 0.8;
+}
+
+/* Optimizar el botÃ³n hamburguesa */
+.navbar-toggler {
+  transition: transform 0.1s ease !important;
+  will-change: transform;
+}
+
+.navbar-toggler:active {
+  transform: scale(0.95);
+}
+
+/* Precargar las transiciones */
+.navbar-collapse * {
+  will-change: auto;
+}
+
+.navbar-collapse.show * {
+  will-change: transform, opacity;
+}
+
+/* Mejorar el contraste del overlay para mejor visibilidad */
+.navbar-overlay.show {
+  backdrop-filter: blur(3px);
+}
+
+/* ========== ESTILOS DEL HEADER Y TARJETAS ========== */
+/* Estos estilos estaban en header-fix.css y se han consolidado aquÃ­ */
+
+/* Header fijo con mejor soporte */
+header {
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 5px 0;
+}
+
+main {
+  margin-top: 100px;
+}
+
+/* MenÃº mÃ³vil */
+#navbarMobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.navbar-nav-mobile {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.navbar-nav-mobile .nav-link {
+  display: block;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: var(--dark) !important;
+  text-decoration: none;
+}
+
+.navbar-nav-mobile .nav-link:hover,
+.navbar-nav-mobile .nav-link.active {
+  color: var(--primary) !important;
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+/* Overlay de fondo para menÃº mÃ³vil */
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 998;
+  display: none;
+}
+
+.navbar-overlay.active {
+  display: block;
+}
+
+/* AnimaciÃ³n del botÃ³n hamburguesa */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  outline: none;
+}
+
+/* ========== TARJETAS MEJORADAS ========== */
+/* Estilos para mejorar las tarjetas */
+.futuristic-card {
+  background: var(--blue-pale);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.futuristic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.futuristic-card:hover .card-icon {
+  transform: scale(1.05);
+  background: var(--primary);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.futuristic-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Merriweather', serif;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.futuristic-card:hover h3 {
+  color: var(--secondary);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 255, 255, 0.7), 0 0 36px rgba(255, 255, 255, 0.5);
+}
+
+.futuristic-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7), 0 0 16px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 0, 0, 0.3);
+}
+
+.btn-futuristic {
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: auto;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-futuristic:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: white;
+  text-decoration: none;
+}
+
+/* ========== ESTILOS PARA SECCIÃ“N DE OFERTA ESPECIAL ========== */
+.oferta-especial {
+  background: linear-gradient(135deg, #ffffff, var(--blue-light), #f0f7ff);
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 102, 204, 0.15);
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.oferta-badge {
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.4rem 1.5rem;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1.2px;
+  box-shadow: 0 3px 10px rgba(0, 102, 204, 0.2);
+}
+
+.oferta-title {
+  color: var(--dark);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.6px;
+  position: relative;
+  display: inline-block;
+}
+
+.oferta-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 30%;
+  right: 30%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--primary), transparent);
+}
+
+.oferta-description {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.highlight {
+  color: var(--primary);
+  font-weight: 700;
+  position: relative;
+}
+
+.highlight:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  opacity: 0.4;
+}
+
+.oferta-features {
+  margin: 1.5rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 102, 204, 0.1);
+  box-shadow: 0 3px 15px rgba(0, 102, 204, 0.08);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 102, 204, 0.15);
+}
+
+.feature-item i {
+  color: var(--primary);
+  font-size: 1.4rem;
+  background-color: rgba(0, 102, 204, 0.1);
+  padding: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Estilos para elementos persuasivos */
+.persuasion-text, .emotional-trigger {
+  font-style: italic;
+  color: #304b78;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.security-text, .prestige-text {
+  color: #555;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.quality-highlight {
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: 0.5px;
+}
+
+.quality-accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.quality-subtext {
+  font-size: 0.95rem;
+  font-style: italic;
+  display: block;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.oferta-deseo {
+  font-weight: 600;
+  color: #304b78;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 102, 204, 0.05);
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subconsciente-trigger {
+  font-size: 1rem;
+  color: #304b78;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.btn-oferta-call, .btn-oferta-whatsapp {
+  padding: 15px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+.btn-oferta-call {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.btn-oferta-call:hover {
+  background-color: var(--secondary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  color: white;
+}
+
+.btn-oferta-whatsapp {
+  background-color: #25d366;
+  color: white;
+  border: none;
+}
+
+.btn-oferta-whatsapp:hover {
+  background-color: #128c7e;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  color: white;
+}
+
+.oferta-terminos {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* Estilos para alternar secciones */
+.section-alt {
+  background-color: var(--gray-alt);
+  padding: 2rem 0;
+  margin: 0.5rem auto;
+  border-top: 1px solid var(--gray-dark);
+  border-bottom: 1px solid var(--gray-dark);
+}
+
+/* Media queries para dispositivos mÃ³viles */
+@media (max-width: 991px) {
+  main {
+    margin-top: 100px;
+  }
+  
+  .header-content {
+    padding: 10px 0;
+  }
+  
+  .oferta-title {
+    font-size: 1.6rem;
+  }
+  
+  .oferta-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  main {
+    margin-top: 120px;
+  }
+  
+  .oferta-especial {
+    padding: 1.5rem;
+  }
+  
+  .oferta-title {
+    font-size: 1.4rem;
+  }
+  
+  .feature-item {
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilos para la secciÃ³n de oferta */
+.oferta-section {
+  position: relative;
+  background-color: rgba(240, 247, 255, 0.5);
+  border-top: 1px solid rgba(0, 102, 204, 0.1);
+  border-bottom: 1px solid rgba(0, 102, 204, 0.1);
+}
+
+
+/* ========== ELEGANT HEADER STYLES ========== */
+/* Elegant Header - Duquetel Corporate Design
+ * Un header llamativo, detallista y estÃ©tico
+ * Mantiene un aspecto serio y empresarial
+ */
+
+/* Estilos bÃ¡sicos del header */
+header {
+  background: linear-gradient(135deg, rgba(5, 5, 15, 0.95) 0%, rgba(15, 25, 35, 0.98) 100%);
+  border-bottom: 1px solid rgba(0, 91, 140, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(0, 91, 140, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Efecto al hacer scroll */
+header.scrolled {
+  background: linear-gradient(135deg, rgba(5, 5, 15, 0.98) 0%, rgba(15, 25, 35, 0.99) 100%);
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 91, 140, 0.1);
+  padding: 5px 0;
+}
+
+/* Contenido del header */
+.header-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 10px 0;
+  position: relative;
+}
+
+/* Logo y contenedor */
+.header-logo {
+  position: relative;
+  z-index: 10;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  margin: 0 auto;
+  text-align: center;
+  width: auto;
+  max-width: 60%;
+}
+
+/* Decoración del logo */
+/* Eliminar decoraciones del logo para simplicidad */
+.header-logo::before, 
+.header-logo::after {
+  display: none;
+}
+
+.header-logo::before {
+  left: 50%;
+  transform: translate(-120px, -50%);
+}
+
+.header-logo::after {
+  left: 50%;
+  transform: translate(117px, -50%);
+}
+
+/* Barras de adorno visibles al hacer hover */
+.header-logo.show-decorators::before,
+.header-logo.show-decorators::after {
+  opacity: 0.8;
+}
+
+/* NavegaciÃ³n principal */
+.navbar-responsive {
+  position: absolute;
+  margin-right: 15px;
+  top: 30px;
+  right: 20px;
+}
+
+/* Estilo de los enlaces de navegaciÃ³n */
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 0.6rem 1.2rem !important;
+  margin: 0 5px;
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* Indicador de enlace activo */
+.nav-link.active {
+  color: white !important;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Efecto antes del hover */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+/* Efecto despuÃ©s del hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 91, 140, 0.1);
+  transition: height 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* Estado hover para enlaces de navegaciÃ³n */
+.nav-link:hover {
+  color: white !important;
+  transform: translateY(-1px);
+}
+
+.nav-link:hover::before {
+  width: 80%;
+  opacity: 1;
+}
+
+.nav-link:hover::after {
+  height: 100%;
+}
+
+.nav-link.active::before {
+  width: 80%;
+  opacity: 1;
+}
+
+/* BotÃ³n hamburguesa de navegaciÃ³n mÃ³vil */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 91, 140, 0.25);
+}
+
+/* LÃ­neas del botÃ³n hamburguesa */
+.navbar-toggler .navbar-toggler-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-toggler .navbar-toggler-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  transform-origin: left center;
+  transition: 
+    transform 0.3s ease, 
+    opacity 0.2s ease, 
+    background-color 0.3s ease;
+}
+
+.navbar-toggler .navbar-toggler-icon span:nth-child(1) {
+  transform: rotate(0);
+}
+
+.navbar-toggler .navbar-toggler-icon span:nth-child(2) {
+  margin: 5px 0;
+  opacity: 1;
+}
+
+.navbar-toggler .navbar-toggler-icon span:nth-child(3) {
+  transform: rotate(0);
+}
+
+/* Estado activo del botÃ³n hamburguesa */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(0, -1px);
+  width: 28px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(0, 1px);
+  width: 28px;
+}
+
+/* Efectos adicionales cuando el menÃº estÃ¡ abierto */
+.navbar-toggler[aria-expanded="true"] {
+  background: rgba(0, 91, 140, 0.1);
+}
+
+/* MenÃº mÃ³vil */
+.navbar-collapse {
+  background: linear-gradient(135deg, rgba(10, 15, 25, 0.98) 0%, rgba(15, 25, 40, 0.99) 100%);
+  position: fixed;
+  top: 100px; /* Ajustado para el logo normal */
+  left: 0;
+  right: 0;
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.navbar-collapse.show {
+  max-height: 100vh;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* NavegaciÃ³n mÃ³vil */
+.navbar-nav-mobile {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.navbar-nav-mobile .nav-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.navbar-nav-mobile .nav-link {
+  display: block;
+  padding: 15px 25px !important;
+  font-size: 1.1rem;
+  border-left: 3px solid transparent;
+  margin: 5px 0;
+}
+
+.navbar-nav-mobile .nav-link:hover {
+  background: rgba(0, 91, 140, 0.1);
+  border-left: 3px solid var(--primary);
+}
+
+.navbar-nav-mobile .nav-link.active {
+  background: rgba(0, 91, 140, 0.15);
+  border-left: 3px solid var(--accent);
+}
+
+/* Overlay del menÃº mÃ³vil */
+#navbarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 990;
+}
+
+#navbarOverlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* AnimaciÃ³n de entrada para el header */
+@keyframes headerFadeIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Aplicar animaciÃ³n al header */
+.header-animated {
+  animation: headerFadeIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* DecoraciÃ³n adicional */
+.header-decorator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(0, 91, 140, 0.3) 20%, 
+    rgba(26, 179, 100, 0.3) 50%,
+    rgba(0, 91, 140, 0.3) 80%,
+    transparent 100%);
+  z-index: 5;
+}
+
+/* Detalles de brillos en el header */
+.header-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(0, 91, 140, 0.1) 0%,
+    rgba(26, 179, 100, 0.05) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 991.98px) {
+  .header-logo::before {
+    transform: translate(-90px, -50%);
+  }
+  
+  .header-logo::after {
+    transform: translate(87px, -50%);
+  }
+  
+  .duquetel-logo {
+    max-height: 64px;
+  }
+  
+  .header-content {
+    padding: 8px 0;
+  }
+  
+  .navbar-collapse {
+    top: calc(100% + 5px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header-logo::before {
+    transform: translate(-80px, -50%);
+  }
+  
+  .header-logo::after {
+    transform: translate(77px, -50%);
+  }
+  
+  .header-content {
+    padding: 5px 0;
+  }
+  
+  .header-glow {
+    width: 80px;
+  }
+  
+  .navbar-collapse {
+    top: calc(100% + 5px);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header-logo::before {
+    transform: translate(-70px, -50%);
+  }
+  
+  .header-logo::after {
+    transform: translate(67px, -50%);
+  }
+  
+  .header-content {
+    padding: 5px 0;
+  }
+  
+  .navbar-collapse {
+    top: calc(100% + 5px);
+  }
+}
+/* Estilos para tarjetas elegantes */
+.elegant-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 2rem;
+}
+
+.elegant-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 91, 140, 0.1);
+}
+
+.elegant-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 0;
+  background: var(--gradient-primary);
+  transition: height 0.4s ease;
+}
+
+.elegant-card:hover::before {
+  height: 100%;
+}
+
+.elegant-card .card-icon {
+  background: var(--blue-light);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 91, 140, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 91, 140, 0.05);
+}
+
+.elegant-card:hover .card-icon {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 25px rgba(0, 91, 140, 0.2);
+}
+
+.elegant-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--dark);
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.elegant-card:hover h3 {
+  color: var(--primary);
+  transform: translateX(10px);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 255, 255, 0.7), 0 0 36px rgba(255, 255, 255, 0.5);
+}
+
+.elegant-card p {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7), 0 0 16px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 0, 0, 0.3);
+}
+
+.elegant-card .btn {
+  margin-top: 1rem;
+}
+
+/* Tarjetas con borde decorativo */
+.border-card {
+  border-top: 4px solid var(--primary);
+}
+
+.border-card.accent {
+  border-top-color: var(--accent);
+}
+
+/* Tarjetas con fondo de gradiente */
+.gradient-card {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.gradient-card h3, .gradient-card p {
+  color: white;
+}
+
+.gradient-card .card-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.gradient-card:hover .card-icon {
+  background: white;
+  color: var(--primary);
+}
+
+/* Tarjetas con efectos especiales */
+.special-card {
+  position: relative;
+}
+
+.special-card::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 70px;
+  height: 70px;
+  background: var(--accent);
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+.special-card:hover::after {
+  transform: scale(1.5);
+}
+
+/* Animaciones para las tarjetas */
+@keyframes cardPulse {
+  0% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+  50% {
+    box-shadow: 0 15px 35px rgba(0, 91, 140, 0.15);
+  }
+  100% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.pulse-animation:hover {
+  animation: cardPulse 2s infinite;
+}
+
+
+/* ========== BACKGROUND PATTERNS STYLES ==========*/
+/* Estilos para el fondo con imagen fija - INDEX.HTML */
+.industrial-bg {
+  background-color: #1c1f26; /* Fondo gris oscuro como respaldo */
+  position: relative;
+  z-index: 0;
+}
+
+.industrial-bg::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('../images/2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.3; /* Opacidad para que el contenido sea legible */
+}
+
+/* Estilos específicos para services.html con imagen j.jpg */
+.services-bg {
+  background-color: #1c1f26; /* Fondo gris oscuro como respaldo */
+  position: relative;
+  z-index: 0;
+}
+
+.services-bg::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('../images/j.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 1.0; /* Imagen de fondo sin opacidad para verla clara */
+}
+
+/* Estilos específicos para about.html con imagen i.jpg */
+.about-bg {
+  background-color: #1c1f26; /* Fondo gris oscuro como respaldo */
+  position: relative;
+  z-index: 0;
+  color: #ffffff;
+}
+
+.about-bg::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('../images/i.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.3; /* Opacidad para que el contenido sea legible */
+}
+
+/* Ajustes para que todo el contenido sea legible sobre el fondo oscuro */
+.industrial-bg {
+  color: #ffffff;
+}
+
+.services-bg {
+  color: #ffffff;
+}
+
+/* Aseguramos que las tarjetas mantengan sus estilos originales y sean legibles */
+.industrial-bg .elegant-card,
+.industrial-bg .futuristic-card,
+.about-bg .elegant-card,
+.about-bg .futuristic-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes adicionales para que las tarjetas con fondo oscuro sean más visibles */
+.industrial-bg .elegant-card h3,
+.industrial-bg .futuristic-card h3,
+.industrial-bg .elegant-card h4,
+.industrial-bg .futuristic-card h4,
+.about-bg .elegant-card h3,
+.about-bg .futuristic-card h3,
+.about-bg .elegant-card h4,
+.about-bg .futuristic-card h4 {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Mantener secciones específicas con sus fondos originales para contraste */
+.industrial-bg .cta-irresistible,
+.industrial-bg .elegant-card,
+.about-bg .cta-irresistible,
+.about-bg .elegant-card {
+  background: inherit;
+}
+
+/* Asegurar que glass-section mantenga su fondo blanco para contraste */
+.industrial-bg .glass-section,
+.about-bg .glass-section {
+  background: var(--light) !important;
+  border: none;
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+  border-bottom: 4px solid var(--primary);
+}
+
+/* Estilos específicos para textos en about-bg que tengan buen contraste */
+.about-bg .feature-item span {
+  color: var(--dark) !important;
+  font-weight: 600;
+}
+
+.about-bg .oferta-deseo {
+  color: var(--dark) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.about-bg .subconsciente-trigger {
+  color: var(--dark) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+/* ========== HEADER FIX STYLES ==========*/
+/* Estilos adicionales para corregir el header */
+
+/* Header fijo con mejor soporte */
+header {
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  align-items: center;
+  padding: 5px 0;
+}
+
+main {
+  margin-top: 190px;
+}
+
+/* MenÃº mÃ³vil */
+#navbarMobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--light);
+  border-bottom: 2px solid var(--primary);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.navbar-nav-mobile {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.navbar-nav-mobile .nav-link {
+  display: block;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: var(--dark) !important;
+  text-decoration: none;
+}
+
+.navbar-nav-mobile .nav-link:hover,
+.navbar-nav-mobile .nav-link.active {
+  color: var(--primary) !important;
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+/* Overlay de fondo para menÃº mÃ³vil */
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 998;
+  display: none;
+}
+
+.navbar-overlay.active {
+  display: block;
+}
+
+/* AnimaciÃ³n del botÃ³n hamburguesa */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  outline: none;
+}
+
+/* Estilos para mejorar las tarjetas */
+.futuristic-card {
+  background: rgba(0, 20, 40, 0.5);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: slideInFromBottom 0.8s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.futuristic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 102, 204, 0.2);
+  border-color: var(--primary);
+}
+
+.futuristic-card:hover .card-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+}
+
+.futuristic-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.futuristic-card:hover h3 {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(0, 170, 204, 0.3);
+}
+
+.futuristic-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7), 0 0 16px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 0, 0, 0.3);
+}
+
+.btn-futuristic {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: auto;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+}
+
+.btn-futuristic:hover {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Animaciones para tarjetas */
+@keyframes cardPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 102, 204, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 102, 204, 0);
+  }
+}
+
+.futuristic-card:hover .card-icon {
+  animation: cardPulse 1.5s infinite;
+}
+
+/* Media queries para dispositivos mÃ³viles */
+@media (max-width: 991px) {
+  .duquetel-logo {
+    max-height: 64px;
+  }
+  
+  main {
+    margin-top: 50px;
+  }
+  
+  .header-content {
+    padding: 5px 0;
+  }
+}
+
+
+/* ========== INLINE STYLES MOVED TO CSS ========== */
+/* Hero Section Styles */
+.hero-main {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+.hero-services {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.hero-content-main {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 1rem 4rem;
+}
+
+.hero-content-services {
+  position: relative;
+  z-index: 2;
+  padding: 6rem 1rem;
+}
+
+/* Sombreado gris oscuro para texto del hero de about */
+.hero-services .hero-title,
+.hero-services .hero-subtitle {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(64, 64, 64, 0.8), 
+               0 0 8px rgba(64, 64, 64, 0.6), 
+               0 0 16px rgba(64, 64, 64, 0.4);
+}
+
+.hero-accent-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #1AB364;
+  z-index: 3;
+}
+
+/* Section Styles */
+.section-gradient {
+  background: linear-gradient(135deg, var(--gray), var(--gray-alt));
+  position: relative;
+  overflow: hidden;
+}
+
+.section-top-bar {
+  height: 6px;
+  background: var(--gradient-primary);
+}
+
+/* Badge Styles */
+.experience-badge {
+  display: inline-block;
+  background: var(--gradient-accent);
+  color: white;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(26, 179, 100, 0.15);
+}
+
+/* Heading Styles */
+.section-title-main {
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.section-divider {
+  width: 70px;
+  height: 3px;
+  background: var(--primary);
+  margin: 0 auto 2rem;
+}
+
+.section-text {
+  color: var(--dark);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.text-primary-color {
+  color: var(--primary);
+}
+
+/* Card Styles */
+.feature-card-white {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  height: 100%;
+  border-top: 3px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.feature-card-white:hover {
+  transform: translateY(-8px);
+}
+
+.feature-card-accent {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  height: 100%;
+  border-top: 3px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.feature-card-accent:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon Styles */
+.icon-circle-primary {
+  width: 70px;
+  height: 70px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.icon-circle-accent {
+  width: 70px;
+  height: 70px;
+  background: var(--gradient-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.icon-white {
+  color: white;
+}
+
+.icon-dashed-border {
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  top: 3px;
+  left: 3px;
+}
+
+/* Text Styles */
+.card-title {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.card-text {
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 0;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 16px rgba(255, 255, 255, 0.5), 0 0 24px rgba(255, 255, 255, 0.3);
+}
+
+/* List Styles */
+.check-icon-accent {
+  color: var(--accent);
+}
+
+.check-icon-white {
+  color: white;
+}
+
+/* Button Styles */
+.btn-outline-white {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+/* Additional inline styles moved to CSS */
+
+.section-question {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.btn-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 15px rgba(0, 91, 140, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 91, 140, 0.25);
+  color: white;
+}
+
+.btn-whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-accent);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 15px rgba(26, 179, 100, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-whatsapp-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(26, 179, 100, 0.25);
+  color: white;
+}
+
+.section-footer-text {
+  color: var(--dark);
+  opacity: 0.8;
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+.section-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--gradient-accent);
+}
+/* Banner credibility section */
+.credibility-banner {
+  background: var(--gradient-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.credibility-title {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.credibility-text {
+  color: white;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.btn-white-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--primary);
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-white-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  color: var(--primary);
+}
+/* About page specific styles */
+
+.delay-02s {
+  animation-delay: 0.2s;
+}
+
+.delay-04s {
+  animation-delay: 0.4s;
+}
+
+.section-spacing {
+  margin-bottom: 2rem;
+}
+
+.footer-spacing {
+  margin-top: 0;
+  padding: 1.5rem 0;
+}
+
+.footer-text-spacing {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.offer-section-spacing {
+  margin-top: -1rem;
+  margin-bottom: 0;
+}
+/* Services page specific styles */
+
+.section-no-margin-top {
+  margin-top: 0;
+}
+
+.section-padding-top-small {
+  padding-top: 0.5rem;
+}
+
+.section-margin-small-top {
+  margin-top: 0.5rem;
+}
+
+.section-no-padding-top {
+  padding-top: 0;
+}
+
+.section-margin-bottom-small {
+  margin-bottom: 0.5rem;
+}
+
+.footer-no-margin-top {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* REGLA FINAL PARA ENLACE ACTIVO - MÁXIMA ESPECIFICIDAD */
+header .navbar-responsive .nav-link.active,
+header .nav-link.active,
+.navbar-responsive .nav-link.active,
+.nav-link.active {
+  color: #0B5D2A !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+/* REGLA FINAL PARA HOVER - MÁXIMA ESPECIFICIDAD */
+
+/* Estilos para el details del footer */
+.footer-details {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.footer-details summary {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.footer-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.footer-details summary::before {
+  content: "▶ ";
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 0.7rem;
+}
+
+.footer-details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.footer-details-content {
+  font-size: 0.75rem;
+  color: #777;
+  font-style: italic;
+  margin-top: 8px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 5px;
+  line-height: 1.4;
+}
+
+.footer-details-content a {
+  color: #005B8C;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-details-content a:hover {
+  color: #1AB364;
+  text-decoration: underline;
+}
+header .navbar-responsive .nav-link:hover,
+header .nav-link:hover,
+.navbar-responsive .nav-link:hover,
+.nav-link:hover {
+  color: #0B5D2A !important;
+  text-shadow: none !important;
+}
+/* Contact page map style */
+.map-no-border {
+  border: 0;
+}
+
+/* Sección ambiental con texto verde oscuro */
+.environmental-section {
+  color: #1B5E20 !important; /* Verde oscuro */
+}
+
+.environmental-section h2 {
+  color: #1B5E20 !important; /* Verde oscuro para título */
+}
+
+.environmental-section h3 {
+  color: #1B5E20 !important; /* Verde oscuro para título h3 */
+}
+
+.environmental-section .lead {
+  color: #2E7D32 !important; /* Verde medio para subtítulo */
+}
+
+.environmental-section p {
+  color: #1B5E20 !important; /* Verde oscuro para párrafos */
+}
+
+/* Títulos uniformes para cards de servicios */
+.services-bg .elegant-card h3 {
+  color: #000000 !important; /* Negro para todos los títulos */
+  text-shadow: none !important; /* Sin sombra */
+}
+
+/* Títulos azules para cards con fondo blanco */
+.services-bg .elegant-card.border-card h3,
+.services-bg .elegant-card.border-card.accent h3 {
+  color: #0066CC !important; /* Azul para cards con fondo blanco */
+  text-shadow: none !important; /* Sin sombra */
+}
+
+/* Texto negro para cards con fondo blanco en index.html */
+.industrial-bg .elegant-card.border-card,
+.industrial-bg .elegant-card.border-card.accent {
+  color: #000000 !important; /* Texto negro para mejor contraste */
+}
+
+.industrial-bg .elegant-card.border-card h3,
+.industrial-bg .elegant-card.border-card.accent h3 {
+  color: #0066CC !important; /* Títulos azules */
+  text-shadow: none !important; /* Sin sombra */
+}
+
+.industrial-bg .elegant-card.border-card p,
+.industrial-bg .elegant-card.border-card.accent p {
+  color: #ffffff !important; /* Texto blanco para párrafos en border-cards */
+}
+
+/* Asegurar que todos los elementos de texto sean legibles en cards blancas */
+.industrial-bg .elegant-card.border-card *:not(h3):not(.btn),
+.industrial-bg .elegant-card.border-card.accent *:not(h3):not(.btn) {
+  color: #000000 !important; /* Negro para todos los elementos de texto excepto títulos y botones */
+}
+
+/* Reglas generales para todas las secciones con fondo blanco */
+.feature-card-white,
+.feature-card-white *:not(.btn):not(.icon-white) {
+  color: #000000 !important; /* Texto negro en cards blancas */
+}
+
+.glass-section,
+.glass-section * {
+  color: #000000 !important; /* Texto negro en secciones de vidrio */
+}
+
+.glass-section p {
+  color: #ffffff !important; /* Texto de párrafo blanco en secciones de vidrio */
+}
+
+.credibility-banner,
+.credibility-banner * {
+  color: #000000 !important; /* Texto negro en banner de credibilidad */
+}
+
+/* Elementos con fondo blanco específicos */
+.bg-white,
+.bg-white *,
+.border-card,
+.border-card *:not(.btn):not(h3),
+.elegant-card.border-card,
+.elegant-card.border-card *:not(.btn):not(h3),
+.elegant-card.border-card.accent,
+.elegant-card.border-card.accent *:not(.btn):not(h3) {
+  color: #000000 !important; /* Texto negro para mejor contraste */
+}
+
+/* Párrafos en border-card con texto blanco */
+.border-card p,
+.elegant-card.border-card p,
+.elegant-card.border-card.accent p {
+  color: #ffffff !important; /* Texto de párrafo blanco en border-cards */
+}
+
+/* Títulos específicos en elementos blancos */
+.border-card h1,
+.border-card h2,
+.border-card h3,
+.border-card h4,
+.border-card h5,
+.border-card h6,
+.elegant-card.border-card h1,
+.elegant-card.border-card h2,
+.elegant-card.border-card h3,
+.elegant-card.border-card h4,
+.elegant-card.border-card h5,
+.elegant-card.border-card h6 {
+  color: #0066CC !important; /* Títulos azules en elementos blancos */
+  text-shadow: none !important;
+}
+
+/* REGLA SUPER ESPECÍFICA PARA TEXTO BLANCO EN CARDS BORDER */
+.industrial-bg .elegant-card.border-card p,
+.industrial-bg .elegant-card.border-card.accent p,
+main.industrial-bg .elegant-card.border-card p,
+main.industrial-bg .elegant-card.border-card.accent p {
+  color: #ffffff !important; /* FORZAR TEXTO BLANCO EN PÁRRAFOS */
+  background: transparent !important;
+}
