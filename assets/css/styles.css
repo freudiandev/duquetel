@@ -48,7 +48,7 @@ body {
 }
 
 main {
-  margin-top: 60px; /* Reducido para el header más pequeño */
+  margin-top: 70px; /* Reducido para acercar el hero al header */
 }
 
 /* TipografÃ­a elegante y profesional */
@@ -229,11 +229,11 @@ header.scrolled {
   display: grid;
   grid-template-columns: 300px 1fr;
   align-items: center;
-  padding: 10px 50px 10px 250px;
+  padding: 20px 50px 20px 250px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 100px;
+  min-height: 80px;
   gap: 0;
   position: relative;
 }
@@ -243,7 +243,7 @@ header.scrolled {
   left: 0 !important;
   top: 0 !important;
   width: auto !important;
-  height: 100px !important;
+  height: 80px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
@@ -261,8 +261,8 @@ header.scrolled {
 
 /* Logo Duquetel - Estilo unificado */
 .duquetel-logo {
-  max-width: 180px !important;
-  max-height: 72px !important;
+  max-width: 140px !important;
+  max-height: 50px !important;
   height: auto !important;
   width: auto !important;
   object-fit: contain;
@@ -277,7 +277,7 @@ header.scrolled {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 5px 20px;
+  padding: 0 20px;
 }
 
 /* Navegación profesional - Estado normal (fondo claro) */
@@ -727,7 +727,7 @@ footer::before {
   align-items: center;
   justify-content: center;
   position: relative;
-  top:-7.92rem;
+  top: -8.5rem;
   background-color: var(--blue-light);
   background-image: linear-gradient(120deg, rgba(0, 91, 140, 0.85), rgba(0, 44, 68, 0.9));
   overflow: hidden;
@@ -799,11 +799,11 @@ footer::before {
 }
 
 .hero-title {
-  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
   font-weight: 700;
   font-family: 'Cormorant Garamond', 'Playfair Display', serif;
   color: #ffffff;
-  text-shadow: 2px 2px 8px rgba(128, 128, 128, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 4px rgba(64, 64, 64, 0.9), 4px 4px 12px rgba(32, 32, 32, 0.7), 0 0 20px rgba(0, 0, 0, 0.6);
   margin-bottom: 1.5rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -824,12 +824,12 @@ footer::before {
 }
 
 .hero-subtitle {
-  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
   font-family: 'Source Sans Pro', sans-serif;
   color: rgba(255, 255, 255, 0.95);
   margin-bottom: 2rem;
   margin-top: 1.5rem;
-  text-shadow: 1px 1px 6px rgba(128, 128, 128, 0.7), 0 0 15px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(64, 64, 64, 0.9), 4px 4px 12px rgba(32, 32, 32, 0.7), 0 0 15px rgba(0, 0, 0, 0.5);
   line-height: 1.6;
   font-weight: 400;
   padding: 0 5%;
@@ -850,11 +850,11 @@ footer::before {
 .hero-description p {
   color: #ffffff;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   margin: 0;
   font-weight: 400;
   line-height: 1.7;
-  text-shadow: 1px 1px 6px rgba(128, 128, 128, 0.7), 0 0 12px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(64, 64, 64, 0.9), 4px 4px 12px rgba(32, 32, 32, 0.7), 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive para el hero */
@@ -1097,10 +1097,11 @@ footer::before {
   
   .header-logo {
     font-size: 1.2rem;
+    height: 60px !important;
   }
   
   .header-logo img {
-    max-width: 30px;
+    max-width: 25px;
     height: auto;
   }
   
@@ -2292,13 +2293,13 @@ header .container-fluid {
 @media (max-width: 991.98px) {
   .header-content {
     grid-template-columns: 1fr auto;
-    min-height: 80px;
-    padding: 10px 0;
+    min-height: 70px;
+    padding: 15px 0;
   }
   
   .duquetel-logo {
-    max-width: 160px !important;
-    max-height: 64px !important;
+    max-width: 130px !important;
+    max-height: 45px !important;
   }
   
   .navbar-responsive {
@@ -2310,39 +2311,39 @@ header .container-fluid {
   }
   
   main {
-    margin-top: 130px;
+    margin-top: 70px;
   }
 }
 
 @media (max-width: 768px) {
   .header-content {
-    min-height: 70px;
-    padding: 5px 0;
+    min-height: 65px;
+    padding: 12px 0;
   }
   
   .duquetel-logo {
-    max-width: 140px;
-    max-height: 56px;
+    max-width: 120px;
+    max-height: 42px;
   }
   
   main {
-    margin-top: 70px;
+    margin-top: 65px;
   }
 }
 
 @media (max-width: 576px) {
   .header-content {
-    min-height: 65px;
-    padding: 5px 0;
+    min-height: 60px;
+    padding: 10px 0;
   }
   
   .duquetel-logo {
-    max-width: 115px !important;
-    max-height: 46px !important;
+    max-width: 100px !important;
+    max-height: 35px !important;
   }
   
   main {
-    margin-top: 65px;
+    margin-top: 60px;
   }
 }
 
@@ -2567,12 +2568,12 @@ main {
 }
 
 .futuristic-card p {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7), 0 0 16px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(64, 64, 64, 0.9), 4px 4px 12px rgba(32, 32, 32, 0.7), 0 0 16px rgba(0, 0, 0, 0.5);
 }
 
 .btn-futuristic {
@@ -4368,7 +4369,7 @@ main.industrial-bg .elegant-card.border-card.accent p {
 /* Estilos para Breadcrumbs SEO */
 .breadcrumb-container {
   background: rgba(255, 255, 255, 0.95);
-  padding: 0.75rem 0;
+  padding: 0.25rem 0;
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
 }

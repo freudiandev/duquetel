@@ -8,7 +8,7 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Forzar www o sin www (sin www en este caso)
+# Forzar sin www
 RewriteCond %{HTTP_HOST} ^www\.duquetel\.com [NC]
 RewriteRule ^(.*)$ https://duquetel.com/$1 [L,R=301]
 
@@ -24,10 +24,12 @@ RewriteRule ^(.*)$ https://duquetel.com/$1 [L,R=301]
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:;"
     
-    # SEO y rendimiento
+    # Cache control optimizado
     Header set Cache-Control "max-age=31536000, public"
     Header unset ETag
 </IfModule>
+
+# Compresión GZIP para mejor rendimiento
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
@@ -38,40 +40,28 @@ RewriteRule ^(.*)$ https://duquetel.com/$1 [L,R=301]
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
 </IfModule>
 
-# Habilitar caché del navegador
+# Configuración de caché del navegador
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType image/jpg "access plus 1 month"
     ExpiresByType image/jpeg "access plus 1 month"
     ExpiresByType image/gif "access plus 1 month"
     ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/pdf "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
     ExpiresByType application/x-javascript "access plus 1 month"
     ExpiresByType application/x-shockwave-flash "access plus 1 month"
     ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType text/html "access plus 1 day"
     ExpiresDefault "access plus 7 days"
 </IfModule>
 
-# Configurar headers de seguridad y SEO
-<IfModule mod_headers.c>
-    # Seguridad
-    Header always set X-Content-Type-Options nosniff
-    Header always set X-Frame-Options DENY
-    Header always set X-XSS-Protection "1; mode=block"
-    
-    # SEO y rendimiento
-    Header set Cache-Control "max-age=31536000, public"
-    Header unset ETag
-</IfModule>
-
-# Redirecciones 301 para SEO (agregar según necesidad)
-# Redirect 301 /old-page.html /new-page.html
-
-# Configurar páginas de error personalizadas
+# Páginas de error personalizadas
 ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html
 
@@ -81,18 +71,32 @@ ErrorDocument 500 /500.html
     Deny from all
 </FilesMatch>
 
-# Prevenir hotlinking de imágenes
-RewriteEngine on
+# Prevenir hotlinking de imágenes (protección de bandwidth)
 RewriteCond %{HTTP_REFERER} !^$
 RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?duquetel\.com [NC]
-RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
+RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [NC,F,L]
 
-# Forzar HTTPS (descomenta si tienes SSL)
-# RewriteEngine On
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Optimizaciones adicionales para SEO
+<IfModule mod_rewrite.c>
+    # Remover trailing slash de URLs (excepto directorios)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{THE_REQUEST} /+[^?\s]*?/[\s?]
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
+    
+    # Agregar trailing slash a directorios
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_URI} !/$
+    RewriteRule ^(.+)$ $1/ [R=301,L]
+</IfModule>
 
-# Remover www (o agregar www según preferencia)
-# RewriteEngine On
-# RewriteCond %{HTTP_HOST} ^www\.duquetel\.com [NC]
-# RewriteRule ^(.*)$ https://duquetel.com/$1 [L,R=301]
+# Configuración de tipos MIME adicionales
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType text/css .css
+    AddType image/webp .webp
+    AddType application/manifest+json .webmanifest
+</IfModule>
+
+# Configuración de charset UTF-8
+AddDefaultCharset UTF-8
+DefaultLanguage es
