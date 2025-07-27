@@ -4429,7 +4429,7 @@ main.industrial-bg .elegant-card.border-card.accent p {
   font-weight: 500;
 }
 
-/* Efecto de máquina de escribir */
+/* Efecto de máquina de escribir con iteración infinita */
 .typewriter-effect {
   font-family: 'Source Sans Pro', monospace;
   font-weight: 600;
@@ -4439,18 +4439,21 @@ main.industrial-bg .elegant-card.border-card.accent p {
   margin: 0 auto;
   letter-spacing: 0.1em;
   animation: 
-    typing 4s steps(90, end),
+    typing-infinite 6s steps(40, end) infinite,
     blink-caret 0.8s infinite;
   display: inline-block;
   max-width: 100%;
 }
 
-@keyframes typing {
-  from { 
+@keyframes typing-infinite {
+  0% { 
     width: 0; 
   }
-  to { 
+  50% { 
     width: 100%; 
+  }
+  100% { 
+    width: 0; 
   }
 }
 
@@ -4468,8 +4471,23 @@ main.industrial-bg .elegant-card.border-card.accent p {
   .typewriter-effect {
     font-size: 1.5rem;
     animation: 
-      typing 5s steps(90, end),
+      typing-infinite-mobile 8s steps(40, end) infinite,
       blink-caret 0.8s infinite;
+  }
+  
+  @keyframes typing-infinite-mobile {
+    0% { 
+      width: 0; 
+    }
+    40% { 
+      width: 100%; 
+    }
+    60% { 
+      width: 100%; 
+    }
+    100% { 
+      width: 0; 
+    }
   }
 }
 
