@@ -76,10 +76,10 @@ ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html
 
 # Bloquear acceso a archivos sensibles
-<Files ~ "^\.">
+<FilesMatch "^\.">
     Order allow,deny
     Deny from all
-</Files>
+</FilesMatch>
 
 # Prevenir hotlinking de imágenes
 RewriteEngine on
