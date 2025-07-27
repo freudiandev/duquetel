@@ -720,6 +720,27 @@ footer::before {
   color: var(--primary);
 }
 
+.text-glow.about-title {
+  color: #2d5016; /* Verde oscuro para el título "Sobre DUQUETEL Ecuador" */
+}
+
+.white-text h3,
+.white-text p {
+  color: #ffffff !important;
+}
+
+/* Regla más específica para asegurar color blanco */
+.elegant-card.white-text h3[itemprop="name"],
+.elegant-card.white-text p[itemprop="description"] {
+  color: #ffffff !important;
+}
+
+.tech-subtitle-large {
+  font-size: 1.125rem; /* 18px - aumenta el tamaño de letra */
+  font-weight: 500; /* Un poco más de peso para destacar */
+  line-height: 1.6;
+}
+
 /* Hero section con estilo moderno, elegante y profesional */
 .hero-section {
   min-height: 50vh;
@@ -4406,4 +4427,77 @@ main.industrial-bg .elegant-card.border-card.accent p {
 .breadcrumb-item.active {
   color: var(--dark);
   font-weight: 500;
+}
+
+/* Efecto de máquina de escribir */
+.typewriter-effect {
+  font-family: 'Source Sans Pro', monospace;
+  font-weight: 600;
+  overflow: hidden;
+  border-right: 3px solid var(--accent);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+  animation: 
+    typing 4s steps(90, end),
+    blink-caret 0.8s infinite;
+  display: inline-block;
+  max-width: 100%;
+}
+
+@keyframes typing {
+  from { 
+    width: 0; 
+  }
+  to { 
+    width: 100%; 
+  }
+}
+
+@keyframes blink-caret {
+  from, to { 
+    border-color: transparent; 
+  }
+  50% { 
+    border-color: var(--accent); 
+  }
+}
+
+/* Responsive para el efecto typewriter */
+@media (max-width: 768px) {
+  .typewriter-effect {
+    font-size: 1.5rem;
+    animation: 
+      typing 5s steps(90, end),
+      blink-caret 0.8s infinite;
+  }
+}
+
+@media (max-width: 576px) {
+  .typewriter-effect {
+    font-size: 1.3rem;
+    white-space: normal;
+    border-right: none;
+    animation: none;
+    text-align: center;
+  }
+}
+
+/* Tamaño reducido para títulos específicos */
+.title-reduced-size {
+  font-size: 1.8rem !important;
+  line-height: 1.3 !important;
+}
+
+@media (max-width: 768px) {
+  .title-reduced-size {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .title-reduced-size {
+    font-size: 1.3rem !important;
+    line-height: 1.2 !important;
+  }
 }
