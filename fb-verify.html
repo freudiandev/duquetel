@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook SSL Verification | DUQUETEL</title>
+  <meta property="og:url" content="https://duquetel.com/fb-verify.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Verificación SSL para Facebook | DUQUETEL">
+  <meta property="og:description" content="Página de verificación SSL para Facebook">
+  <meta property="og:image" content="https://duquetel.com/assets/images/2.jpg">
+  <meta name="robots" content="noindex">
+  <style>
+    body {font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;}
+    .result {padding: 15px; border-radius: 5px; margin: 15px 0;}
+    .success {background-color: #d4edda; color: #155724;}
+    .error {background-color: #f8d7da; color: #721c24;}
+  </style>
+</head>
+<body>
+  <h1>Verificación SSL para Facebook - DUQUETEL</h1>
+  <div id="ssl-status"></div>
+  
+  <h2>Información del servidor</h2>
+  <table>
+    <tr><th>URL</th><td id="current-url"></td></tr>
+    <tr><th>Protocolo</th><td id="protocol"></td></tr>
+    <tr><th>User Agent</th><td id="user-agent"></td></tr>
+  </table>
+  
+  <script>
+    // Verificar SSL
+    const isHttps = window.location.protocol === 'https:';
+    const statusDiv = document.getElementById('ssl-status');
+    
+    if (isHttps) {
+      statusDiv.className = 'result success';
+      statusDiv.innerHTML = '✓ Verificación exitosa: Este sitio está correctamente configurado con SSL/HTTPS.';
+    } else {
+      statusDiv.className = 'result error';
+      statusDiv.innerHTML = '✗ Verificación fallida: Este sitio no está usando HTTPS.';
+    }
+    
+    // Información del servidor
+    document.getElementById('current-url').textContent = window.location.href;
+    document.getElementById('protocol').textContent = window.location.protocol;
+    document.getElementById('user-agent').textContent = navigator.userAgent;
+  </script>
+</body>
+</html>
