@@ -1,6 +1,8 @@
 # Prohibir indexación a todos los motores de búsqueda
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
 
 # Permitir a todos los bots acceder al contenido principal
 Allow: /index.html
@@ -49,3 +51,12 @@ Disallow: /
 
 User-agent: Twitterbot
 Disallow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
