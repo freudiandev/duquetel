@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Facebook SSL Verification</title>
+  <meta name="facebook-domain-verification" content="ssl-verification-token">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link rel="canonical" href="https://duquetel.com/fb-ssl-verify.html">
+</head>
+<body>
+  <h1>SSL Verification for Facebook</h1>
+  <p>This site is properly configured with SSL/HTTPS.</p>
+  <p>Site URL: <a href="https://duquetel.com">https://duquetel.com</a></p>
+  <script type="text/javascript">
+    // Verificar protocolo HTTPS
+    if (window.location.protocol === 'https:') {
+      document.write('<p style="color: green;">✓ HTTPS verificado correctamente</p>');
+    } else {
+      document.write('<p style="color: red;">✗ No se está usando HTTPS</p>');
+    }
+  </script>
+</body>
+</html>

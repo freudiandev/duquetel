@@ -1,62 +1,56 @@
-# Prohibir indexación a todos los motores de búsqueda
+# Robots.txt para DUQUETEL
+# Configurado para permitir acceso a todos los bots de redes sociales y motores de búsqueda
+
 User-agent: *
 Allow: /
-Disallow: /private/
-Disallow: /admin/
 
-# Permitir a todos los bots acceder al contenido principal
-Allow: /index.html
-Allow: /about.html
-Allow: /services.html
-Allow: /contact.html
-Allow: /assets/css/
-Allow: /assets/js/
-Allow: /assets/images/
-
-# Archivos importantes para SEO
-Sitemap: https://duquetel.com/sitemap.xml
-
-# Información adicional para bots
-# DUQUETEL - Servicios de Ingeniería Eléctrica en Ecuador
-# Especialistas en automatización industrial y energías renovables
-# Más de 22 años de experiencia profesional
-# Sitio web seguro con HTTPS
-
-# Crawl-delay para evitar sobrecarga del servidor
-Crawl-delay: 1 /
-
-# Prohibir específicamente a Google
-User-agent: Googlebot
-Disallow: /
-
-# Prohibir específicamente a Bing
-User-agent: Bingbot
-Disallow: /
-
-# Prohibir a otros motores de búsqueda conocidos
-User-agent: Slurp
-Disallow: /
-
-User-agent: DuckDuckBot
-Disallow: /
-
-User-agent: Baiduspider
-Disallow: /
-
-User-agent: YandexBot
-Disallow: /
-
+# Permitir explícitamente el bot de Facebook (requerido para solucionar el error 403)
 User-agent: facebookexternalhit
-Disallow: /
+Allow: /
 
+# Otros bots de redes sociales importantes
 User-agent: Twitterbot
-Disallow: /
+Allow: /
 
 User-agent: LinkedInBot
 Allow: /
 
-User-agent: Pinterestbot
-Allow: /
-
 User-agent: WhatsApp
 Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Bots de motores de búsqueda
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Permitir acceso a recursos importantes
+Allow: /assets/
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.svg
+
+# Sitemap para ayudar a la indexación
+Sitemap: https://duquetel.com/sitemap.xml
