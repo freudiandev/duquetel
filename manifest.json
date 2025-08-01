@@ -12,13 +12,13 @@
   "categories": ["business", "productivity", "utilities"],
   "icons": [
     {
-      "src": "https://duquetel.com/assets/images/logo_base.png",
+      "src": "https://duquetel.com/assets/images/logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "https://duquetel.com/assets/images/logo_base.png",
+      "src": "https://duquetel.com/assets/images/logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
