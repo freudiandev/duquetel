@@ -3,176 +3,78 @@
  * Optimizado para todos los dispositivos desde Smartwatch hasta Smart TV
  */
 
-/* ========================================
-   ESTILOS GLOBALES UNIFICADOS
-   ======================================== */
+/* ===== SISTEMA UNIFICADO GLOBAL ===== */
 
-/* Títulos y subtítulos - Color azul con sombra blanca */
-h1, h2, h3, h4, h5, h6,
-.hero-title, .neon-title, .section-title-main, .credibility-title, .oferta-title {
-  color: #005B8C !important;
-  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), 
-               0px 0px 6px rgba(255, 255, 255, 0.6) !important;
+/* HEROES ACERCADOS AL HEADER - TODAS LAS PÁGINAS */
+.hero-section {
+  margin-top: -20px !important;
+  padding-top: 80px !important;
+  min-height: 60vh !important;
 }
 
-/* ===== OPTIMIZACIÓN AUTOMÁTICA DE CONTRASTES POR PÁGINA ===== */
-
-/* INDEX.HTML - Fondo industrial oscuro (g.jpg) */
-.industrial-bg h1, .industrial-bg h2, .industrial-bg h3, .industrial-bg h4, .industrial-bg h5, .industrial-bg h6 {
+/* TÍTULOS GLOBALES - H1 Y H2 BLANCOS CON SOMBRA AZUL OSCURA */
+h1, h2 {
   color: #FFFFFF !important;
-  text-shadow: 3px 3px 6px rgba(0, 91, 140, 0.9), 
-               0px 0px 12px rgba(0, 91, 140, 0.7) !important;
+  text-shadow: 3px 3px 8px rgba(0, 45, 82, 0.9), 
+               1px 1px 4px rgba(0, 45, 82, 0.8),
+               0px 0px 12px rgba(0, 45, 82, 0.6) !important;
   font-weight: 700 !important;
 }
 
-.industrial-bg p, .industrial-bg li, .industrial-bg span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item), 
-.industrial-bg .text-glow, .industrial-bg .hero-subtitle, .industrial-bg .section-text, 
-.industrial-bg .card-text, .industrial-bg .text-responsive {
+/* SUBTÍTULOS - H3, H4, H5, H6 BLANCOS CON SOMBRA AZUL MEDIA */
+h3, h4, h5, h6 {
   color: #FFFFFF !important;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9), 
-               1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+  text-shadow: 2px 2px 6px rgba(0, 61, 92, 0.8), 
+               1px 1px 3px rgba(0, 61, 92, 0.7) !important;
+  font-weight: 600 !important;
+}
+
+/* TEXTO GLOBAL - NEGRO CON SOMBRA BLANCA MEDIA */
+p, li, span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item), 
+.text-glow, .hero-subtitle, .section-text, .oferta-description, 
+.card-text, .text-responsive, .text-dark-styled, .text-black-styled {
+  color: #000000 !important;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), 
+               1px 1px 2px rgba(255, 255, 255, 0.9) !important;
   font-weight: 500 !important;
 }
 
-/* ABOUT.HTML & SERVICES.HTML - Fondo más claro (2.jpg) */
-.about-bg h1, .about-bg h2, .about-bg h3, .about-bg h4, .about-bg h5, .about-bg h6,
-.services-bg h1, .services-bg h2, .services-bg h3, .services-bg h4, .services-bg h5, .services-bg h6 {
-  color: #003D5C !important;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), 
-               0px 0px 8px rgba(255, 255, 255, 0.7) !important;
-  font-weight: 700 !important;
+/* TEXTO PEQUEÑO */
+small, .footer-details-content {
+  color: #000000 !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7) !important;
+  font-weight: 400 !important;
 }
 
-.about-bg p, .about-bg li, .about-bg span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item),
-.about-bg .text-glow, .about-bg .hero-subtitle, .about-bg .section-text, 
-.about-bg .card-text, .about-bg .text-responsive,
-.services-bg p, .services-bg li, .services-bg span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item),
-.services-bg .text-glow, .services-bg .hero-subtitle, .services-bg .section-text, 
-.services-bg .card-text, .services-bg .text-responsive {
-  color: #1A1A1A !important;
-  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), 
-               0px 0px 6px rgba(255, 255, 255, 0.6) !important;
-  font-weight: 500 !important;
+/* MANTENER ESTILOS DE BOTONES SIN SOMBRAS DE TEXTO */
+.btn, .badge {
+  text-shadow: none !important;
 }
 
-/* CONTACT.HTML - Fondo industrial igual que index */
-.industrial-bg-contact h1, .industrial-bg-contact h2, .industrial-bg-contact h3, 
-.industrial-bg-contact h4, .industrial-bg-contact h5, .industrial-bg-contact h6 {
-  color: #FFFFFF !important;
-  text-shadow: 3px 3px 6px rgba(0, 91, 140, 0.9), 
-               0px 0px 12px rgba(0, 91, 140, 0.7) !important;
-  font-weight: 700 !important;
-}
-
-.industrial-bg-contact p, .industrial-bg-contact li, .industrial-bg-contact span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item),
-.industrial-bg-contact .text-glow, .industrial-bg-contact .hero-subtitle, .industrial-bg-contact .section-text, 
-.industrial-bg-contact .card-text, .industrial-bg-contact .text-responsive {
-  color: #FFFFFF !important;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9), 
-               1px 1px 3px rgba(0, 0, 0, 0.8) !important;
-  font-weight: 500 !important;
-}
-
-/* Elementos especiales con tarjetas - Ajustes por fondo */
-.industrial-bg .elegant-card, .industrial-bg .futuristic-card,
-.industrial-bg-contact .elegant-card, .industrial-bg-contact .futuristic-card {
-  background: rgba(0, 0, 0, 0.7) !important;
-  border: 2px solid rgba(0, 91, 140, 0.3) !important;
+/* TARJETAS - FONDO SEMI-TRANSPARENTE PARA MEJOR LEGIBILIDAD */
+.elegant-card, .futuristic-card {
+  background: rgba(255, 255, 255, 0.1) !important;
   backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
-.about-bg .elegant-card, .about-bg .futuristic-card,
-.services-bg .elegant-card, .services-bg .futuristic-card {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border: 2px solid rgba(0, 61, 92, 0.2) !important;
-  backdrop-filter: blur(5px) !important;
-}
-
-/* Ajustes para botones empresariales según fondo */
-.industrial-bg .btn, .industrial-bg-contact .btn {
-  background: linear-gradient(135deg, #005B8C, #003D5C) !important;
-  color: #FFFFFF !important;
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
-  font-weight: 600 !important;
-}
-
-.about-bg .btn, .services-bg .btn {
-  background: linear-gradient(135deg, #003D5C, #005B8C) !important;
-  color: #FFFFFF !important;
-  border: 2px solid rgba(0, 61, 92, 0.5) !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
-  font-weight: 600 !important;
-}
-
-/* Ajustes para navegación según el fondo */
-.industrial-bg .nav-link, .industrial-bg-contact .nav-link {
-  color: #FFFFFF !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
-}
-
-.about-bg .nav-link, .services-bg .nav-link {
-  color: #003D5C !important;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
-}
-
-/* Breadcrumbs específicos por página */
-.industrial-bg .breadcrumb-item, .industrial-bg .breadcrumb-item a,
-.industrial-bg-contact .breadcrumb-item, .industrial-bg-contact .breadcrumb-item a {
-  color: #FFFFFF !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
-}
-
-.about-bg .breadcrumb-item, .about-bg .breadcrumb-item a,
-.services-bg .breadcrumb-item, .services-bg .breadcrumb-item a {
-  color: #003D5C !important;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
-}
-
-/* Secciones CTA empresariales según fondo */
-.industrial-bg .section-gradient, .industrial-bg .credibility-banner,
-.industrial-bg-contact .section-gradient, .industrial-bg-contact .credibility-banner {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 91, 140, 0.6)) !important;
-  border-top: 3px solid rgba(0, 91, 140, 0.7) !important;
-  border-bottom: 3px solid rgba(0, 91, 140, 0.7) !important;
-}
-
-.about-bg .section-gradient, .about-bg .credibility-banner,
-.services-bg .section-gradient, .services-bg .credibility-banner {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(0, 61, 92, 0.1)) !important;
-  border-top: 3px solid rgba(0, 61, 92, 0.3) !important;
-  border-bottom: 3px solid rgba(0, 61, 92, 0.3) !important;
-}
-
-/* Texto destacado empresarial */
-.industrial-bg .experience-badge, .industrial-bg .section-title-main,
-.industrial-bg-contact .experience-badge, .industrial-bg-contact .section-title-main {
+/* ELEMENTOS CTA Y DESTACADOS */
+.experience-badge, .section-title-main, .credibility-title, .oferta-title {
   color: #FFD700 !important;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+  text-shadow: 2px 2px 4px rgba(0, 45, 82, 0.9) !important;
   font-weight: 800 !important;
 }
 
-.about-bg .experience-badge, .about-bg .section-title-main,
-.services-bg .experience-badge, .services-bg .section-title-main {
-  color: #B8860B !important;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9) !important;
-  font-weight: 800 !important;
-}
-
-/* ===== FIN OPTIMIZACIÓN AUTOMÁTICA DE CONTRASTES ===== */
-
-/* Hero About - Fondo negro específico para textos */
-.about-bg .hero-section .hero-title,
-.about-bg .hero-section .hero-subtitle {
-  background: rgba(0, 0, 0, 0.8) !important;
-  padding: 15px 25px !important;
-  border-radius: 8px !important;
+/* BREADCRUMBS GLOBALES */
+.breadcrumb-item, .breadcrumb-item a {
   color: #FFFFFF !important;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
-  display: inline-block !important;
-  margin: 10px 0 !important;
-  backdrop-filter: blur(5px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  text-shadow: 1px 1px 2px rgba(0, 45, 82, 0.8) !important;
+}
+
+/* NAVEGACIÓN GLOBAL */
+.nav-link {
+  color: #FFFFFF !important;
+  text-shadow: 1px 1px 2px rgba(0, 45, 82, 0.8) !important;
 }
 
 /* Listas con estilo mejorado */
@@ -208,19 +110,6 @@ small, .footer-details-content {
   padding: 0 !important;
   margin: inherit !important;
   display: inherit !important;
-}
-
-/* Texto destacado en tarjetas - Solo sombras */
-.futuristic-card *, .elegant-card * {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
-}
-
-.futuristic-card h1, .futuristic-card h2, .futuristic-card h3, .futuristic-card h4,
-.elegant-card h1, .elegant-card h2, .elegant-card h3, .elegant-card h4 {
-  color: #005B8C !important;
-  background: none !important;
-  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), 
-               0px 0px 6px rgba(255, 255, 255, 0.6) !important;
 }
 
 /* ===== FIN DEL SISTEMA UNIFICADO ===== */
@@ -1468,6 +1357,9 @@ header {
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   padding: 0 !important;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .header-container {
@@ -1484,31 +1376,24 @@ header.scrolled {
 }
 
 .header-content {
-  display: grid;
-  grid-template-columns: 300px 1fr;
+  display: flex;
   align-items: center;
-  padding: 20px 50px 20px 250px;
+  justify-content: space-between;
+  padding: 0 50px;
   width: 100%;
+  height: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 80px;
-  gap: 0;
   position: relative;
 }
 
 .header-logo {
-  position: fixed !important;
-  left: 0 !important;
-  top: 0 !important;
-  width: auto !important;
-  height: 80px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  padding: 0 0 0 5px !important;
+  height: 80px !important;
   margin: 0 !important;
-  z-index: 1001 !important;
-  background: transparent !important;
+  padding: 0 !important;
 }
 
 .header-logo a {
@@ -1528,14 +1413,18 @@ header.scrolled {
   cursor: pointer;
 }
 
-/* Navegación desktop con Grid */
+/* Navegación desktop centrada verticalmente */
 .navbar-responsive {
-  justify-self: end;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 20px;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  height: 100% !important;
+  padding: 0 !important;
+  flex: 1 !important;
+  min-height: 80px !important;
+  max-height: 80px !important;
+  position: relative !important;
+  top: -5px !important;
 }
 
 /* Navegación profesional - Estado normal (fondo claro) */
@@ -3641,12 +3530,47 @@ header .container-fluid {
 }
 
 .navbar-responsive .nav {
-  margin-bottom: 0;
-  gap: 0.5rem; /* Reduce el espacio entre elementos del menÃº */
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  gap: 0 !important;
+  display: table !important;
+  align-items: center !important;
+  height: 100% !important;
+  list-style: none !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
+  width: 100% !important;
 }
 
 .navbar-responsive .nav-link {
-  padding: 0.5rem 0.75rem; /* Reduce el padding de los enlaces */
+  padding: 0 0.75rem !important;
+  display: table-cell !important;
+  vertical-align: middle !important;
+  height: 80px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  text-align: center !important;
+  position: relative !important;
+  top: -5px !important;
+}
+
+.navbar-responsive .nav-item {
+  display: table-cell !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  height: 80px !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  position: relative !important;
+  top: -5px !important;
+}
+
+/* Override específico para Bootstrap */
+.navbar-responsive .nav-item,
+.navbar-responsive .nav-link {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }
 
 /* Ajustes responsive para mantener la proximidad */
@@ -5853,7 +5777,12 @@ main.industrial-bg .elegant-card.border-card.accent p {
     background-position: center top;
   }
   
-  .industrial-bg,
+  .industrial-bg {
+    background-color: #000000 !important;
+    background-size: 80% !important;
+    min-height: auto;
+  }
+  
   .about-bg,
   .services-bg,
   .industrial-bg-contact {
@@ -5873,6 +5802,11 @@ main.industrial-bg .elegant-card.border-card.accent p {
   .hero-services-bg {
     background-attachment: scroll;
     background-position: center;
+  }
+  
+  .industrial-bg {
+    background-color: #000000 !important;
+    background-size: 65% !important;
   }
 }
 
@@ -5954,12 +5888,13 @@ body.index-page small {
 /* Responsive text shadows para index.html - DESACTIVADO, usa sistema global */
 /* Media queries específicos para index eliminados - se usa el sistema responsive global */
 
-/* Fondo principal industrial responsive */
+/* Fondo principal industrial responsive - Imagen reducida con fondo negro */
 .industrial-bg {
+  background-color: #000000;
   background-image: url('../images/g.jpg');
   background-attachment: fixed;
   background-position: center;
-  background-size: cover;
+  background-size: 70%;
   background-repeat: no-repeat;
   min-height: 100vh;
 }
