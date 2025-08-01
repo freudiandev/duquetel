@@ -1222,7 +1222,11 @@ body {
 }
 
 .text-black-styled {
-  color: #000000;
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 8px rgba(40, 40, 40, 0.95), 
+               2px 2px 6px rgba(20, 20, 20, 0.9),
+               0px 0px 12px rgba(60, 60, 60, 0.8),
+               4px 4px 16px rgba(0, 0, 0, 0.7) !important;
   font-weight: 500;
 }
 
@@ -5542,23 +5546,100 @@ header .nav-link:hover,
   color: #1B5E20 !important; /* Verde oscuro para párrafos */
 }
 
-/* Títulos uniformes para cards de servicios */
+/* Títulos uniformes para cards de servicios - CON SOMBRA AZUL GRANDE */
 .services-bg .elegant-card h3 {
-  color: #000000 !important; /* Negro para todos los títulos */
-  text-shadow: none !important; /* Sin sombra */
+  color: #FFFFFF !important;
+  text-shadow: 4px 4px 12px rgba(0, 91, 140, 0.95), 
+               2px 2px 8px rgba(0, 91, 140, 0.9),
+               0px 0px 16px rgba(0, 91, 140, 0.8),
+               6px 6px 20px rgba(0, 45, 82, 0.7) !important;
 }
 
-/* Títulos azules para cards con fondo blanco */
+/* Títulos para cards con fondo especial - SOMBRA AZUL GRANDE */
 .services-bg .elegant-card.border-card h3,
 .services-bg .elegant-card.border-card.accent h3 {
-  color: #0066CC !important; /* Azul para cards con fondo blanco */
-  text-shadow: none !important; /* Sin sombra */
+  color: #FFFFFF !important;
+  text-shadow: 4px 4px 12px rgba(0, 91, 140, 0.95), 
+               2px 2px 8px rgba(0, 91, 140, 0.9),
+               0px 0px 16px rgba(0, 91, 140, 0.8),
+               6px 6px 20px rgba(0, 45, 82, 0.7) !important;
 }
 
-/* Texto negro para cards con fondo blanco en index.html */
-.industrial-bg .elegant-card.border-card,
-.industrial-bg .elegant-card.border-card.accent {
-  color: #000000 !important; /* Texto negro para mejor contraste */
+/* H4 y títulos elegantes en servicios - SOMBRA AZUL GRANDE */
+.services-bg .elegant-card h4,
+.services-bg .futuristic-card h4,
+.services-bg .elegant-title {
+  color: #FFFFFF !important;
+  text-shadow: 4px 4px 12px rgba(0, 91, 140, 0.95), 
+               2px 2px 8px rgba(0, 91, 140, 0.9),
+               0px 0px 16px rgba(0, 91, 140, 0.8),
+               6px 6px 20px rgba(0, 45, 82, 0.7) !important;
+}
+
+/* === SERVICIOS PÁGINA - ESTILO SOBRIO Y PROFESIONAL === */
+
+/* Tarjetas profesionales sin efectos excesivos */
+.services-bg .elegant-card,
+.services-bg .futuristic-card {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Hover sólo una sombra sutil */
+.services-bg .elegant-card:hover,
+.services-bg .futuristic-card:hover {
+  transform: none !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Iconos profesionales sin gradientes */
+.services-bg .card-icon {
+  background: rgba(0, 91, 140, 0.9) !important;
+  box-shadow: 0 2px 8px rgba(0, 91, 140, 0.3) !important;
+}
+
+/* Eliminar efectos especiales */
+.services-bg .gradient-card,
+.services-bg .special-card,
+.services-bg .pulse-animation {
+  background: rgba(255, 255, 255, 0.15) !important;
+  animation: none !important;
+}
+
+/* Botones sobrios */
+.services-bg .btn {
+  background: rgba(0, 91, 140, 0.8) !important;
+  border: 1px solid rgba(0, 91, 140, 0.9) !important;
+  color: white !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.services-bg .btn:hover {
+  background: rgba(0, 91, 140, 1) !important;
+  transform: none !important;
+}
+.services-bg .elegant-card p,
+.services-bg .futuristic-card p {
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 8px rgba(40, 40, 40, 0.95), 
+               2px 2px 6px rgba(20, 20, 20, 0.9),
+               0px 0px 12px rgba(60, 60, 60, 0.8),
+               4px 4px 16px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Texto de listas en tarjetas - SOMBRA GRIS OSCURA GRANDE */
+.services-bg .elegant-card li,
+.services-bg .futuristic-card li {
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 8px rgba(40, 40, 40, 0.95), 
+               2px 2px 6px rgba(20, 20, 20, 0.9),
+               0px 0px 12px rgba(60, 60, 60, 0.8),
+               4px 4px 16px rgba(0, 0, 0, 0.7) !important;
 }
 
 .industrial-bg .elegant-card.border-card h3,
