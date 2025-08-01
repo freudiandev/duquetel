@@ -1,41 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <!-- Página Principal -->
+  <!-- Página Principal - MÁXIMA PRIORIDAD -->
   <url>
     <loc>https://duquetel.com/</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-08-01</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://duquetel.com/assets/images/2.jpg</image:loc>
-      <image:title>DUQUETEL - Ingeniería Eléctrica Ecuador</image:title>
+      <image:title>DUQUETEL - Empresa Líder en Ingeniería Eléctrica Ecuador</image:title>
+      <image:caption>22 años de experiencia en servicios eléctricos profesionales, automatización industrial y energías renovables</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://duquetel.com/assets/images/logo.png</image:loc>
+      <image:title>Logo DUQUETEL - Innovación Eléctrica del Futuro</image:title>
+      <image:caption>Logotipo oficial de DUQUETEL, empresa especializada en ingeniería eléctrica Ecuador</image:caption>
     </image:image>
   </url>
   
-  <!-- Página Sobre Nosotros -->
-  <url>
-    <loc>https://duquetel.com/about.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Página de Servicios -->
+  <!-- Página Servicios - ALTA PRIORIDAD -->
   <url>
     <loc>https://duquetel.com/services.html</loc>
-    <lastmod>2025-07-27</lastmod>
+    <lastmod>2025-08-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://duquetel.com/assets/images/c.jpg</image:loc>
+      <image:title>Servicios Especializados DUQUETEL - Ingeniería Eléctrica Ecuador</image:title>
+      <image:caption>Servicios profesionales: redes eléctricas, automatización industrial, energía solar, tableros de distribución</image:caption>
+    </image:image>
   </url>
   
-  <!-- Página de Contacto -->
+  <!-- Página Sobre Nosotros - ALTA PRIORIDAD -->
+  <url>
+    <loc>https://duquetel.com/about.html</loc>
+    <lastmod>2025-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://duquetel.com/assets/images/d.jpg</image:loc>
+      <image:title>Historia DUQUETEL - 22 Años de Experiencia en Ingeniería Eléctrica</image:title>
+      <image:caption>Conoce la historia, misión, visión y valores de DUQUETEL, empresa ecuatoriana líder en ingeniería eléctrica</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Página de Contacto - MEDIA-ALTA PRIORIDAD -->
   <url>
     <loc>https://duquetel.com/contact.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2025-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://duquetel.com/assets/images/f.jpg</image:loc>
+      <image:title>Contacto DUQUETEL Ecuador - Cotizaciones Servicios Eléctricos</image:title>
+      <image:caption>Contacta con DUQUETEL para cotizaciones: WhatsApp +593-99-730-6549, consultoría técnica gratuita</image:caption>
+    </image:image>
   </url>
   
 </urlset>

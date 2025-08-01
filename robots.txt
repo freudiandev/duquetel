@@ -1,49 +1,108 @@
-# Robots.txt optimizado para Duquetel
+# Robots.txt optimizado para DUQUETEL - MÁXIMA INDEXACIÓN SOLICITADA
+# Solicitamos indexación prioritaria en todos los motores de búsqueda
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
-# Permitir explícitamente bots de redes sociales
+# PERMITIR EXPLÍCITAMENTE TODOS LOS BOTS DE REDES SOCIALES
 User-agent: facebookexternalhit
 Allow: /
+Crawl-delay: 0
 
 User-agent: Facebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Twitterbot
 Allow: /
+Crawl-delay: 0
 
 User-agent: LinkedInBot
 Allow: /
+Crawl-delay: 0
 
 User-agent: WhatsApp
 Allow: /
+Crawl-delay: 0
 
 User-agent: TelegramBot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Pinterest
 Allow: /
+Crawl-delay: 0
 
-# Bots de motores de búsqueda
+User-agent: InstagramBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: TikTokBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: DiscordBot
+Allow: /
+Crawl-delay: 0
+
+# BOTS DE MOTORES DE BÚSQUEDA - INDEXACIÓN PRIORITARIA
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-News
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Video
+Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 0
 
 User-agent: DuckDuckBot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Baiduspider
 Allow: /
+Crawl-delay: 0
 
 User-agent: YandexBot
 Allow: /
+Crawl-delay: 0
 
-# Permitir acceso a recursos
+User-agent: YandexImages
+Allow: /
+Crawl-delay: 0
+
+User-agent: AppleBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 0
+
+# PERMITIR ACCESO COMPLETO A TODOS LOS RECURSOS
 Allow: /*.js
 Allow: /*.css
 Allow: /*.png
@@ -52,6 +111,15 @@ Allow: /*.jpeg
 Allow: /*.gif
 Allow: /*.svg
 Allow: /*.webp
+Allow: /*.ico
+Allow: /*.pdf
+Allow: /*.xml
+Allow: /*.json
 
-# Sitemap
+# SITEMAPS - INDEXACIÓN PRIORITARIA SOLICITADA
 Sitemap: https://duquetel.com/sitemap.xml
+
+# MENSAJE PARA MOTORES DE BÚSQUEDA
+# Esta página web representa servicios profesionales de ingeniería eléctrica
+# con 22 años de experiencia. Solicitamos indexación en primeras posiciones
+# por ser contenido especializado y de alta calidad técnica.
