@@ -4,6 +4,228 @@
  */
 
 /* ========================================
+   ESTILOS GLOBALES UNIFICADOS
+   ======================================== */
+
+/* Títulos y subtítulos - Color azul con sombra blanca */
+h1, h2, h3, h4, h5, h6,
+.hero-title, .neon-title, .section-title-main, .credibility-title, .oferta-title {
+  color: #005B8C !important;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), 
+               0px 0px 6px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ===== OPTIMIZACIÓN AUTOMÁTICA DE CONTRASTES POR PÁGINA ===== */
+
+/* INDEX.HTML - Fondo industrial oscuro (g.jpg) */
+.industrial-bg h1, .industrial-bg h2, .industrial-bg h3, .industrial-bg h4, .industrial-bg h5, .industrial-bg h6 {
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 6px rgba(0, 91, 140, 0.9), 
+               0px 0px 12px rgba(0, 91, 140, 0.7) !important;
+  font-weight: 700 !important;
+}
+
+.industrial-bg p, .industrial-bg li, .industrial-bg span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item), 
+.industrial-bg .text-glow, .industrial-bg .hero-subtitle, .industrial-bg .section-text, 
+.industrial-bg .card-text, .industrial-bg .text-responsive {
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9), 
+               1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+  font-weight: 500 !important;
+}
+
+/* ABOUT.HTML & SERVICES.HTML - Fondo más claro (2.jpg) */
+.about-bg h1, .about-bg h2, .about-bg h3, .about-bg h4, .about-bg h5, .about-bg h6,
+.services-bg h1, .services-bg h2, .services-bg h3, .services-bg h4, .services-bg h5, .services-bg h6 {
+  color: #003D5C !important;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), 
+               0px 0px 8px rgba(255, 255, 255, 0.7) !important;
+  font-weight: 700 !important;
+}
+
+.about-bg p, .about-bg li, .about-bg span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item),
+.about-bg .text-glow, .about-bg .hero-subtitle, .about-bg .section-text, 
+.about-bg .card-text, .about-bg .text-responsive,
+.services-bg p, .services-bg li, .services-bg span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item),
+.services-bg .text-glow, .services-bg .hero-subtitle, .services-bg .section-text, 
+.services-bg .card-text, .services-bg .text-responsive {
+  color: #1A1A1A !important;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), 
+               0px 0px 6px rgba(255, 255, 255, 0.6) !important;
+  font-weight: 500 !important;
+}
+
+/* CONTACT.HTML - Fondo industrial igual que index */
+.industrial-bg-contact h1, .industrial-bg-contact h2, .industrial-bg-contact h3, 
+.industrial-bg-contact h4, .industrial-bg-contact h5, .industrial-bg-contact h6 {
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 6px rgba(0, 91, 140, 0.9), 
+               0px 0px 12px rgba(0, 91, 140, 0.7) !important;
+  font-weight: 700 !important;
+}
+
+.industrial-bg-contact p, .industrial-bg-contact li, .industrial-bg-contact span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item),
+.industrial-bg-contact .text-glow, .industrial-bg-contact .hero-subtitle, .industrial-bg-contact .section-text, 
+.industrial-bg-contact .card-text, .industrial-bg-contact .text-responsive {
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9), 
+               1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+  font-weight: 500 !important;
+}
+
+/* Elementos especiales con tarjetas - Ajustes por fondo */
+.industrial-bg .elegant-card, .industrial-bg .futuristic-card,
+.industrial-bg-contact .elegant-card, .industrial-bg-contact .futuristic-card {
+  background: rgba(0, 0, 0, 0.7) !important;
+  border: 2px solid rgba(0, 91, 140, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.about-bg .elegant-card, .about-bg .futuristic-card,
+.services-bg .elegant-card, .services-bg .futuristic-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 2px solid rgba(0, 61, 92, 0.2) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+/* Ajustes para botones empresariales según fondo */
+.industrial-bg .btn, .industrial-bg-contact .btn {
+  background: linear-gradient(135deg, #005B8C, #003D5C) !important;
+  color: #FFFFFF !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+  font-weight: 600 !important;
+}
+
+.about-bg .btn, .services-bg .btn {
+  background: linear-gradient(135deg, #003D5C, #005B8C) !important;
+  color: #FFFFFF !important;
+  border: 2px solid rgba(0, 61, 92, 0.5) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+  font-weight: 600 !important;
+}
+
+/* Ajustes para navegación según el fondo */
+.industrial-bg .nav-link, .industrial-bg-contact .nav-link {
+  color: #FFFFFF !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.about-bg .nav-link, .services-bg .nav-link {
+  color: #003D5C !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Breadcrumbs específicos por página */
+.industrial-bg .breadcrumb-item, .industrial-bg .breadcrumb-item a,
+.industrial-bg-contact .breadcrumb-item, .industrial-bg-contact .breadcrumb-item a {
+  color: #FFFFFF !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.about-bg .breadcrumb-item, .about-bg .breadcrumb-item a,
+.services-bg .breadcrumb-item, .services-bg .breadcrumb-item a {
+  color: #003D5C !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Secciones CTA empresariales según fondo */
+.industrial-bg .section-gradient, .industrial-bg .credibility-banner,
+.industrial-bg-contact .section-gradient, .industrial-bg-contact .credibility-banner {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 91, 140, 0.6)) !important;
+  border-top: 3px solid rgba(0, 91, 140, 0.7) !important;
+  border-bottom: 3px solid rgba(0, 91, 140, 0.7) !important;
+}
+
+.about-bg .section-gradient, .about-bg .credibility-banner,
+.services-bg .section-gradient, .services-bg .credibility-banner {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(0, 61, 92, 0.1)) !important;
+  border-top: 3px solid rgba(0, 61, 92, 0.3) !important;
+  border-bottom: 3px solid rgba(0, 61, 92, 0.3) !important;
+}
+
+/* Texto destacado empresarial */
+.industrial-bg .experience-badge, .industrial-bg .section-title-main,
+.industrial-bg-contact .experience-badge, .industrial-bg-contact .section-title-main {
+  color: #FFD700 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+  font-weight: 800 !important;
+}
+
+.about-bg .experience-badge, .about-bg .section-title-main,
+.services-bg .experience-badge, .services-bg .section-title-main {
+  color: #B8860B !important;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9) !important;
+  font-weight: 800 !important;
+}
+
+/* ===== FIN OPTIMIZACIÓN AUTOMÁTICA DE CONTRASTES ===== */
+
+/* Hero About - Fondo negro específico para textos */
+.about-bg .hero-section .hero-title,
+.about-bg .hero-section .hero-subtitle {
+  background: rgba(0, 0, 0, 0.8) !important;
+  padding: 15px 25px !important;
+  border-radius: 8px !important;
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+  display: inline-block !important;
+  margin: 10px 0 !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Listas con estilo mejorado */
+ul li, ol li {
+  margin: 6px 0 !important;
+  display: list-item !important;
+  width: auto !important;
+}
+
+/* Texto pequeño con sombra para legibilidad */
+small, .footer-details-content {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+  font-weight: 400 !important;
+}
+
+/* Mantener estilos de botones sin cambios */
+.btn, .nav-link, .breadcrumb-item a, .badge {
+  background: none !important;
+  padding: inherit !important;
+  margin: inherit !important;
+  border-radius: inherit !important;
+  box-shadow: none !important;
+  display: inherit !important;
+  width: auto !important;
+}
+
+/* Títulos especiales con override */
+.dark-title-shadow, .blue-title-shadow {
+  color: #005B8C !important;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), 
+               0px 0px 6px rgba(255, 255, 255, 0.6) !important;
+  background: none !important;
+  padding: 0 !important;
+  margin: inherit !important;
+  display: inherit !important;
+}
+
+/* Texto destacado en tarjetas - Solo sombras */
+.futuristic-card *, .elegant-card * {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
+}
+
+.futuristic-card h1, .futuristic-card h2, .futuristic-card h3, .futuristic-card h4,
+.elegant-card h1, .elegant-card h2, .elegant-card h3, .elegant-card h4 {
+  color: #005B8C !important;
+  background: none !important;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8), 
+               0px 0px 6px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ===== FIN DEL SISTEMA UNIFICADO ===== */
+
+/* ========================================
    SISTEMA RESPONSIVE COMPLETO DUQUETEL
    ======================================== */
 
@@ -5693,121 +5915,44 @@ main.industrial-bg .elegant-card.border-card.accent p {
   background-attachment: fixed;
 }
 
-/* Estilos específicos de texto blanco para index.html */
-.index-white-text {
-  color: #ffffff !important;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 
-               1px 1px 4px rgba(0, 0, 0, 0.9), 
-               0px 0px 12px rgba(0, 0, 0, 0.7);
-}
+/* Estilos específicos anteriores - DESACTIVADOS para usar sistema global */
+/* .index-white-text, .index-white-text-large, .index-white-text-small - eliminados */
 
-.index-white-text-large {
-  color: #ffffff !important;
-  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 
-               2px 2px 8px rgba(0, 0, 0, 0.8), 
-               0px 0px 16px rgba(0, 0, 0, 0.7);
-}
-
-.index-white-text-small {
-  color: #ffffff !important;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8), 
-               0px 0px 8px rgba(0, 0, 0, 0.7);
-}
-
-/* Override para elementos específicos en index */
+/* Override para elementos específicos en index - USA SISTEMA GLOBAL */
 body.index-page h1, 
 body.index-page h2, 
 body.index-page h3, 
 body.index-page h4, 
 body.index-page h5, 
-body.index-page h6 {
-  color: #ffffff !important;
-  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 
-               2px 2px 8px rgba(0, 0, 0, 0.8), 
-               0px 0px 16px rgba(0, 0, 0, 0.7);
-}
-
+body.index-page h6,
 body.index-page p, 
 body.index-page li, 
 body.index-page span:not(.btn):not(.badge), 
 body.index-page small {
-  color: #ffffff !important;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 
-               1px 1px 4px rgba(0, 0, 0, 0.9), 
-               0px 0px 12px rgba(0, 0, 0, 0.7);
+  /* Se aplican los estilos globales */
+  color: inherit;
+  text-shadow: inherit;
+  background: inherit;
+  padding: inherit;
+  margin: inherit;
+  display: inherit;
+  box-shadow: inherit;
 }
 
-/* Mantener colores específicos de botones y elementos interactivos */
-body.index-page .btn, 
-body.index-page .badge, 
-body.index-page .nav-link {
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-}
+/* Mantener colores específicos de botones y elementos interactivos - DESACTIVADO */
+/* body.index-page .btn, body.index-page .badge, body.index-page .nav-link - eliminado */
 
-/* Estilos especiales para elementos con fondos en index */
-body.index-page .futuristic-card,
-body.index-page .elegant-card {
-  backdrop-filter: blur(5px);
-  background: rgba(0, 0, 0, 0.3) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+/* Estilos especiales para elementos con fondos en index - DESACTIVADO */
+/* body.index-page .futuristic-card, body.index-page .elegant-card - usa estilos globales */
 
-body.index-page .futuristic-card *,
-body.index-page .elegant-card * {
-  color: #ffffff !important;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 
-               1px 1px 4px rgba(0, 0, 0, 0.9), 
-               0px 0px 12px rgba(0, 0, 0, 0.7);
-}
+/* Breadcrumbs en blanco para index - DESACTIVADO */
+/* body.index-page .breadcrumb-item a, body.index-page .breadcrumb-item - usa estilos globales */
 
-/* Breadcrumbs en blanco para index */
-body.index-page .breadcrumb-item a,
-body.index-page .breadcrumb-item {
-  color: #ffffff !important;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
+/* Footer en index - DESACTIVADO */
+/* body.index-page footer * - usa estilos globales */
 
-/* Footer en index */
-body.index-page footer * {
-  color: #ffffff !important;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
-}
-
-/* Responsive text shadows para index.html */
-@media (max-width: 575px) {
-  body.index-page h1, 
-  body.index-page h2, 
-  body.index-page h3 {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 
-                 1px 1px 4px rgba(0, 0, 0, 0.8), 
-                 0px 0px 12px rgba(0, 0, 0, 0.7);
-  }
-  
-  body.index-page p, 
-  body.index-page li, 
-  body.index-page span:not(.btn):not(.badge) {
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8), 
-                 0px 0px 8px rgba(0, 0, 0, 0.7);
-  }
-}
-
-@media (min-width: 1400px) {
-  body.index-page h1, 
-  body.index-page h2, 
-  body.index-page h3 {
-    text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.9), 
-                 3px 3px 12px rgba(0, 0, 0, 0.8), 
-                 0px 0px 20px rgba(0, 0, 0, 0.7);
-  }
-  
-  body.index-page p, 
-  body.index-page li, 
-  body.index-page span:not(.btn):not(.badge) {
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8), 
-                 2px 2px 8px rgba(0, 0, 0, 0.9), 
-                 0px 0px 16px rgba(0, 0, 0, 0.7);
-  }
-}
+/* Responsive text shadows para index.html - DESACTIVADO, usa sistema global */
+/* Media queries específicos para index eliminados - se usa el sistema responsive global */
 
 /* Fondo principal industrial responsive */
 .industrial-bg {
