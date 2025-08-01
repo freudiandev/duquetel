@@ -4334,7 +4334,7 @@ header .nav-link:hover,
 }
 
 .glass-section p {
-  color: #ffffff !important; /* Texto de párrafo blanco en secciones de vidrio */
+  color: #333333 !important; /* Texto de párrafo oscuro en secciones de vidrio para mejor legibilidad */
 }
 
 .credibility-banner,
