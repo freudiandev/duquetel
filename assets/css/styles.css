@@ -12,37 +12,36 @@
   min-height: 60vh !important;
 }
 
-/* TÍTULOS GLOBALES - H1 Y H2 BLANCOS CON SOMBRA AZUL OSCURA */
-h1, h2 {
+/* TÍTULOS GLOBALES - TODOS CON SOMBRA AZUL GRANDE */
+h1, h2, h3, h4, h5, h6,
+.hero-title, .neon-title, .section-title, .section-title-main, 
+.credibility-title, .oferta-title {
   color: #FFFFFF !important;
-  text-shadow: 3px 3px 8px rgba(0, 45, 82, 0.9), 
-               1px 1px 4px rgba(0, 45, 82, 0.8),
-               0px 0px 12px rgba(0, 45, 82, 0.6) !important;
+  text-shadow: 4px 4px 12px rgba(0, 91, 140, 0.95), 
+               2px 2px 8px rgba(0, 91, 140, 0.9),
+               0px 0px 16px rgba(0, 91, 140, 0.8),
+               6px 6px 20px rgba(0, 45, 82, 0.7) !important;
   font-weight: 700 !important;
 }
 
-/* SUBTÍTULOS - H3, H4, H5, H6 BLANCOS CON SOMBRA AZUL MEDIA */
-h3, h4, h5, h6 {
-  color: #FFFFFF !important;
-  text-shadow: 2px 2px 6px rgba(0, 61, 92, 0.8), 
-               1px 1px 3px rgba(0, 61, 92, 0.7) !important;
-  font-weight: 600 !important;
-}
-
-/* TEXTO GLOBAL - NEGRO CON SOMBRA BLANCA MEDIA */
+/* PÁRRAFOS GLOBALES - TODOS CON SOMBRA GRIS OSCURA GRANDE */
 p, li, span:not(.btn):not(.badge):not(.nav-link):not(.breadcrumb-item), 
 .text-glow, .hero-subtitle, .section-text, .oferta-description, 
 .card-text, .text-responsive, .text-dark-styled, .text-black-styled {
-  color: #000000 !important;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), 
-               1px 1px 2px rgba(255, 255, 255, 0.9) !important;
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 8px rgba(40, 40, 40, 0.95), 
+               2px 2px 6px rgba(20, 20, 20, 0.9),
+               0px 0px 12px rgba(60, 60, 60, 0.8),
+               4px 4px 16px rgba(0, 0, 0, 0.7) !important;
   font-weight: 500 !important;
 }
 
-/* TEXTO PEQUEÑO */
+/* TEXTO PEQUEÑO - CON SOMBRA GRIS OSCURA GRANDE */
 small, .footer-details-content {
-  color: #000000 !important;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7) !important;
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 6px rgba(40, 40, 40, 0.9),
+               1px 1px 4px rgba(20, 20, 20, 0.8),
+               0px 0px 8px rgba(60, 60, 60, 0.7) !important;
   font-weight: 400 !important;
 }
 
@@ -58,23 +57,29 @@ small, .footer-details-content {
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
-/* ELEMENTOS CTA Y DESTACADOS */
+/* ELEMENTOS CTA Y DESTACADOS - SOMBRA AZUL GRANDE */
 .experience-badge, .section-title-main, .credibility-title, .oferta-title {
   color: #FFD700 !important;
-  text-shadow: 2px 2px 4px rgba(0, 45, 82, 0.9) !important;
+  text-shadow: 4px 4px 12px rgba(0, 91, 140, 0.95),
+               2px 2px 8px rgba(0, 45, 82, 0.9),
+               0px 0px 16px rgba(0, 91, 140, 0.8) !important;
   font-weight: 800 !important;
 }
 
-/* BREADCRUMBS GLOBALES */
+/* BREADCRUMBS GLOBALES - SOMBRA AZUL GRANDE */
 .breadcrumb-item, .breadcrumb-item a {
   color: #FFFFFF !important;
-  text-shadow: 1px 1px 2px rgba(0, 45, 82, 0.8) !important;
+  text-shadow: 2px 2px 6px rgba(0, 91, 140, 0.9),
+               1px 1px 4px rgba(0, 45, 82, 0.8),
+               0px 0px 8px rgba(0, 91, 140, 0.7) !important;
 }
 
-/* NAVEGACIÓN GLOBAL */
+/* NAVEGACIÓN GLOBAL - SOMBRA AZUL GRANDE */
 .nav-link {
   color: #FFFFFF !important;
-  text-shadow: 1px 1px 2px rgba(0, 45, 82, 0.8) !important;
+  text-shadow: 2px 2px 6px rgba(0, 91, 140, 0.9),
+               1px 1px 4px rgba(0, 45, 82, 0.8),
+               0px 0px 8px rgba(0, 91, 140, 0.7) !important;
 }
 
 /* Listas con estilo mejorado */
@@ -82,12 +87,6 @@ ul li, ol li {
   margin: 6px 0 !important;
   display: list-item !important;
   width: auto !important;
-}
-
-/* Texto pequeño con sombra para legibilidad */
-small, .footer-details-content {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
-  font-weight: 400 !important;
 }
 
 /* Mantener estilos de botones sin cambios */
@@ -113,6 +112,81 @@ small, .footer-details-content {
 }
 
 /* ===== FIN DEL SISTEMA UNIFICADO ===== */
+
+/* ===== SISTEMA DE SECTIONS CON ANCHO COMPLETO Y ESPACIOS ===== */
+
+/* Todas las sections ocupan ancho completo de pantalla */
+section {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-bottom: 5rem !important;
+  padding: 3rem 0 !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+/* Container dentro de sections - centrado y con max-width */
+section .container,
+section .container-fluid {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Espacios aumentados entre sections para mostrar más fondo */
+section:not(:last-child) {
+  margin-bottom: 6rem !important;
+}
+
+/* Hero sections con espaciado especial */
+.hero-section {
+  margin-bottom: 5rem !important;
+  padding: 4rem 0 !important;
+}
+
+/* Sections especiales con fondo glass para contraste */
+section:has(.glass-section),
+section:has(.oferta-especial),
+.glass-section,
+.oferta-especial {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ajustes responsive para sections */
+@media (max-width: 768px) {
+  section {
+    margin-bottom: 4rem !important;
+    padding: 2rem 0 !important;
+  }
+  
+  section .container,
+  section .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    margin-bottom: 3rem !important;
+    padding: 1.5rem 0 !important;
+  }
+  
+  section .container,
+  section .container-fluid {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+/* ===== FIN DEL SISTEMA DE SECTIONS ===== */
 
 /* ========================================
    SISTEMA RESPONSIVE COMPLETO DUQUETEL
